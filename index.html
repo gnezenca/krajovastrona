@@ -39,7 +39,7 @@
         // Funkcja do dynamicznego ładowania header.html
         async function loadHeader() {
             try {
-                const response = await fetch('header.html');
+                const response = await fetch('templates/header.html');
                 const text = await response.text();
 
                 // Tworzymy tymczasowy element do parsowania HTML
