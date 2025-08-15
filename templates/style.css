@@ -71,3 +71,21 @@ footer {
   position: relative; /* Używane, jeśli stopka ma być na dole strony, niekoniecznie "przypięta" */
   width: 100%; /* Stopka zajmuje całą szerokość strony */
 }
+.language-selector {
+            display: flex;
+            gap: 5px;
+            margin-left: 20px;
+        }
+        .lang-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .lang-button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
