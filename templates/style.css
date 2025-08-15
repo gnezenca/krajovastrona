@@ -1,0 +1,68 @@
+a {
+  color: blue; /* Kolor niebieski dla normalnego stanu linku */
+  text-decoration: none; /* Usuwa podkreślenie linku */
+}
+
+a:hover {
+  color: darkgoldenrod; /* Ciemnożółty kolor po najechaniu myszką */
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Kolor tła dla całej strony, aby nagłówek był widoczny */
+}
+
+.main-header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 0; /* Zmieniono padding na 0, aby nagłówek zajmował całą szerokość */
+    color: white;
+    width: 100vw; /* Zapewnia, że nagłówek zajmuje całą szerokość widocznego obszaru */
+}
+
+.header-left {
+    /* Usunięto margin-right: auto, ponieważ flex-grow zajmie się rozkładem */
+    display: flex; /* Dodano display: flex, aby flaga była centrowana w swoim kontenerze */
+    align-items: center; /* Wyśrodkowanie flagi w pionie */
+    padding-left: 20px; /* Dodano padding dla flagi, aby nie dotykała lewej krawędzi */
+}
+
+.flag-icon {
+    height: 40px; /* Dostosuj rozmiar flagi według potrzeb */
+    width: auto;
+    display: block; /* Zapewnia, że obraz jest blokowy, co pomaga w wyrównaniu */
+}
+
+.header-nav {
+    display: flex;
+    flex-grow: 1; /* Pozwala nawigacji zająć całą dostępną przestrzeń */
+}
+
+.nav-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 0; /* Zmieniono padding horyzontalny na 0, aby przyciski stykały się */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Płynne przejście */
+    flex-grow: 1; /* Pozwala każdemu przyciskowi zająć równą część dostępnej przestrzeni */
+    text-align: center; /* Wyśrodkowanie tekstu w przyciskach */
+}
+
+.nav-button:hover {
+    background-color: white;
+    color: black;
+}
+
+footer {
+  background-color: black; /* Czarne tło stopki */
+  color: white; /* Biały kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 20px 0; /* Górny i dolny padding 20px, brak paddingu po bokach */
+  font-family: Arial, sans-serif; /* Prosta, czytelna czcionka */
+  font-size: 14px; /* Rozmiar czcionki */
+  position: relative; /* Używane, jeśli stopka ma być na dole strony, niekoniecznie "przypięta" */
+  width: 100%; /* Stopka zajmuje całą szerokość strony */
+}
