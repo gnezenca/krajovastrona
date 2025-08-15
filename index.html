@@ -77,9 +77,20 @@ footer {
     </style>
 </head>
 <body>
-    <?php include 'templates/header.html'; ?>
+    <div id="header-placeholder">
+        </div>
     <footer>
         <p>©2025-2025. Krajova strona Gnezenskej Republiky. Naš mejl: <a href="mailto:gnezenca@wp.pl">gnezenca@wp.pl</a></p>
     </footer> 
+    <script>
+        fetch('templates/header.html') // Zastąp 'header.html' ścieżką do Twojego pliku z nagłówkiem
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd podczas ładowania nagłówka:', error);
+            });
+    </script>
 </body>
 </html>
