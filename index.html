@@ -77,18 +77,26 @@ footer {
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-left">
-            <img src="images/gnezenca.png" alt="Gnezenska flaga" class="flag-icon">
+    <div id="targetDiv">
         </div>
-        <nav class="header-nav">
-            <button class="nav-button"><a href="index.html">HLOVNA STRONA</a></button>
-            <button class="nav-button"><a href="o-nas.html">O NAS</a></button>
-            <button class="nav-button"><a href="kraj.html">KRAJ</a></button>
-            <button class="nav-button"><a href="narod.html">NAROD</a></button>
-            <button class="nav-button"><a href="mova.html">MOVA</a></button>
-        </nav>
-    </header>
+
+    <script>
+        fetch('1.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const content = doc.getElementById('contentToInsert');
+                if (content) {
+                    document.getElementById('targetDiv').appendChild(content);
+                } else {
+                    console.error('Element o id "contentToInsert" nie został znaleziony w 1.html');
+                }
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd podczas ładowania 1.html:', error);
+            });
+    </script>
     <footer>
         <p>©2025-2025. Krajova strona Gnezenskej Republiky. Naš mejl: <a href="mailto:gnezenca@wp.pl">gnezenca@wp.pl</a></p>
     </footer> 
