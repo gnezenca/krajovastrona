@@ -15,31 +15,39 @@
     background-color: black;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0; /* Zmieniono padding na 0, aby nagłówek zajmował całą szerokość */
     color: white;
+    width: 100vw; /* Zapewnia, że nagłówek zajmuje całą szerokość widocznego obszaru */
 }
 
 .header-left {
-    margin-right: auto; /* Przesuwa flagę na lewą stronę */
+    /* Usunięto margin-right: auto, ponieważ flex-grow zajmie się rozkładem */
+    display: flex; /* Dodano display: flex, aby flaga była centrowana w swoim kontenerze */
+    align-items: center; /* Wyśrodkowanie flagi w pionie */
+    padding-left: 20px; /* Dodano padding dla flagi, aby nie dotykała lewej krawędzi */
 }
 
 .flag-icon {
     height: 40px; /* Dostosuj rozmiar flagi według potrzeb */
     width: auto;
+    display: block; /* Zapewnia, że obraz jest blokowy, co pomaga w wyrównaniu */
 }
 
 .header-nav {
     display: flex;
+    flex-grow: 1; /* Pozwala nawigacji zająć całą dostępną przestrzeń */
 }
 
 .nav-button {
     background-color: transparent;
     color: white;
     border: none;
-    padding: 10px 150px;
+    padding: 10px 0; /* Zmieniono padding horyzontalny na 0, aby przyciski stykały się */
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease; /* Płynne przejście */
+    flex-grow: 1; /* Pozwala każdemu przyciskowi zająć równą część dostępnej przestrzeni */
+    text-align: center; /* Wyśrodkowanie tekstu w przyciskach */
 }
 
 .nav-button:hover {
