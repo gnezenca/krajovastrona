@@ -1,12 +1,92 @@
 <header class="main-header">
-        <div class="header-left">
-            <img src="https://gnezenca.github.io/krajovastrona/images/gnezenca.png" alt="Gnezenska flaga" class="flag-icon">
+    <div class="header-left">
+        <img src="https://gnezenca.github.io/krajovastrona/images/gnezenca.png" alt="Gnezenska flaga" class="flag-icon">
+        <div class="language-selector">
+            <button id="lang-gnz" class="lang-button active" onclick="setLanguage('gnz')">GNZ</button>
+            <button id="lang-pol" class="lang-button" onclick="setLanguage('pol')">POL</button>
+            <button id="lang-eng" class="lang-button" onclick="setLanguage('eng')">ENG</button>
         </div>
-        <nav class="header-nav">
-            <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona">HLOVNA STRONA</a></button>
-            <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/o-nas.html">O NAS</a></button>
-            <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/kraj.html">KRAJ</a></button>
-            <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/narod.html">NAROD</a></button>
-            <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/mova.html">MOVA</a></button>
-        </nav>
-    </header>
+    </div>
+    <nav class="header-nav">
+        <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona" data-lang-key="home">HLOVNA STRONA</a></button>
+        <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/o-nas.html" data-lang-key="about">O NAS</a></button>
+        <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/kraj.html" data-lang-key="country">KRAJ</a></button>
+        <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/narod.html" data-lang-key="nation">NAROD</a></button>
+        <button class="nav-button"><a href="https://gnezenca.github.io/krajovastrona/mova.html" data-lang-key="language">MOVA</a></button>
+    </nav>
+
+    <script>
+        // Obiekty z tłumaczeniami dla każdego języka
+        const translations = {
+            gnz: {
+                home: "HLOVNA STRONA",
+                about: "O NAS",
+                country: "KRAJ",
+                nation: "NAROD",
+                language: "MOVA"
+            },
+            pol: {
+                home: "STRONA GŁÓWNA",
+                about: "O NAS",
+                country: "PAŃSTWO",
+                nation: "NARÓD",
+                language: "JĘZYK"
+            },
+            eng: {
+                home: "HOME PAGE",
+                about: "ABOUT US",
+                country: "COUNTRY",
+                nation: "NATION",
+                language: "LANGUAGE"
+            }
+        };
+
+        // Funkcja do ustawiania języka
+        function setLanguage(lang) {
+            // Zapisz wybrany język w localStorage
+            localStorage.setItem('selectedLang', lang);
+
+            // Zaktualizuj teksty na stronie
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Zaktualizuj aktywne przyciski językowe
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(`lang-${lang}`).classList.add('active');
+        }
+
+        // Ustaw domyślny język po załadowaniu strony lub wczytaj z localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLang');
+            setLanguage(savedLang || 'gnz'); // Domyślnie GNZ
+        });
+    </script>
+
+    <style>
+        /* Proste style dla selektora języka - możesz dostosować */
+        .language-selector {
+            display: flex;
+            gap: 5px;
+            margin-left: 20px; /* Dostosuj pozycję w header-left */
+        }
+        .lang-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .lang-button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+    </style>
+</header>
