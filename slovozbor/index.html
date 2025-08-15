@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <style>
         .search-container {
+            align: center;
             margin-bottom: 30px;
             background-color: #fff;
             padding: 25px;
@@ -120,7 +121,7 @@
 <body>
 <div id="header-placeholder">
         </div>
-    <h1>Słownik polsko-gneżeński (gotowy częściowo, do litery P)</h1>
+    <h1 align="center">Słownik polsko-gneżeński (gotowy częściowo, do litery P)</h1>
 
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Wpisz słowo..." onkeyup="if(event.key === 'Enter') searchWord()">
@@ -1498,7 +1499,7 @@
 "pyrzycki": "pyrzycki - pyrycovy",
  };
 
-        const polishAlphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTVWYZŹŻ";
+        const polishAlphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
 
         function formatDefinition(definitionText) {
             const parts = definitionText.split(' - ');
