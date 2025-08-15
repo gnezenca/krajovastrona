@@ -1,8 +1,67 @@
 <html>
   <head>
-    <title>Gnezenca - Krajova Strona</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenca - Hlovna Strona</title>
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Kolor tła dla całej strony, aby nagłówek był widoczny */
+}
+
+.main-header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header-left {
+    margin-right: auto; /* Przesuwa flagę na lewą stronę */
+}
+
+.flag-icon {
+    height: 40px; /* Dostosuj rozmiar flagi według potrzeb */
+    width: auto;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 150px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Płynne przejście */
+}
+
+.nav-button:hover {
+    background-color: white;
+    color: black;
+}
+    </style>
+</head>
   </head>
   <body>
+    <header class="main-header">
+        <div class="header-left">
+            <img src="images/gnezenca.png" class="flag-icon">
+        </div>
+        <nav class="header-nav">
+            <a href="index.html"><button class="nav-button">HLOVNA STRONA</button></a>
+            <a href="o-nas.html"><button class="nav-button">O NAS</button></a>
+            <a href="kraj.html"><button class="nav-button">KRAJ</button></a>
+            <a href="narod.html"><button class="nav-button">NAROD</button></a>
+            <a href="mova.html"><button class="nav-button">MOVA</button></a>
+        </nav>
+    </header>
     Fitamy v krajovyj strony
   </body>
 </html>
