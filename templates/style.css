@@ -9,9 +9,14 @@ a:hover {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Kolor tła dla całej strony, aby nagłówek był widoczny */
+    background-color: #f4f4f4;
+    color: #333;
 }
-
+h1 {
+            color: #444;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
 .main-header {
     background-color: black;
     display: flex;
