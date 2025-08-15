@@ -77,26 +77,7 @@ footer {
     </style>
 </head>
 <body>
-    <div id="targetDiv">
-        </div>
-
-    <script>
-        fetch('templates/header.html')
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const content = doc.getElementById('contentToInsert');
-                if (content) {
-                    document.getElementById('targetDiv').appendChild(content);
-                } else {
-                    console.error('Element o id "contentToInsert" nie został znaleziony w 1.html');
-                }
-            })
-            .catch(error => {
-                console.error('Wystąpił błąd podczas ładowania 1.html:', error);
-            });
-    </script>
+    <?php include 'templates/header.html'; ?>
     <footer>
         <p>©2025-2025. Krajova strona Gnezenskej Republiky. Naš mejl: <a href="mailto:gnezenca@wp.pl">gnezenca@wp.pl</a></p>
     </footer> 
