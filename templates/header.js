@@ -1,4 +1,4 @@
-fetch('header.html')
+fetch('https://gnezenca.github.io/krajovastrona/templatesheader.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
