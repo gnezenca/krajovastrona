@@ -1,5 +1,4 @@
-<script>
-        // Funkcja do ładowania zawartości z pliku
+// Funkcja do ładowania zawartości z pliku
         function loadContent(url, elementId) {
             fetch(url)
                 .then(response => {
@@ -20,5 +19,4 @@
         // loadContent('header.html', 'header-placeholder');
 
         // Załaduj stopkę
-        loadContent('footer.html', 'footer-placeholder');
-    </script>
+        loadContent('https://gnezenca.github.io/krajovastrona/templates/footer.html', 'footer-placeholder');
