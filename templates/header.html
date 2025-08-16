@@ -1,75 +1,12 @@
 <header class="main-header">
     <div class="header-left">
-        <img src="https://gnezenca.github.io/krajovastrona/images/gnezenca.png" alt="Gnezenska flaga" class="flag-icon">
+        <img src="images/gnezenca.png" alt="Gnezenska flaga" class="flag-icon">
     </div>
     <nav class="header-nav">
-        <button class="nav-button" data-lang-key="home"><a href="index.html">HLOVNA STRONA</a></button>
-        <button class="nav-button" data-lang-key="about"><a href="o-nas.html">O NAS</a></button>
-        <button class="nav-button" data-lang-key="country"><a href="kraj.html">KRAJ</a></button>
-        <button class="nav-button" data-lang-key="nation"><a href="narod.html">NAROD</a></button>
-        <button class="nav-button" data-lang-key="language"><a href="mova.html">MOVA</a></button>
-        <div class="language-switcher">
-            <button class="lang-button active" data-lang="gnz">GNEZENŠČINA</button>
-            <button class="lang-button" data-lang="pol">POLSKI</button>
-            <button class="lang-button" data-lang="eng">ENGLISH</button>
-        </div>
+        <button class="nav-button"><a href="index.html">HLOVNA STRONA</a></button>
+        <button class="nav-button"><a href="o-nas.html">O NAS</a></button>
+        <button class="nav-button"><a href="kraj.html">KRAJ</a></button>
+        <button class="nav-button"><a href="narod.html">NAROD</a></button>
+        <button class="nav-button"><a href="mova.html">MOVA</a></button>
     </nav>
 </header>
-
-<script>
-    const translations = {
-        gnz: {
-            home: "HLOVNA STRONA",
-            about: "O NAS",
-            country: "KRAJ",
-            nation: "NAROD",
-            language: "MOVA"
-        },
-        pol: {
-            home: "STRONA GŁÓWNA",
-            about: "O NAS",
-            country: "KRAJ",
-            nation: "NARÓD",
-            language: "JĘZYK"
-        },
-        eng: {
-            home: "HOME PAGE",
-            about: "ABOUT US",
-            country: "COUNTRY",
-            nation: "NATION",
-            language: "LANGUAGE"
-        }
-    };
-
-    const navButtons = document.querySelectorAll('.header-nav .nav-button');
-    const langButtons = document.querySelectorAll('.language-switcher .lang-button');
-
-    function setLanguage(lang) {
-        navButtons.forEach(button => {
-            const langKey = button.dataset.langKey;
-            if (langKey && translations[lang] && translations[lang][langKey]) {
-                button.querySelector('a').textContent = translations[lang][langKey];
-            }
-        });
-
-        langButtons.forEach(button => {
-            if (button.dataset.lang === lang) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-            }
-        });
-    }
-
-    langButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedLang = button.dataset.lang;
-            setLanguage(selectedLang);
-        });
-    });
-
-    // Ustaw język domyślny na GNZ po załadowaniu strony
-    document.addEventListener('DOMContentLoaded', () => {
-        setLanguage('gnz');
-    });
-</script>
