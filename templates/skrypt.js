@@ -28,7 +28,7 @@
             .catch(error => {
                 console.error('Wystąpił błąd podczas ładowania nagłówka:', error);
             });
-    // header_script.js
+// header_script.js
 const translations = {
     gnz: {
         home: "HLOVNA STRONA",
