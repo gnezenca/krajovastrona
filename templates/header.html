@@ -1,12 +1,65 @@
 <header class="main-header">
     <div class="header-left">
-        <img src="https://gnezenca.github.io/krajovastrona/images/gnezensky_herb.jpg" alt="Gnezenska flaga" class="flag-icon">
+        <img src="https://gnezenca.github.io/krajovastrona/images/gnezensky_herb.jpg" alt="Gnezensky herb" class="flag-icon">
     </div>
-    <nav class="header-nav">
-        <button class="nav-button"><a href="index.html">HLOVNA STRONA</a></button>
-        <button class="nav-button"><a href="o-nas.html">O NAS</a></button>
-        <button class="nav-button"><a href="kraj.html">KRAJ</a></button>
-        <button class="nav-button"><a href="narod.html">NAROD</a></button>
-        <button class="nav-button"><a href="mova.html">MOVA</a></button>
-    </nav>
+    <nav class="header-nav" id="main-nav">
+        </nav>
+    <div class="language-switcher">
+        <button class="lang-button" data-lang="gnz"><img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" alt="Gnezenśčina" class="lang-icon"></button>
+        <button class="lang-button" data-lang="pol"><img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" alt="Polski" class="lang-icon"></button>
+        <button class="lang-button" data-lang="eng"><img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" alt="English" class="lang-icon"></button>
+    </div>
 </header>
+
+<script>
+    const translations = {
+        gnz: {
+            home: "HLOVNA STRONA",
+            about: "O NAS",
+            country: "KRAJ",
+            nation: "NAROD",
+            language: "MOVA"
+        },
+        pol: {
+            home: "STRONA GŁÓWNA",
+            about: "O NAS",
+            country: "KRAJ",
+            nation: "NARÓD",
+            language: "JĘZYK"
+        },
+        eng: {
+            home: "HOME PAGE",
+            about: "ABOUT US",
+            country: "COUNTRY",
+            nation: "NATION",
+            language: "LANGUAGE"
+        }
+    };
+
+    const navElement = document.getElementById('main-nav');
+    const langButtons = document.querySelectorAll('.lang-button');
+
+    function updateNavigation(lang) {
+        const currentTranslations = translations[lang];
+        navElement.innerHTML = `
+            <button class="nav-button"><a href="index.html">${currentTranslations.home}</a></button>
+            <button class="nav-button"><a href="o-nas.html">${currentTranslations.about}</a></button>
+            <button class="nav-button"><a href="kraj.html">${currentTranslations.country}</a></button>
+            <button class="nav-button"><a href="narod.html">${currentTranslations.nation}</a></button>
+            <button class="nav-button"><a href="mova.html">${currentTranslations.language}</a></button>
+        `;
+    }
+
+    // Ustawienie domyślnego języka na Gnezensky po załadowaniu strony
+    document.addEventListener('DOMContentLoaded', () => {
+        updateNavigation('gnz');
+    });
+
+    // Obsługa kliknięć przycisków językowych
+    langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const lang = button.dataset.lang;
+            updateNavigation(lang);
+        });
+    });
+</script>
