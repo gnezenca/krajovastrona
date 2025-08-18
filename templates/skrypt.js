@@ -28,7 +28,6 @@
             .catch(error => {
                 console.error('Wystąpił błąd podczas ładowania nagłówka:', error);
             });
-<script>
     const translations = {
         gnz: {
             home: "HLOVNA STRONA",
@@ -79,4 +78,3 @@
             updateNavigation(lang);
         });
     });
-</script>
