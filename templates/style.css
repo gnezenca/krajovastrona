@@ -71,21 +71,30 @@ footer {
   position: relative; /* Używane, jeśli stopka ma być na dole strony, niekoniecznie "przypięta" */
   width: 100%; /* Stopka zajmuje całą szerokość strony */
 }
-.language-selector {
-            display: flex;
-            gap: 5px;
-            margin-left: 20px;
-        }
-        .lang-button {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .lang-button.active {
-            background-color: #007bff;
-            color: white;
-            border-color: #007bff;
-        }
+
+.nav-button:hover {
+        background-color: #0056b3;
+    }
+
+    .language-switcher {
+        display: flex;
+        gap: 10px;
+    }
+
+    .lang-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .lang-icon {
+        height: 30px; /* Rozmiar ikonek językowych */
+        width: 30px;
+        border-radius: 50%; /* Aby były okrągłe, jeśli chcesz */
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .lang-button:hover .lang-icon {
+        opacity: 0.8;
+    }
