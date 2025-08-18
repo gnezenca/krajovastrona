@@ -111,3 +111,60 @@ footer {
     .greeting-text.active {
         display: block;
     }
+/* Nowe style dla dropdownu jako listy */
+.dropdown-content ul {
+    list-style-type: none; /* Usuwa domyślne kropki listy */
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content li {
+    padding: 0; /* Usuwa domyślny padding z elementów listy */
+}
+
+.dropdown-content li a {
+    display: block; /* Sprawia, że linki zajmują całą szerokość elementu listy */
+    padding: 12px 16px; /* Padding dla linków, aby były klikalne i miały przestrzeń */
+    color: black;
+    text-decoration: none;
+    text-align: left;
+}
+
+.dropdown-content li a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+/* Style dla kontenera rozwijanego menu */
+.dropdown {
+    position: relative;
+    /* Usunięto display: inline-block; aby dropdown mógł być elementem flexa */
+    display: flex; /* KLUCZOWA ZMIANA: Zmieniono na flex, aby wewnętrzny przycisk mógł się rozciągać */
+    flex-grow: 1; /* KLUCZOWA ZMIANA: Pozwala kontenerowi dropdown zająć równą część dostępnej przestrzeni */
+    text-align: center; /* Wyśrodkowanie tekstu w przycisku dropdown */
+}
+
+/* Styl dla przycisku wewnątrz dropdownu, aby rozciągał się */
+.dropdown-toggle {
+    flex-grow: 1; /* Pozwala przyciskowi 'MOVA' wewnątrz dropdownu rozciągać się */
+    padding: 10px 0; /* Utrzymuje taki sam padding jak inne nav-buttony */
+}
+
+/* Style dla zawartości rozwijanej (domyślnie ukryte) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Kolor tła rozwijanego menu */
+    min-width: 160px; /* Zachowaj min-width dla rozwijanej listy */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* Upewnia się, że menu jest na wierzchu */
+    border-radius: 5px;
+    top: 100%; /* Umieszcza dropdown poniżej przycisku */
+    left: 0;
+    /* Dodaj poniższe, aby rozwijane menu było szerokie jak całe menu, a nie tylko min-width */
+    width: 100%;
+}
+
+/* Pokazywanie rozwijanego menu po najechaniu na kontener dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
