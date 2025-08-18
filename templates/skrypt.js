@@ -43,21 +43,27 @@
                 "about-us": "O NAS",
                 "country": "KRAJ",
                 "nation": "NAROD",
-                "language": "MOVA"
+                "language": "MOVA",
+                "grammar": "HRAMATYKA",
+                "dictionary": "SLOVOZBOR"
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
                 "about-us": "O NAS",
                 "country": "KRAJ",
                 "nation": "NARÓD",
-                "language": "JĘZYK"
+                "language": "JĘZYK",
+                "grammar": "GRAMATYKA",
+                "dictionary": "SŁOWNIK"
             },
             eng: {
                 "main-page": "MAIN PAGE",
                 "about-us": "ABOUT US",
                 "country": "COUNTRY",
                 "nation": "NATION",
-                "language": "LANGUAGE"
+                "language": "LANGUAGE",
+                "grammar": "GRAMMAR",
+                "dictionary": "DICTIONARY"
             }
         };
 
@@ -101,3 +107,24 @@
 
         // Ładuj nagłówek po załadowaniu DOM
         document.addEventListener('DOMContentLoaded', loadHeader);
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Pokazuj/ukrywaj menu po kliknięciu na przycisk "MOVA"
+    dropdownToggle.addEventListener('click', function() {
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Zamykaj menu, jeśli kliknięto poza nim
+    window.addEventListener('click', function(event) {
+        if (!dropdown.contains(event.target)) {
+            dropdownContent.style.display = 'none';
+        }
+    });
+
+    // Alternatywnie, dla działania na hover (jak w CSS), możesz usunąć powyższy JS
+    // i polegać wyłącznie na CSS. Jeśli chcesz oba, to możesz tak zostawić.
+    // Powyższy JS daje kontrolę nad otwieraniem/zamykaniem kliknięciem.
+});
