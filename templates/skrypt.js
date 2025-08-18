@@ -28,65 +28,73 @@
             .catch(error => {
                 console.error('Wystąpił błąd podczas ładowania nagłówka:', error);
             });
-    // Istniejące tłumaczenia dla nawigacji
-    const translations = {
-        gnz: {
-            home: "HLOVNA STRONA",
-            about: "O NAS",
-            country: "KRAJ",
-            nation: "NAROD",
-            language: "MOVA"
-        },
-        pol: {
-            home: "STRONA GŁÓWNA",
-            about: "O NAS",
-            country: "KRAJ",
-            nation: "NARÓD",
-            language: "JĘZYK"
-        },
-        eng: {
-            home: "HOME PAGE",
-            about: "ABOUT US",
-            country: "COUNTRY",
-            nation: "NATION",
-            language: "LANGUAGE"
-        }
-    };
-
-    const navElement = document.getElementById('main-nav');
-    const langButtons = document.querySelectorAll('.lang-button');
-    const greetingTexts = document.querySelectorAll('.greeting-text'); // Nowa zmienna dla powitań
-
-    function updateNavigation(lang) {
-        const currentTranslations = translations[lang];
-        navElement.innerHTML = `
-            <button class="nav-button"><a href="index.html">${currentTranslations.home}</a></button>
-            <button class="nav-button"><a href="o-nas.html">${currentTranslations.about}</a></button>
-            <button class="nav-button"><a href="kraj.html">${currentTranslations.country}</a></button>
-            <button class="nav-button"><a href="narod.html">${currentTranslations.nation}</a></button>
-            <button class="nav-button"><a href="mova.html">${currentTranslations.language}</a></button>
-        `;
-
-        // Funkcja do aktualizacji widocznego powitania (dodana tutaj)
-        greetingTexts.forEach(textElement => {
-            textElement.classList.remove('active');
-        });
-
-        const selectedGreeting = document.querySelector(`#greeting-container .greeting-text[data-lang="${lang}"]`);
-        if (selectedGreeting) {
-            selectedGreeting.classList.add('active');
-        }
+// header_script.js
+const translations = {
+    gnz: {
+        home: "HLOVNA STRONA",
+        about: "O NAS",
+        country: "KRAJ",
+        nation: "NAROD",
+        language: "MOVA"
+    },
+    pol: {
+        home: "STRONA GŁÓWNA",
+        about: "O NAS",
+        country: "KRAJ",
+        nation: "NARÓD",
+        language: "JĘZYK"
+    },
+    eng: {
+        home: "HOME PAGE",
+        about: "ABOUT US",
+        country: "COUNTRY",
+        nation: "NATION",
+        language: "LANGUAGE"
     }
+};
 
-    // Ustawienie domyślnego języka na Gnezensky po załadowaniu strony
-    document.addEventListener('DOMContentLoaded', () => {
-        updateNavigation('gnz'); // Wywoła to również aktualizację powitania
-    });
+function updateNavigation(lang) {
+    const navElement = document.getElementById('main-nav');
+    if (!navElement) return; // Upewnij się, że element istnieje
 
-    // Obsługa kliknięć przycisków językowych
-    langButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const lang = button.dataset.lang;
-            updateNavigation(lang);
+    const currentTranslations = translations[lang];
+    navElement.innerHTML = `
+        <button class="nav-button"><a href="index.html">${currentTranslations.home}</a></button>
+        <button class="nav-button"><a href="o-nas.html">${currentTranslations.about}</a></button>
+        <button class="nav-button"><a href="kraj.html">${currentTranslations.country}</a></button>
+        <button class="nav-button"><a href="narod.html">${currentTranslations.nation}</a></button>
+        <button class="nav-button"><a href="mova.html">${currentTranslations.language}</a></button>
+    `;
+}
+
+// Funkcja do wczytywania nagłówka
+async function loadHeader() {
+    try {
+        const response = await fetch('header.html'); // Ścieżka do pliku header.html
+        const headerHtml = await response.text();
+        const headerContainer = document.getElementById('header-placeholder'); // Kontener, gdzie wstawisz nagłówek
+        if (headerContainer) {
+            headerContainer.innerHTML = headerHtml;
+        }
+
+        // Po wstawieniu HTML, zainicjuj funkcjonalność JavaScript
+        const langButtons = document.querySelectorAll('.lang-button');
+
+        // Ustawienie domyślnego języka na Gnezensky po załadowaniu nagłówka
+        updateNavigation('gnz');
+
+        // Obsługa kliknięć przycisków językowych
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.dataset.lang;
+                updateNavigation(lang);
+            });
         });
-    });
+
+    } catch (error) {
+        console.error('Błąd podczas wczytywania nagłówka:', error);
+    }
+}
+
+// Wywołaj funkcję wczytywania nagłówka po załadowaniu strony
+document.addEventListener('DOMContentLoaded', loadHeader);
