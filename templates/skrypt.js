@@ -20,15 +20,6 @@
 
         // Załaduj stopkę
         loadContent('https://gnezenca.github.io/krajovastrona/templates/footer.html', 'footer-placeholder');
-        fetch('https://gnezenca.github.io/krajovastrona/templates/header.html') // Zastąp 'header.html' ścieżką do Twojego pliku z nagłówkiem
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header-placeholder').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Wystąpił błąd podczas ładowania nagłówka:', error);
-            });
-    // header_script.js
 const translations = {
     gnz: {
         home: "HLOVNA STRONA",
@@ -70,7 +61,7 @@ function updateNavigation(lang) {
 // Funkcja do wczytywania nagłówka
 async function loadHeader() {
     try {
-        const response = await fetch('header.html'); // Ścieżka do pliku header.html
+        const response = await fetch('https://gnezenca.github.io/krajovastrona/templates/header.html'); // Ścieżka do pliku header.html
         const headerHtml = await response.text();
         const headerContainer = document.getElementById('header-placeholder'); // Kontener, gdzie wstawisz nagłówek
         if (headerContainer) {
