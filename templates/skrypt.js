@@ -15,11 +15,11 @@
                 });
         }
 
-        // Załaduj nagłówek (jeśli masz plik header.html)
-        // loadContent('header.html', 'header-placeholder');
+// https://gnezenca.github.io/krajovastrona/templates/skrypt.js
+// (Dodaj lub zmodyfikuj poniższe w swoim istniejącym skrypcie.js)
 
-        // Załaduj stopkę
-        loadContent('https://gnezenca.github.io/krajovastrona/templates/footer.html', 'footer-placeholder');
+// ... (Twój istniejący kod dla translations, navElement, langButtons) ...
+
 const translations = {
     gnz: {
         home: "HLOVNA STRONA",
@@ -44,48 +44,50 @@ const translations = {
     }
 };
 
+const navElement = document.getElementById('main-nav');
+const langButtons = document.querySelectorAll('.lang-button');
+const languageTexts = document.querySelectorAll('.language-text'); // NOWA ZMIENNA: Pobierz wszystkie elementy tekstowe
+
 function updateNavigation(lang) {
-    const navElement = document.getElementById('main-nav');
-    if (!navElement) return; // Upewnij się, że element istnieje
-
     const currentTranslations = translations[lang];
-    navElement.innerHTML = `
-        <button class="nav-button"><a href="index.html">${currentTranslations.home}</a></button>
-        <button class="nav-button"><a href="o-nas.html">${currentTranslations.about}</a></button>
-        <button class="nav-button"><a href="kraj.html">${currentTranslations.country}</a></button>
-        <button class="nav-button"><a href="narod.html">${currentTranslations.nation}</a></button>
-        <button class="nav-button"><a href="mova.html">${currentTranslations.language}</a></button>
-    `;
-}
 
-// Funkcja do wczytywania nagłówka
-async function loadHeader() {
-    try {
-        const response = await fetch('https://gnezenca.github.io/krajovastrona/templates/header.html'); // Ścieżka do pliku header.html
-        const headerHtml = await response.text();
-        const headerContainer = document.getElementById('header-placeholder'); // Kontener, gdzie wstawisz nagłówek
-        if (headerContainer) {
-            headerContainer.innerHTML = headerHtml;
-        }
-
-        // Po wstawieniu HTML, zainicjuj funkcjonalność JavaScript
-        const langButtons = document.querySelectorAll('.lang-button');
-
-        // Ustawienie domyślnego języka na Gnezensky po załadowaniu nagłówka
-        updateNavigation('gnz');
-
-        // Obsługa kliknięć przycisków językowych
-        langButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const lang = button.dataset.lang;
-                updateNavigation(lang);
-            });
-        });
-
-    } catch (error) {
-        console.error('Błąd podczas wczytywania nagłówka:', error);
+    // Zaktualizuj nawigację (jak już masz)
+    if (navElement) { // Sprawdź, czy navElement istnieje, jeśli jest ładowany dynamicznie
+        navElement.innerHTML = `
+            <button class="nav-button"><a href="index.html">${currentTranslations.home}</a></button>
+            <button class="nav-button"><a href="o-nas.html">${currentTranslations.about}</a></button>
+            <button class="nav-button"><a href="kraj.html">${currentTranslations.country}</a></button>
+            <button class="nav-button"><a href="narod.html">${currentTranslations.nation}</a></button>
+            <button class="nav-button"><a href="mova.html">${currentTranslations.language}</a></button>
+        `;
     }
+
+    // NOWA LOGIKA: Zaktualizuj widoczność treści na stronie
+    languageTexts.forEach(textElement => {
+        if (textElement.dataset.lang === lang) {
+            textElement.classList.add('active'); // Pokaż element dla wybranego języka
+        } else {
+            textElement.classList.remove('active'); // Ukryj pozostałe elementy
+        }
+    });
 }
 
-// Wywołaj funkcję wczytywania nagłówka po załadowaniu strony
-document.addEventListener('DOMContentLoaded', loadHeader);
+// ... (Pozostały kod do ładowania nagłówka i stopki, jeśli jest) ...
+
+// Upewnij się, że ta część jest wywoływana po załadowaniu DOM
+document.addEventListener('DOMContentLoaded', () => {
+    // Jeśli ładujesz nagłówek dynamicznie (np. za pomocą fetch),
+    // upewnij się, że updateNavigation('gnz') jest wywoływana PO wstawieniu nagłówka.
+    // Jeśli nagłówek jest statyczny w HTML, to wystarczy tutaj.
+
+    // Przykład dla statycznego nagłówka (jeśli nie ładujesz go przez JS fetch):
+    updateNavigation('gnz');
+
+    // Obsługa kliknięć przycisków językowych (jak już masz)
+    langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const lang = button.dataset.lang;
+            updateNavigation(lang);
+        });
+    });
+});
