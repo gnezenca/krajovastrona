@@ -98,17 +98,3 @@ footer {
     .lang-button:hover .lang-icon {
         opacity: 0.8;
     }
-.language-text {
-            display: none; /* Domyślnie ukryj wszystkie wersje językowe */
-        }
-        .language-text.active {
-            display: block; /* Pokaż aktywną wersję językową */
-        }
-
-        /* Przykładowe style dla Twojej treści, dostosuj je */
-        .content-section {
-            padding: 20px;
-            text-align: center;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
