@@ -98,3 +98,16 @@ footer {
     .lang-button:hover .lang-icon {
         opacity: 0.8;
     }
+    /* Dodany styl dla centralnego powitania */
+    #greeting-container {
+
+    }
+
+    /* Ukryj wszystkie powitania domyślnie, pokaż tylko aktywne */
+    .greeting-text {
+        display: none;
+    }
+
+    .greeting-text.active {
+        display: block;
+    }
