@@ -1,7 +1,7 @@
 const dictionary = {
             "Denmark": "Denmark - Dana",
-            "Germany": "Germany - Germana".
-            "Poland": "Poland - Gnezenland".
+            "Germany": "Germany - Germana",
+            "Poland": "Poland - Gnezenland",
  };
 
         const polishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
