@@ -4,7 +4,7 @@ const dictionary = {
             "Poland": "Poland - Gnezenland",
  };
 
-        const polishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         function formatDefinition(definitionText) {
             const parts = definitionText.split(' - ');
@@ -84,7 +84,7 @@ const dictionary = {
         // Funkcja do inicjalizacji alfabetu
         function initializeAlphabetFilter() {
             const alphabetFilterDiv = document.getElementById('alphabetFilter');
-            polishAlphabet.split('').forEach(letter => {
+            englishAlphabet.split('').forEach(letter => {
                 const span = document.createElement('span');
                 span.textContent = letter;
                 span.dataset.letter = letter; // Dodaj atrybut data-letter
