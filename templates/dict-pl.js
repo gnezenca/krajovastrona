@@ -1,4 +1,4 @@
-const dictionary = {
+const dictionaryPol = {
             "a": "a - a",
             "abdiasz": "Abdiasz - Abdaš",
             "absolwent": "absolwent - absolvent",
@@ -2183,7 +2183,7 @@ const dictionary = {
 
         const polishAlphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
 
-        function formatDefinition(definitionText) {
+        function formatDefinitionPol(definitionText) {
             const parts = definitionText.split(' - ');
             if (parts.length === 2) {
                 return `<strong>${parts[0].trim()}</strong> - <em>${parts[1].trim()}</em>`;
@@ -2191,17 +2191,17 @@ const dictionary = {
             return definitionText;
         }
 
-        function displayWordsByLetter(letter = 'A') { // Domyślnie 'A'
-            const wordListUl = document.getElementById('wordList');
+        function displayWordsByLetterPol(letter = 'A') { // Domyślnie 'A'
+            const wordListUl = document.getElementById('wordListPol');
             wordListUl.innerHTML = ''; // Wyczyść listę przed dodaniem
 
-            const sortedWords = Object.keys(dictionary).sort();
+            const sortedWords = Object.keys(dictionaryPol).sort();
             const filteredWords = sortedWords.filter(word => word.toLowerCase().startsWith(letter.toLowerCase()));
 
             if (filteredWords.length > 0) {
                 filteredWords.forEach(key => {
                     const li = document.createElement('li');
-                    li.innerHTML = formatDefinition(dictionary[key]);
+                    li.innerHTML = formatDefinitionPol(dictionaryPol[key]);
                     wordListUl.appendChild(li);
                 });
             } else {
@@ -2210,20 +2210,20 @@ const dictionary = {
                 wordListUl.appendChild(li);
             }
 
-            document.getElementById('allWordsList').style.display = 'block';
-            document.getElementById('singleResult').style.display = 'none';
+            document.getElementById('allWordsLisPolt').style.display = 'block';
+            document.getElementById('singleResultPol').style.display = 'none';
 
             // Zaznacz aktywną literę
-            document.querySelectorAll('.alphabet-filter span').forEach(span => {
+            document.querySelectorAll('.alphabet-filterPol span').forEach(span => {
                 span.classList.remove('active');
             });
-            document.querySelector(`.alphabet-filter span[data-letter="${letter}"]`).classList.add('active');
+            document.querySelector(`.alphabet-filterPol span[data-letter="${letter}"]`).classList.add('active');
         }
 
-        function searchWord() {
-            const searchInput = document.getElementById('searchInput');
-            const singleResultDiv = document.getElementById('singleResult');
-            const allWordsListDiv = document.getElementById('allWordsList');
+        function searchWordPol() {
+            const searchInput = document.getElementByIdPol('searchInput');
+            const singleResultDiv = document.getElementByIdPol('singleResult');
+            const allWordsListDiv = document.getElementByIdPol('allWordsList');
 
             const searchTerm = searchInput.value.toLowerCase().trim();
 
@@ -2232,47 +2232,47 @@ const dictionary = {
 
             if (searchTerm === "") {
                 // Jeśli pole wyszukiwania jest puste, wyświetl domyślnie słowa na "A"
-                displayWordsByLetter('A');
+                displayWordsByLetterPol('A');
                 return;
             }
 
             allWordsListDiv.style.display = 'none';
             singleResultDiv.style.display = 'block';
 
-            if (dictionary[searchTerm]) {
-                singleResultDiv.innerHTML = formatDefinition(dictionary[searchTerm]);
+            if (dictionaryPol[searchTerm]) {
+                singleResultDiv.innerHTML = formatDefinitionPol(dictionaryPol[searchTerm]);
             } else {
                 singleResultDiv.innerHTML = `<em>Brak słowa "${searchTerm}" w słowniku.</em>`;
                 singleResultDiv.classList.add('error');
             }
         }
 
-        function resetView() {
-            const searchInput = document.getElementById('searchInput');
+        function resetViewPol() {
+            const searchInput = document.getElementById('searchInputPol');
             // Jeśli pole wyszukiwania jest puste, zresetuj widok do pełnej listy słów na aktywną literę (domyślnie 'A')
             if (searchInput.value.trim() === "") {
-                const activeLetterSpan = document.querySelector('.alphabet-filter span.active');
+                const activeLetterSpan = document.querySelector('.alphabet-filterPol span.active');
                 const activeLetter = activeLetterSpan ? activeLetterSpan.dataset.letter : 'A';
-                displayWordsByLetter(activeLetter);
-                document.getElementById('singleResult').innerHTML = ""; // Wyczyść poprzedni wynik wyszukiwania
+                displayWordsByLetterPol(activeLetter);
+                document.getElementById('singleResultPol').innerHTML = ""; // Wyczyść poprzedni wynik wyszukiwania
             }
         }
 
         // Funkcja do inicjalizacji alfabetu
-        function initializeAlphabetFilter() {
-            const alphabetFilterDiv = document.getElementById('alphabetFilter');
+        function initializeAlphabetFiltePolr() {
+            const alphabetFilterDiv = document.getElementById('alphabetFilterPol');
             polishAlphabet.split('').forEach(letter => {
                 const span = document.createElement('span');
                 span.textContent = letter;
                 span.dataset.letter = letter; // Dodaj atrybut data-letter
-                span.addEventListener('click', () => displayWordsByLetter(letter));
+                span.addEventListener('click', () => displayWordsByLetterPol(letter));
                 alphabetFilterDiv.appendChild(span);
             });
         }
 
         // Wywołaj funkcje po załadowaniu strony
         window.onload = () => {
-            initializeAlphabetFilter(); // Najpierw utwórz alfabet
-            displayWordsByLetter('A'); // Następnie wyświetl słowa na "A"
+            initializeAlphabetFilterPol(); // Najpierw utwórz alfabet
+            displayWordsByLetterPol('A'); // Następnie wyświetl słowa na "A"
             document.getElementById('searchInput').addEventListener('input', resetView); // Dodaj nasłuchiwanie na zmiany w polu input
         };
