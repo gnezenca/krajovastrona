@@ -118,16 +118,20 @@
 </head>
 <body>
 <div id="header-placeholder">
-        </div>
+</div>
+<div class="greeting-text" data-lang="gnz">
+    <h1>Slovozbor neset v gnezenščiny. Spravdi v gnezničiny i anglovščiny</h1>
+</div>
+<div class="greeting-text" data-lang="pol">
     <h1 align="center">Słownik polsko-gneżeński</h1>
 
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Wpisz słowo..." onkeyup="if(event.key === 'Enter') searchWord()">
-        <button onclick="searchWord()">Szukaj</button>
+        <input type="text" id="searchInput" placeholder="Wpisz słowo..." onkeyup="if(event.key === 'Enter') searchWord(this.closest('.greeting-text'))">
+        <button onclick="searchWord(this.closest('.greeting-text'))">Szukaj</button>
     </div>
 
     <div class="alphabet-filter" id="alphabetFilter">
-        </div>
+    </div>
 
     <div id="contentContainer">
         <div id="allWordsList">
@@ -138,8 +142,30 @@
 
         <div id="singleResult"></div>
     </div>
-<script src="https://gnezenca.github.io/krajovastrona/templates/dict-pl.js"></script>
+</div>
+<div class="greeting-text" data-lang="eng">
+    <h1 align="center">English-gnezen dictionary</h1>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter the word..." onkeyup="if(event.key === 'Enter') searchWord(this.closest('.greeting-text'))">
+        <button onclick="searchWord(this.closest('.greeting-text'))">Search</button>
+    </div>
+
+    <div class="alphabet-filter" id="alphabetFilter">
+    </div>
+
+    <div id="contentContainer">
+        <div id="allWordsList">
+            <h2>Available words</h2>
+            <ul id="wordList">
+            </ul>
+        </div>
+
+        <div id="singleResult"></div>
+    </div>
+</div>
 <div id="footer-placeholder"></div>
+<script src="https://gnezenca.github.io/krajovastrona/templates/dictionary.js"></script>
 <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
