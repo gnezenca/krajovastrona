@@ -2178,7 +2178,15 @@ const dictionary = {
 "konserwatywny": "konserwatywny - konservatyvny",
 "sejmowy": "sejmowy - sejmovy",
 "komisja": "komisja - komysa",
-"nowo": "nowo - novo",
+"paszport": "paszport - pasport",
+"wyjazd": "wyjazd - vyjezd",
+"letni": "letni - letovy",
+"wakacje": "wakacje - letove fere",
+"urlop": "urlop - urlop",
+"pamiątka": "pamiątka - pomnostka",
+"wspomnieć": "wspomnieć - vspomner",
+"wspomnienie": "wspomnienie - vspomnene",
+"woda": "woda - voda",
  };
 
         const polishAlphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
