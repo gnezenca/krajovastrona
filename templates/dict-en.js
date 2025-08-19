@@ -38,10 +38,10 @@ function displayWordsByLetter(letter = 'A') { // Default to 'A'
     document.getElementById('singleResult').style.display = 'none';
 
     // Mark active letter
-    document.querySelectorAll('.alphabet-filter span').forEach(span => {
+    document.querySelectorAll('.alphabet-filter.en span').forEach(span => {
         span.classList.remove('active');
     });
-    const activeLetterElement = document.querySelector(`.alphabet-filter span[data-letter="${letter}"]`);
+    const activeLetterElement = document.querySelector(`.alphabet-filter.en span[data-letter="${letter}"]`);
     if (activeLetterElement) {
         activeLetterElement.classList.add('active');
     }
