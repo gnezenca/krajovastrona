@@ -2193,7 +2193,7 @@
 "Africa": "Africa - afryka",
 "African": "African - afrykovy",
 "ancestor": "ancestor - praded",
-"around": "wokół - vkolo",
+"around": "around - vkolo",
 "chew": "chew - zur",
 "chewing": "chewing - zute",
 "Christmas tree": "Christmas tree - hoinka",
