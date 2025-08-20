@@ -41,6 +41,7 @@
             gnz: {
                 "main-page": "HLOVNA STRONA",
                 "about-us": "O NAS",
+                "history": "ISTORA",
                 "country": "KRAJ",
                 "nation": "NAROD",
                 "language": "MOVA",
@@ -50,6 +51,7 @@
             pol: {
                 "main-page": "STRONA GŁÓWNA",
                 "about-us": "O NAS",
+               "history": "HISTORIA",
                 "country": "KRAJ",
                 "nation": "NARÓD",
                 "language": "JĘZYK",
@@ -59,6 +61,7 @@
             eng: {
                 "main-page": "MAIN PAGE",
                 "about-us": "ABOUT US",
+                   "history": "HISTORY",
                 "country": "COUNTRY",
                 "nation": "NATION",
                 "language": "LANGUAGE",
