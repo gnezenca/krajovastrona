@@ -2210,7 +2210,7 @@
 "trafić": "trafić - trafyr",
 "ponad": "ponad - vyce nyz",
         },
-        eng: {
+    eng: {
 "and": "and - a",
 "obadiah": "Obadiah - Abdaš",
 "graduate": "graduate - absolvent",
