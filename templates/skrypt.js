@@ -47,7 +47,6 @@
                 "language": "MOVA",
                 "grammar": "HRAMATYKA",
                 "dictionary": "SLOVOZBOR",
-                "footer": "©2025-2025. Krajova strona Gnezenskej Republiky. Naš mejl: gnezencja@wp.pl"
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -58,7 +57,6 @@
                 "language": "JĘZYK",
                 "grammar": "GRAMATYKA",
                 "dictionary": "SŁOWNIK",
-                "footer": "©2025-2025. Strona państwowa Republiki Gneżeńskiej. Nasz mail: gnezencja@wp.pl"
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -69,7 +67,6 @@
                 "language": "LANGUAGE",
                 "grammar": "GRAMMAR",
                 "dictionary": "DICTIONARY",
-                   "footer": "©2025-2025. State website of Republic of Gnezenland. Our mail: gnezencja@wp.pl"
             }
         };
 
@@ -134,3 +131,63 @@ document.addEventListener('DOMContentLoaded', function() {
     // i polegać wyłącznie na CSS. Jeśli chcesz oba, to możesz tak zostawić.
     // Powyższy JS daje kontrolę nad otwieraniem/zamykaniem kliknięciem.
 });
+    const BASE_TZ = 'Europe/Warsaw';  // Strefa bazowa: Polska
+    const DISPLAY_OFFSET_MS = 60 * 60 * 1000; // Dodajemy +1 godzinę
+    const RESYNC_INTERVAL_MS = 60 * 1000; // Synchronizacja co 1 minutę
+
+    // Formatter do wyświetlania daty i godziny
+    const timeFmt = new Intl.DateTimeFormat('pl-PL', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZone: BASE_TZ
+    });
+
+    const clockEl = document.getElementById('clock');
+    let baseServerEpochMs = null;
+    let basePerfMs = null;
+    let resyncTimer = null;
+
+    // Pobiera czas z worldtimeapi.org
+    async function fetchWarsawTime() {
+      const r = await fetch('https://worldtimeapi.org/api/timezone/' + BASE_TZ, { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const data = await r.json();
+      return new Date(data.datetime).getTime();
+    }
+
+    async function syncNow() {
+      try {
+        const warsawEpoch = await fetchWarsawTime();
+        baseServerEpochMs = warsawEpoch + DISPLAY_OFFSET_MS; // Dodajemy +1h
+        basePerfMs = performance.now();
+      } catch (e) {
+        clockEl.textContent = 'Błąd pobierania czasu';
+      }
+    }
+
+    function tick() {
+      if (baseServerEpochMs != null && basePerfMs != null) {
+        const elapsed = performance.now() - basePerfMs;
+        const currentEpoch = baseServerEpochMs + elapsed;
+        const displayStr = timeFmt.format(new Date(currentEpoch));
+        clockEl.textContent = displayStr;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function setupResync() {
+      if (resyncTimer) clearInterval(resyncTimer);
+      resyncTimer = setInterval(syncNow, RESYNC_INTERVAL_MS);
+    }
+
+    // Start
+    (async () => {
+      await syncNow();
+      setupResync();
+      tick();
+    })();
