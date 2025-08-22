@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Istora</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .timeline-container {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            height: 6px; /* Grubość linii osi czasu */
+            background-color: #ccc;
+            border-radius: 3px;
+        }
+
+        .timeline-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #007bff;
+            border-radius: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 3px solid white; /* Obwódka wokół kropki */
+            box-shadow: 0 0 0 2px #007bff; /* Dodatkowy cień/ramka */
+        }
+
+        .timeline-point:hover,
+        .timeline-point.active {
+            background-color: #0056b3;
+            transform: translate(-50%, -50%) scale(1.2); /* Powiększenie po najechaniu/aktywacji */
+            box-shadow: 0 0 0 3px #0056b3;
+        }
+
+        /* Pozycjonowanie kropek - nowe, równomierne rozmieszczenie dla 7 punktów */
+        .timeline-point[data-event="event1"] { left: 8%; }
+        .timeline-point[data-event="event2"] { left: 15%; }
+        .timeline-point[data-event="event3"] { left: 22%; }
+        .timeline-point[data-event="event4"] { left: 29%; } /* Nowy punkt */
+        .timeline-point[data-event="event5"] { left: 36%; } /* Nowy punkt */
+        .timeline-point[data-event="event6"] { left: 43%; } /* Nowy punkt */
+        .timeline-point[data-event="event7"] { left: 50%; }
+        .timeline-point[data-event="event8"] { left: 57%; }
+        .timeline-point[data-event="event9"] { left: 64%; }/* Nowy punkt */
+        .timeline-point[data-event="event10"] { left: 71%; }
+        .timeline-point[data-event="event11"] { left: 78%; }/* Nowy punkt */
+        .timeline-point[data-event="event12"] { left: 85%; }
+
+        .timeline-point-label {
+            position: absolute;
+            top: -35px; /* Nad kropką */
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #555;
+            pointer-events: none; /* Nie blokuje kliknięć na kropce */
+        }
+
+        .timeline-content-display {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 50px auto 20px auto;
+            text-align: left;
+            min-height: 250px; /* Minimalna wysokość, aby uniknąć skakania */
+            display: none; /* Domyślnie ukryte */
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .timeline-content-display.active {
+            display: block;
+        }
+
+        .timeline-content-display h2 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content-display .date {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .timeline-content-display img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Animacja pojawiania się */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ustawienia responsywne */
+        @media (max-width: 768px) {
+            .timeline-container {
+                width: 95%;
+            }
+            .timeline-point-label {
+                top: -30px;
+                font-size: 0.8em;
+            }
+            .timeline-content-display {
+                padding: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header-placeholder">
+</div>
+<div class="greeting-text" data-lang="gnz">
+<h1>Istora Gnezenskej Respubliky</h1>
+
+<div class="timeline-container">
+    <div class="timeline-point" data-event="event1" onclick="showEvent('event1gnz', this)">
+        <span class="timeline-point-label">2023</span>
+    </div>
+    <div class="timeline-point" data-event="event2" onclick="showEvent('event2gnz', this)">
+        <span class="timeline-point-label">15X2023</span>
+    </div>
+    <div class="timeline-point" data-event="event3" onclick="showEvent('event3gnz', this)">
+        <span class="timeline-point-label">III2024</span>
+    </div>
+    <div class="timeline-point" data-event="event4" onclick="showEvent('event4gnz', this)">
+        <span class="timeline-point-label">III/IV2024</span>
+    </div>
+    <div class="timeline-point" data-event="event5" onclick="showEvent('event5gnz', this)">
+        <span class="timeline-point-label">1V2024</span>
+    </div>
+    <div class="timeline-point" data-event="event6" onclick="showEvent('event6gnz', this)">
+        <span class="timeline-point-label">1VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event7" onclick="showEvent('event7gnz', this)">
+        <span class="timeline-point-label">26VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event8" onclick="showEvent('event8gnz', this)">
+        <span class="timeline-point-label">1IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event9" onclick="showEvent('event9gnz', this)">
+        <span class="timeline-point-label">9IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event10" onclick="showEvent('event10gnz', this)">
+        <span class="timeline-point-label">10XI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event11" onclick="showEvent('event11gnz', this)">
+        <span class="timeline-point-label">1I2025</span>
+    </div>
+    <div class="timeline-point" data-event="event12" onclick="showEvent('event12gnz', this)">
+        <span class="timeline-point-label">7IX2025</span>
+    </div>
+</div>
+
+<div id="event1gnz-content" class="timeline-content-display">
+    <span class="date">2023</span>
+    <h2>Počutek pra-patrykovščiny</h2>
+    <p>Začila povstavar pra-patrykovščina. Mala vona jednak vel nyzku hladynu, skončyla byr rozvyjana majuc kylka vyrazynov.</p>
+</div>
+<div id="event2gnz-content" class="timeline-content-display">
+    <span class="date">15X2023</span>
+    <h2>Patrykovščina</h2>
+    <p>Vtedy pra-patrykovščina seprekštaltyla v neco velš rozvynutu patrykovščinu. Tego dena začil povstavar podruknyk, seskončylo jednak na 2 stronah. Odna z nyh v 1.2025 zostala otnalezona. Na pomnostku udalosty v 15.10 set obhodyny Den Gnezenščiny.</p>
+</div>
+<div id="event3gnz-content" class="timeline-content-display">
+    <span class="date">III2024</span>
+    <h2>Gnezenščina</h2>
+    <p>Patrykovščina po dlouhej stagnacy začila prehodyr velku zmenu v slovozborym. Vtedy takze vejsla v zyvota nova nazva - "gnezenščina", byjuca prekštaltynem slova "gneznicky". Vkrotce začil povstavar ofycalny slovozbor movy, pod koneca majy z 65 slovamy trafyl ku internete. Prytomno ma ih vyce nyz 2000.</p>
+</div>
+<div id="event4-content" class="timeline-content-display">
+    <span class="date">III/IV2024</span>
+    <h2>Powstanie Ruchu Gneżeńskiego.</h2>
+    <p>Na przełomie tych miesięcy została utworzona organizacja Ruch Gneżeński, której prezesem został Patryk Jan Česlav Galazka. Jako swoje symbole przyjął herb z krajobrazem Podlasia: niebieskie niebo ze słońcem w rogu, rzeka Biała (rzeka w Białymstoku) i zielona trawa, oraz niebiesko-biało-zielona flaga, z barwami na wzór herbu. Głównym celem organizacji była proklamacja Państwa Gneżeńskiego. Po zrealizowaniu tego znikła z życia publicznego, po 5 miesiącach wznowiła działalność jako organizacja prowadząca działalność kulturalną.</p>
+</div>
+<div id="event5-content" class="timeline-content-display">
+    <span class="date">1V2024</span>
+    <h2>Proklamacja Republiki Gneżeńskiej.</h2>
+    <p>Tamtego dnia o godzinie 20:00 (według obecnego czasu gneżeńskiego 21:00) prezes Ruchu Gneżeńskiego Patryk Jan Česlav Galazka wspólnie z Adamem Vykentym Gnezenecem ogłosili powstanie Republiki Gneżeńskiej. W jej trakcie pierwszy z nich został Tymczasowym Przywódcą Republiki Gneżeński (będzie nim do końca roku 2025), a drugi pra-ministrem w rządzie. Towarzyszące proklamacji symbole Ruchu Gneżeńskiego zostały symbolami nowo-powstałej republiki, z herbu jedynie usunięte zostało słońce. Na pamiątkę tego wydarzenia 1 maja jest obchodzony Dzień Niepodległości.</p>
+</div>
+<div id="event6-content" class="timeline-content-display">
+    <span class="date">1VI2024</span>
+    <h2>Złoty Gneżeński i Radio Gneżencja.</h2>
+    <p>Wtedy weszła w życie narodowa waluta Gneżencji, zastępując dotychczasową polską. Został ustalony wtedy stały kurs wobec franka szwajcarskiego - 1,00 CHF=8,70 GNZ. Tego samego dnia rozpoczęło działalność Radio Gneżencja. Samo radio nie opublikowało żadnej audycji z powodu problemów strony, ale jej bezpośredni następca - Portal Gneżeńskie Wiadomości - działał przez 2 miesiące. Był to początek wielu prób gneżeńskiej działalności publicystycznej.</p>
+</div>
+<div id="event7-content" class="timeline-content-display">
+    <span class="date">26VI2024</span>
+    <h2>I Konstytucja</h2>
+    <p>Tego dnia z rana została uchwalona przez Tymczasowego Przywódcę Patryka Jana Česlava Galazkę oraz pra-ministrów Mateuša Andreja Naumovyča i Sebastana Oda Januka tymczasowa konstytucja. Zawiera ona 34 punkty, obowiązywać będzie do 1.7.2026. Stała się ona fundamentem państwa, niektóre punkty też pokazują plany Gneżencji w przyszłości (np. punkt 24 - Ochrona zdrowia jest tania i obowiązkowa). Na pamiątkę tego wydarzenia 26 czerwca obchodzony jest Dzień Konstytucji.</p>
+</div>
+<div id="event8-content" class="timeline-content-display">
+    <span class="date">1IX2024</span>
+    <h2>Wybory rządowe</h2>
+    <p>Tego dnia odbyły się pierwsze wybory, których celem było wyłonienie rządu. Starły się w nich 2 partie: Gneżeńska Partia Socjalistyczna (GSP) i Porządek, Sprawiedliwość, Prawo (LSP). Wybory musiały zostać powtórzone, ponieważ obie partie miały po 50% poparcia. Mimo wszystko, ponieważ to był pierwszy "sprawdzian" demokracji, 1 września obchodzony jest Dzień Demokracji. Powtórka odbyła się 15 września, wtedy doszło do znaczącej porażki GSP 29%) z LSP (71%).</p>
+</div>
+<div id="event9-content" class="timeline-content-display">
+    <span class="date">9IX2024</span>
+    <h2>Szkoła Gneżeńska.</h2>
+    <p>Tego dnia rozpoczął się pierwszy rok szkolny w Gneżencji. Naukę zaczęło 3 uczniów, wszyscy chodzili do 1 klasy gimnazjum. Regularne lekcje skończyły się w październiku.</p>
+</div>
+<div id="event10-content" class="timeline-content-display">
+    <span class="date">10XI2024</span>
+    <h2>Unia Niezależnych Mikronacji</h2>
+    <p>W początku listopada z inicjatywy Tymczasowego Przywódcy Republiki Gneżeńskiej Patryka Jana Česlava Galazki i Prezydenta Globo Aleksego Ivanova powstał związek tych dwóch państw oraz Matowic. Tego dnia odbyło się pierwsze posiedzenie członków rady, której pierwszym przewodniczącym był przywódca Republiki Gneżeńskiej.</p>
+</div>
+<div id="event11-content" class="timeline-content-display">
+    <span class="date">1I2025</span>
+    <h2>Rząd Sebastana O. Januka</h2>
+    <p>Tego dnia doszedł do władzy rząd wybrany w wyborach. Otrzymał on swoją nazwę od Pra-ministra nr. 1 - Sebastana Oda Januka. W maju w wyniku zmian personalnych, zmienił nazwę na Rząd Mateuša A. Naumovyča.</p>
+</div>
+<div id="event12-content" class="timeline-content-display">
+    <span class="date">7IX2025</span>
+    <h2>Wybory prezydenckie</h2>
+    <p>Tego dnia wybrany zostanie pierwszy prezydent Republiki Gneżeńskiej. Będzie dwóch kandydatów: Patryk Jan Česlav Galazka (kandydat GSP) i Mateuš Andrej Naumovyč (niezależny, popierany przez LSP). Zwycięzca wyborów będzie pełnić funkcję od początku roku 2026.</p>
+</div>
+</div>
+    <div class="greeting-text" data-lang="pol">
+<h1>Historia Republiki Gneżeńskiej</h1>
+
+<div class="timeline-container">
+    <div class="timeline-point" data-event="event1" onclick="showEvent('event1', this)">
+        <span class="timeline-point-label">2023</span>
+    </div>
+    <div class="timeline-point" data-event="event2" onclick="showEvent('event2', this)">
+        <span class="timeline-point-label">15X2023</span>
+    </div>
+    <div class="timeline-point" data-event="event3" onclick="showEvent('event3', this)">
+        <span class="timeline-point-label">III2024</span>
+    </div>
+    <div class="timeline-point" data-event="event4" onclick="showEvent('event4', this)">
+        <span class="timeline-point-label">III/IV2024</span>
+    </div>
+    <div class="timeline-point" data-event="event5" onclick="showEvent('event5', this)">
+        <span class="timeline-point-label">1V2024</span>
+    </div>
+    <div class="timeline-point" data-event="event6" onclick="showEvent('event6', this)">
+        <span class="timeline-point-label">1VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event7" onclick="showEvent('event7', this)">
+        <span class="timeline-point-label">26VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event8" onclick="showEvent('event8', this)">
+        <span class="timeline-point-label">1IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event9" onclick="showEvent('event9', this)">
+        <span class="timeline-point-label">9IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event10" onclick="showEvent('event10', this)">
+        <span class="timeline-point-label">10XI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event11" onclick="showEvent('event11', this)">
+        <span class="timeline-point-label">1I2025</span>
+    </div>
+    <div class="timeline-point" data-event="event12" onclick="showEvent('event12', this)">
+        <span class="timeline-point-label">7IX2025</span>
+    </div>
+</div>
+
+<div id="event1-content" class="timeline-content-display">
+    <span class="date">2023</span>
+    <h2>Początek języka pra-patrykowego</h2>
+    <p>Zaczyna powstawać język pra-patrykowy. Miał on jednak bardzo niski poziom, skończył być rozwijany mając parę wyrażeń</p>
+</div>
+<div id="event2-content" class="timeline-content-display">
+    <span class="date">15X2023</span>
+    <h2>Język patrykowy</h2>
+    <p>Wtedy język pra-patrykowy przekształcił się w nieco bardziej rozwinięty język patrykowy. Tego dnia zaczął powstawać podręcznik, skończyło się jednak na 2 stronach. Jedna z nich odnaleziona została w 1.2025. Na pamiątkę wydarzenia 15 października jest obchodzony Dzień Języka Gneżeńskiego.</p>
+</div>
+<div id="event3-content" class="timeline-content-display">
+    <span class="date">III2024</span>
+    <h2>Język gneżeński</h2>
+    <p>Język patrykowy po długiej stagnacji zaczął przechodzić wielką zmianę w słownictwie. Wtedy także weszła w życie nowa nazwa - "gneżeński", będąca przekształceniem słowa "gneznicky" - polski. Wkrótce zaczął powstawać oficjalny słownik języka, pod koniec maja z 65 słowami trafił do internetu. Obecnie ma ich ponad 2000.</p>
+</div>
+<div id="event4-content" class="timeline-content-display">
+    <span class="date">III/IV2024</span>
+    <h2>Powstanie Ruchu Gneżeńskiego.</h2>
+    <p>Na przełomie tych miesięcy została utworzona organizacja Ruch Gneżeński, której prezesem został Patryk Jan Česlav Galazka. Jako swoje symbole przyjął herb z krajobrazem Podlasia: niebieskie niebo ze słońcem w rogu, rzeka Biała (rzeka w Białymstoku) i zielona trawa, oraz niebiesko-biało-zielona flaga, z barwami na wzór herbu. Głównym celem organizacji była proklamacja Państwa Gneżeńskiego. Po zrealizowaniu tego znikła z życia publicznego, po 5 miesiącach wznowiła działalność jako organizacja prowadząca działalność kulturalną.</p>
+</div>
+<div id="event5-content" class="timeline-content-display">
+    <span class="date">1V2024</span>
+    <h2>Proklamacja Republiki Gneżeńskiej.</h2>
+    <p>Tamtego dnia o godzinie 20:00 (według obecnego czasu gneżeńskiego 21:00) prezes Ruchu Gneżeńskiego Patryk Jan Česlav Galazka wspólnie z Adamem Vykentym Gnezenecem ogłosili powstanie Republiki Gneżeńskiej. W jej trakcie pierwszy z nich został Tymczasowym Przywódcą Republiki Gneżeński (będzie nim do końca roku 2025), a drugi pra-ministrem w rządzie. Towarzyszące proklamacji symbole Ruchu Gneżeńskiego zostały symbolami nowo-powstałej republiki, z herbu jedynie usunięte zostało słońce. Na pamiątkę tego wydarzenia 1 maja jest obchodzony Dzień Niepodległości.</p>
+</div>
+<div id="event6-content" class="timeline-content-display">
+    <span class="date">1VI2024</span>
+    <h2>Złoty Gneżeński i Radio Gneżencja.</h2>
+    <p>Wtedy weszła w życie narodowa waluta Gneżencji, zastępując dotychczasową polską. Został ustalony wtedy stały kurs wobec franka szwajcarskiego - 1,00 CHF=8,70 GNZ. Tego samego dnia rozpoczęło działalność Radio Gneżencja. Samo radio nie opublikowało żadnej audycji z powodu problemów strony, ale jej bezpośredni następca - Portal Gneżeńskie Wiadomości - działał przez 2 miesiące. Był to początek wielu prób gneżeńskiej działalności publicystycznej.</p>
+</div>
+<div id="event7-content" class="timeline-content-display">
+    <span class="date">26VI2024</span>
+    <h2>I Konstytucja</h2>
+    <p>Tego dnia z rana została uchwalona przez Tymczasowego Przywódcę Patryka Jana Česlava Galazkę oraz pra-ministrów Mateuša Andreja Naumovyča i Sebastana Oda Januka tymczasowa konstytucja. Zawiera ona 34 punkty, obowiązywać będzie do 1.7.2026. Stała się ona fundamentem państwa, niektóre punkty też pokazują plany Gneżencji w przyszłości (np. punkt 24 - Ochrona zdrowia jest tania i obowiązkowa). Na pamiątkę tego wydarzenia 26 czerwca obchodzony jest Dzień Konstytucji.</p>
+</div>
+<div id="event8-content" class="timeline-content-display">
+    <span class="date">1IX2024</span>
+    <h2>Wybory rządowe</h2>
+    <p>Tego dnia odbyły się pierwsze wybory, których celem było wyłonienie rządu. Starły się w nich 2 partie: Gneżeńska Partia Socjalistyczna (GSP) i Porządek, Sprawiedliwość, Prawo (LSP). Wybory musiały zostać powtórzone, ponieważ obie partie miały po 50% poparcia. Mimo wszystko, ponieważ to był pierwszy "sprawdzian" demokracji, 1 września obchodzony jest Dzień Demokracji. Powtórka odbyła się 15 września, wtedy doszło do znaczącej porażki GSP 29%) z LSP (71%).</p>
+</div>
+<div id="event9-content" class="timeline-content-display">
+    <span class="date">9IX2024</span>
+    <h2>Szkoła Gneżeńska.</h2>
+    <p>Tego dnia rozpoczął się pierwszy rok szkolny w Gneżencji. Naukę zaczęło 3 uczniów, wszyscy chodzili do 1 klasy gimnazjum. Regularne lekcje skończyły się w październiku.</p>
+</div>
+<div id="event10-content" class="timeline-content-display">
+    <span class="date">10XI2024</span>
+    <h2>Unia Niezależnych Mikronacji</h2>
+    <p>W początku listopada z inicjatywy Tymczasowego Przywódcy Republiki Gneżeńskiej Patryka Jana Česlava Galazki i Prezydenta Globo Aleksego Ivanova powstał związek tych dwóch państw oraz Matowic. Tego dnia odbyło się pierwsze posiedzenie członków rady, której pierwszym przewodniczącym był przywódca Republiki Gneżeńskiej.</p>
+</div>
+<div id="event11-content" class="timeline-content-display">
+    <span class="date">1I2025</span>
+    <h2>Rząd Sebastana O. Januka</h2>
+    <p>Tego dnia doszedł do władzy rząd wybrany w wyborach. Otrzymał on swoją nazwę od Pra-ministra nr. 1 - Sebastana Oda Januka. W maju w wyniku zmian personalnych, zmienił nazwę na Rząd Mateuša A. Naumovyča.</p>
+</div>
+<div id="event12-content" class="timeline-content-display">
+    <span class="date">7IX2025</span>
+    <h2>Wybory prezydenckie</h2>
+    <p>Tego dnia wybrany zostanie pierwszy prezydent Republiki Gneżeńskiej. Będzie dwóch kandydatów: Patryk Jan Česlav Galazka (kandydat GSP) i Mateuš Andrej Naumovyč (niezależny, popierany przez LSP). Zwycięzca wyborów będzie pełnić funkcję od początku roku 2026.</p>
+</div>
+</div>
+    <div class="greeting-text" data-lang="eng">
+<h1>History of Republic of Gnezenland</h1>
+
+<div class="timeline-container">
+    <div class="timeline-point" data-event="event1" onclick="showEvent('event1eng', this)">
+        <span class="timeline-point-label">2023</span>
+    </div>
+    <div class="timeline-point" data-event="event2" onclick="showEvent('event2eng', this)">
+        <span class="timeline-point-label">15X2023</span>
+    </div>
+    <div class="timeline-point" data-event="event3" onclick="showEvent('event3eng', this)">
+        <span class="timeline-point-label">III2024</span>
+    </div>
+    <div class="timeline-point" data-event="event4" onclick="showEvent('event4eng', this)">
+        <span class="timeline-point-label">III/IV2024</span>
+    </div>
+    <div class="timeline-point" data-event="event5" onclick="showEvent('event5eng', this)">
+        <span class="timeline-point-label">1V2024</span>
+    </div>
+    <div class="timeline-point" data-event="event6" onclick="showEvent('event6eng', this)">
+        <span class="timeline-point-label">1VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event7" onclick="showEvent('event7eng', this)">
+        <span class="timeline-point-label">26VI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event8" onclick="showEvent('event8eng', this)">
+        <span class="timeline-point-label">1IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event9" onclick="showEvent('event9eng', this)">
+        <span class="timeline-point-label">9IX2024</span>
+    </div>
+    <div class="timeline-point" data-event="event10" onclick="showEvent('event10eng', this)">
+        <span class="timeline-point-label">10XI2024</span>
+    </div>
+    <div class="timeline-point" data-event="event11" onclick="showEvent('event11eng', this)">
+        <span class="timeline-point-label">1I2025</span>
+    </div>
+    <div class="timeline-point" data-event="event12" onclick="showEvent('event12eng', this)">
+        <span class="timeline-point-label">7IX2025</span>
+    </div>
+</div>
+
+<div id="event1eng-content" class="timeline-content-display">
+    <span class="date">2023</span>
+    <h2>Beginning of Proto-Patric's language</h2>
+    <p>The Proto-Patric's language has started created. However, it had very low level and stopped developing with several expressions.</p>
+</div>
+<div id="event2eng-content" class="timeline-content-display">
+    <span class="date">15X2023</span>
+    <h2>Patric's language</h2>
+    <p>Then Proto-Patric's language has transformed into a somewhat more developed Patric's language. On this day it started creating the textbook, however it was finished with 2 pages. One of them was rediscovered in 1.2025. In the memory of this event in 15th October it's celebrated Day of Gnezen language.</p>
+</div>
+<div id="event3eng-content" class="timeline-content-display">
+    <span class="date">III2024</span>
+    <h2>Gnezen language</h2>
+    <p>Patric's language after a long stagnation started went through a big change with vocabulary. Then also came into effect new name - "Gnezen", which was a reshape of word "gneznicky" - Polish. Soon has started creating official dictionary of the language, in the end of May with 65 words has published in Internet. At present it has them more than 2000.</p>
+</div>
+<div id="event4eng-content" class="timeline-content-display">
+    <span class="date">III/IV2024</span>
+    <h2>Creating of the Gnezen Movement.</h2>
+    <p>On the turn of these month has created organisation Gnezen Movement, whose president became Patryk Jan Česlav Galazka. As its own symbols it has coat of arms with landscape of Podlachia: blue sky with the Sun in the corner, Biała river (river in Białystok, in Polish "biała" means white) and green grass, and the blue-white-green flag, with the colours in imitation of the coat of arms. The main objective of organisation was proclamation of Gnezen state. After realisation of this it disappeared from public life, after 5 month it has restarted activity as the organisation conducting cultural activity.</p>
+</div>
+<div id="event5eng-content" class="timeline-content-display">
+    <span class="date">1V2024</span>
+    <h2>Proclamation of Republic of Gnezenland.</h2>
+    <p>These day at 20:00 (according to current gnezen time 21:00) president of Gnezen Movement Patryk Jan Česlav Galazka together with Adam Vykenty Gnezenec declared the creation of Republic of Gnezenland. During its first of them became Temporary Leader of Republic of Gnezenland (he will him to the end of year 2025), and second became the pra-minister in government. Accompanied to the proclamation symbols of Gnezen Movement became the symbols of Republic of Gnezenland, only from coat of arms was deleted the Sun. In the memory of this event in 1st May it's celebrated Day of Independence.</p>
+</div>
+<div id="event6eng-content" class="timeline-content-display">
+    <span class="date">1VI2024</span>
+    <h2>Gnezen Zloty and Radio Gnezenland.</h2>
+    <p>Then came into effect national currency of Gnezenland, replacing the previous polish. Then was established fixed exchange rate of the Swiss Franc - 1,00 CHF=8,70 GNZ. On the same day Radio Gnezenland has started its activity. Alone radio hasn't published any broadcast because of problems of site, but it's direct successor - Portal Gnezen News - worked during 2 months. It was the beginning of many tries of gnezen publicistic activity.</p>
+</div>
+<div id="event7eng-content" class="timeline-content-display">
+    <span class="date">26VI2024</span>
+    <h2>I Constitution</h2>
+    <p>On these day in the morning has allocated by Temporary Leader Patryk Jan Česlav Galazka and pra-ministers Mateuš Andrej Naumovyč i Sebastan Odo Januk temporary constitution. It contains 34 points and will apply until 1.7.2026. It became the base of state, some of points also show plans of Gnezenland in the future (e.g. point 24 - Health care is cheap and obligatory). In the memory of this event in 26th June it's celebrated Day of Constitution.</p>
+</div>
+<div id="event8eng-content" class="timeline-content-display">
+    <span class="date">1IX2024</span>
+    <h2>Governmental election</h2>
+    <p>On these day was the first election, which objective was selection of government. 2 parties has clashed: Gnezen Socialist Party (GSP) and Order, Justice, Law (LSP). Election had to be repeated, because both parties had 50% support. After all, because it was the first "test" of democracy, in 1st September it's celebrated Day of Demokracy. Repeat was in 15st September, then it was significant failure of GSP (29%) with LSP (71%).</p>
+</div>
+<div id="event9eng-content" class="timeline-content-display">
+    <span class="date">9IX2024</span>
+    <h2>Gnezen School.</h2>
+    <p>On this day has started first schoolyear in Gnezenland. Science was started by 3 students, all of them were in 1st class of middle school. Regular lessons were finished in October.</p>
+</div>
+<div id="event10eng-content" class="timeline-content-display">
+    <span class="date">10XI2024</span>
+    <h2>Independent Micronations' Union</h2>
+    <p>In the beginning of November from the initiative of Temporary Leader of Republic of Gnezenland Patryk Jan Česlav Galazka and President of Globo Aleksy Ivanov was created union of these two countries and Matowice. These day was the first plenary of council's members, whose first chairman was leader of Republic of Gnezenland.</p>
+</div>
+<div id="event11eng-content" class="timeline-content-display">
+    <span class="date">1I2025</span>
+    <h2>Cabinet of Sebastan O. Januk</h2>
+    <p>On this day came to power government choosen in election. It had it's name from pra-minister nr. 1 - Sebastan Odo Januk. In May, after the personal changes, it changes its name to Cabinet of Mateuš A. Naumovyč.</p>
+</div>
+<div id="event12eng-content" class="timeline-content-display">
+    <span class="date">7IX2025</span>
+    <h2>Presidential election</h2>
+    <p>On this day will be choosen President of Gnezenland. It'll be two candidates: Patryk Jan Česlav Galazka (candidate of GSP) and Mateuš Andrej Naumovyč (independent, supported by LSP). The winner of election will perform the function since the beginning of 2026.</p>
+</div>
+</div>
+
+<script>
+    function showEvent(eventId, clickedPoint) {
+        // Ukryj wszystkie bloki z treścią
+        const contents = document.querySelectorAll('.timeline-content-display');
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Usuń klasę 'active' ze wszystkich kropek
+        const points = document.querySelectorAll('.timeline-point');
+        points.forEach(point => {
+            point.classList.remove('active');
+        });
+
+        // Pokaż wybrany blok z treścią
+        document.getElementById(eventId + '-content').classList.add('active');
+
+        // Dodaj klasę 'active' do klikniętej kropki
+        clickedPoint.classList.add('active');
+    }
+</script>
+
+<div id="footer-placeholder"></div>
+<script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+</body>
+</html>
