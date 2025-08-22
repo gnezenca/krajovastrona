@@ -2210,7 +2210,7 @@
 "trafić": "trafić - trafyr",
 "ponad": "ponad - vyce nyz",
         },
-    eng: {
+        eng: {
 "and": "and - a",
 "obadiah": "Obadiah - Abdaš",
 "graduate": "graduate - absolvent",
@@ -2402,7 +2402,7 @@
 "cyberattack": "cyberattack - cyberatak",
 "digit": "digit - cyfra",
 "cyprus": "Cyprus - kypr",
-"to quote": "to quote - cytovar",
+"quote": "quote - cytovar",
 "montenegro": "Montenegro - Čarna Hora",
 "black": "black - čarny",
 "time": "time - čas",
@@ -2440,7 +2440,7 @@
 "read": "read - čytar",
 "readable": "readable - čytelny",
 "exercise": "exercise - cvyčyr",
-"give - dar",
+"give": "give - dar",
 "distant": "distant - daloky",
 "far": "far - daloko",
 "data": "data - dane",
@@ -2839,4 +2839,3 @@
             container.querySelector('#searchInput').addEventListener('input', () => resetView(container));
         });
     };
-
