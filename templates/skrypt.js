@@ -46,7 +46,8 @@
                 "nation": "NAROD",
                 "language": "MOVA",
                 "grammar": "HRAMATYKA",
-                "dictionary": "SLOVOZBOR"
+                "dictionary": "SLOVOZBOR",
+                "footer": "©2025-2025. Krajova strona Gnezenskej Republiky. Naš mejl: gnezencja@wp.pl"
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -56,7 +57,8 @@
                 "nation": "NARÓD",
                 "language": "JĘZYK",
                 "grammar": "GRAMATYKA",
-                "dictionary": "SŁOWNIK"
+                "dictionary": "SŁOWNIK",
+                "footer": "©2025-2025. Strona państwowa Republiki Gneżeńskiej. Nasz mail: gnezencja@wp.pl"
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -66,7 +68,8 @@
                 "nation": "NATION",
                 "language": "LANGUAGE",
                 "grammar": "GRAMMAR",
-                "dictionary": "DICTIONARY"
+                "dictionary": "DICTIONARY",
+                   "footer": "©2025-2025. State website of Republic of Gnezenland. Our mail: gnezencja@wp.pl"
             }
         };
 
