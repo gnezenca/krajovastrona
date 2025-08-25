@@ -2,6 +2,7 @@
             gnz: {
                 "main-page": "HLOVNA STRONA",
                 "about-us": "O NAS",
+                "symbols": "SYMBOLY",
                 "history": "ISTORA",
                 "news": "VESTY",
                 "language": "MOVA",
@@ -13,6 +14,7 @@
                 "main-page": "STRONA GŁÓWNA",
                 "about-us": "O NAS",
                 "history": "HISTORIA",
+                "symbols": "SYMBOLE",
                 "news": "WIADOMOŚCI",
                 "language": "JĘZYK",
                 "grammar": "GRAMATYKA",
@@ -23,6 +25,7 @@
                 "main-page": "MAIN PAGE",
                 "about-us": "ABOUT US",
                 "history": "HISTORY",
+                "symbols": "SYMBOLS",
                 "news": "NEWS",
                 "language": "LANGUAGE",
                 "grammar": "GRAMMAR",
