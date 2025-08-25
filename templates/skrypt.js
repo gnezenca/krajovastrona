@@ -8,6 +8,7 @@
                 "language": "MOVA",
                 "grammar": "HRAMATYKA",
                 "dictionary": "SLOVOZBOR",
+                "forum": "FORUM",
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -18,6 +19,7 @@
                 "language": "JĘZYK",
                 "grammar": "GRAMATYKA",
                 "dictionary": "SŁOWNIK",
+                "forum": "FORUM",
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -28,6 +30,7 @@
                 "language": "LANGUAGE",
                 "grammar": "GRAMMAR",
                 "dictionary": "DICTIONARY",
+                "forum": "FORUM",
             }
         };
 
