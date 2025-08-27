@@ -84,7 +84,7 @@
             "biały": "biały - bily",
             "białystok": "Białystok - I (na świecie) Bilstoka, II (w Gneżencji) Zlotstoka",
             "biblia": "Biblia - Bibla",
-            "biblioteka": "biblioteka - biblioteka",
+            "biblioteka": "bibloteka - biblioteka",
             "biegać": "biegać - begar",
             "biel": "biel - bil",
             "biologia": "biologia - boiloza",
