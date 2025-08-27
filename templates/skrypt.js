@@ -9,6 +9,11 @@
                 "grammar": "HRAMATYKA",
                 "dictionary": "SLOVOZBOR",
                 "forum": "FORUM",
+                "gta": "GNEZENSKA TEHNOLOGOVA AKADEMA",
+                "g-school": "GNEZENSKA MOKYKLA",
+                "g-library": "GNEZENSKA BIBLOTEKA",
+                "g-telegraph": "GNEZENSKY TELEGRAF",
+                "gnezenpeda": "GNEZENPEDA",
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -20,6 +25,11 @@
                 "grammar": "GRAMATYKA",
                 "dictionary": "SŁOWNIK",
                 "forum": "FORUM",
+                "gta": "GNEŻEŃSKA AKADEMIA TECHNOLOGICZNA",
+                "g-school": "SZKOŁA GNEŻEŃSKA",
+                "g-library": "BIBLIOTEKA GNEŻEŃSKA",
+                "g-telegraph": "TELEGRAF GNEŻEŃSKI",
+                "gnezenpeda": "GNEZENPEDA",
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -31,6 +41,11 @@
                 "grammar": "GRAMMAR",
                 "dictionary": "DICTIONARY",
                 "forum": "FORUM",
+                "gta": "GNEZEN TECHNOLOGICAL ACADEMY",
+                "g-school": "GNEZEN SCHOOL",
+                "g-library": "GNEZEN LIBRARY",
+                "g-telegraph": "GNEZEN TELEGRAPH",
+                "gnezenpeda": "GNEZENPEDA",
             }
         };
 
