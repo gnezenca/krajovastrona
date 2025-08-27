@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Symboly</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        .item {
+            cursor: pointer;
+            width: 33.33%;
+            height: auto;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        .text-box {
+            margin: 40px auto 0;
+            max-width: 700px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            min-height: 150px;
+            display: none;
+            color: #666;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .item .description {
+          display: none;
+        }
+        .text-box h2 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<div class="greeting-text" data-lang="gnz">
+    <div class="content-wrapper">
+        <h1>Symboly Gnezenskej Respubliky</h1>
+        <div class="gallery">
+            <div class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" alt="Flaga Gneżencji">
+                <span class="description">
+                    <h2>Gnezenska flaga</h2>
+                    <p>Gnezenska flaga mat 3 barvy: siny, bily i zeleny. Neofycalovo vone symbolyzova: svobodu, čystostu, nadeju. Pervotno byl flagom Gnezenskego Ruha, sevyvodyl ot herba. Symbolem Gnezency zostal v 2.5.2024.</p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezensky_herb.jpg" alt="Herb Gneżencji">
+                <span class="description">
+                    <h2>Gnezensky herb</h2>
+                    <p>Gnezensky herb predstavat čarnego orela, reku Biała'u (reka v Zlotstoky, v gnezničiny slovo "biała" značyt "bila") i zelenu travu. To sevyvodyt ot podlasovego krajobraza. Pervotno byl symbolem Gnezenskego Ruha. Symbolem Gnezency zostal v 2.5.2025. Pervotno v pravym horovym rohym bylo sonce, ryhlo jednak zostalo usunute. Pres dlouhy čas nemal odnej versy, vona zostala vrovadyna v 28.7.2025.</p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/hymn-1.jpg" alt="Hymn Gneżencji">
+                <span class="description">
+                    <h2>Gnezenska artylera</h2>
+                    <p>Ta posnka, vzorovana na bosnovej "Bosanska'ej Artiljerija'y", zostala hymnem v 20.6.2024. Jej autorem set Mateuš A. Naumovyč. Odena zmena byla v 24.8.2025, kedy ukreovano vtoru zvrotku i dodano ku nyh vtoru čustku.<br>
+                    Jej tekst:
+                    <table border="0">
+                    <tr><td>1.</td><td>Druh za druhem rodily nas matky,</td></tr>
+                    <tr><td></td><td>čuvamy nad našom Gnezencom.</td></tr>
+                    <tr><td></td><td>Spevai Gnezenco, neh vrogy veda,</td></tr>
+                    <tr><td></td><td>ze my latvo nesepoddamy (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Zlotstoka, Krakov, Varšuva, Svinoujste,</td></tr>
+                    <tr><td></td><td>one leza blisko mojego serca.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artylera! Sem gnezenskym soldatem.</td></tr>
+                    <tr><td></td><td>Moja vspanalo Gnezenco! (x2)</td></tr>
+                    <tr><td>2.</td><td>Druh za druhem rodily nas matky,</td></tr>
+                    <tr><td></td><td>čuvamy nad našom Gnezencom.</td></tr>
+                    <tr><td></td><td>Spevai Gnezenco, neh vrogy veda,</td></tr>
+                    <tr><td></td><td>ze my latvo nesepoddamy (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Zlotstoka, Krakov, Varšuva, Svinoujste,</td></tr>
+                    <tr><td></td><td>one leza blisko mojego serca.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artylera! Sem gnezenskym soldatem.</td></tr>
+                    <tr><td></td><td>Moja vspanalo Gnezenco! (x2)</td></tr>
+                    </table></p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-gnz"></div>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="pol">
+    <div class="content-wrapper">
+        <h1>Symbole Republiki Gneżeńskiej</h1>
+        <div class="gallery">
+            <div class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" alt="Flaga Gneżencji">
+                <span class="description">
+                    <h2>Flaga Gneżencji</h2>
+                    <p>Flaga Gneżencji ma 3 kolory: niebieski, biały i zielony. Nieoficjalnie symbolizują one: wolność, czystość, nadzieja. Pierwotnie był flagą Ruchu Gneżeńskiego, wywodził się od herbu. Symbolem Gneżencji został 2 maja 2024.</p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezensky_herb.jpg" alt="Herb Gneżencji">
+                <span class="description">
+                    <h2>Herb Gneżencji</h2>
+                    <p>Herb Gneżencji przedstawia czarnego orła, rzekę Białą (rzeka w Białymstoku) i zieloną trawę. Wywodzi się to od krajobrazu Podlasia. Pierwotnie był herbem Ruchu Gneżeńskiego. Symbolem Gneżencji został 2 maja 2024. Pierwotnie w górnym prawym rogu było słońce, szybko jednak zostało usunięte. Przez długi czas nie miał jednej wersji, wprowadzona została ona 28 lipca 2025.</p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/hymn-1.jpg" alt="Hymn Gneżencji">
+                <span class="description">
+                    <h2>Gneżeńska Artyleria</h2>
+                    <p>Pieśń ta, wzorowana na bośniackiej "Bosanskiej Artiljeriji", hymnem została 20 czerwca 2024. Autorem jej jest Mateuš A. Naumovyč. Jedyna zmiana była 24 sierpnia 2025, kiedy utworzono drugą zwrotkę i dodano do nich drugą część.<br>
+                    Jej tekst:
+                    <table border="0">
+                    <tr><td>1.</td><td>Druh za druhem rodziły nas matki,</td></tr>
+                    <tr><td></td><td>czuwamy nad naszą Gneżencją.</td></tr>
+                    <tr><td></td><td>Śpiewaj Gneżencjo, niech wrogowie wiedzą,</td></tr>
+                    <tr><td></td><td>że my łatwo się nie poddamy (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Złotystok, Kraków, Warszawa, Świnoujście,</td></tr>
+                    <tr><td></td><td>one leżą blisko mego serca.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artyleria! Jestem gneżeńskim żołnierzem.</td></tr>
+                    <tr><td></td><td>Moja wspaniało Gneżencjo! (x2)</td></tr>
+                    <td>2.</td><td>Druh za druhem rodziły nas matki,</td></tr>
+                    <tr><td></td><td>czuwamy nad naszą Gneżencją.</td></tr>
+                    <tr><td></td><td>Śpiewaj Gneżencjo, niech wrogowie wiedzą,</td></tr>
+                    <tr><td></td><td>że my łatwo się nie poddamy (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Złotystok, Kraków, Warszawa, Świnoujście,</td></tr>
+                    <tr><td></td><td>one leżą blisko mego serca.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artyleria! Jestem gneżeńskim żołnierzem.</td></tr>
+                    <tr><td></td><td>Moja wspaniało Gneżencjo! (x2)</td></tr>
+                    </table></p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-pol"></div>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="eng">
+    <div class="content-wrapper">
+        <h1>Symbols of Republic of Gnezenland.</h1>
+        <div id="gallery" class="gallery">
+            <div class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" alt="Flaga Gneżencji">
+                <span class="description">
+                    <h2>Flag of Gnezenland</h2>
+                    <p>Flag of Gnezenland has 3 colours: blue, white and green. Unofficially they're symbolizing: freedom, purity, hope. Originally it was the flag of Gnezen Movement, it descended from coat of arms. It became the symbol of Gnezenland in 2nd of May 2024.</p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/gnezensky_herb.jpg" alt="Herb Gneżencji">
+                <span class="description">
+                    <h2>Coat of arms of Gnezenland</h2>
+                    <p>Coat of arms of Gnezenland shows black eagle, Biała River (river in Białystok, in Polish "biała" means white) and green grass. It descendes from the landscape of Podlachia. Originally it was the coat of arms of Gnezen Movement. It became the symbol of Gnezenland in 2nd of May 2024. Originally in the right upper corner was the Sun, however, it was quickly deleted. During the long time it didn't have one version, it was introduces in 28th of July 2025.</p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/hymn-1.jpg" alt="Hymn Gneżencji">
+                <span class="description">
+                    <h2>Gnezen Artillery</h2>
+                    <p>This song, wzorowana na imitated on Bosnian "Bosanska Artiljerija", became the anthem in 20th of June 2024. Its autor is Mateuš A. Naumovyč. The only change was in 24th of August 2025, when it has created second stanza and it has added to them the second part.<br>
+                    Its text:
+                    <table border="0">
+                    <tr><td>1.</td><td>Friend after friend our mothers gave birth to us,</td></tr>
+                    <tr><td></td><td>we're watching over our Gnezenland.</td></tr>
+                    <tr><td></td><td>Sing Gnezenland, let our enemies know,</td></tr>
+                    <tr><td></td><td>that we won't surrender easily (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Złotystok, Kraków, Warsaw, Świnoujście,</td></tr>
+                    <tr><td></td><td>they're lying near to my heart.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artillery! I'm the Gnezen soldier.</td></tr>
+                    <tr><td></td><td>My excellent Gnezenland! (x2)</td></tr>
+                    <tr><td>2.</td><td>Friend after friend our mothers gave birth to us,</td></tr>
+                    <tr><td></td><td>we're watching over our Gnezenland.</td></tr>
+                    <tr><td></td><td>Sing Gnezenland, let our enemies know,</td></tr>
+                    <tr><td></td><td>that we won't surrender easily (x2)</td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td>Złotystok, Kraków, Warsaw, Świnoujście,</td></tr>
+                    <tr><td></td><td>they're lying near to my heart.</td></tr>
+                    <td></td><td></td></tr>
+                    <tr><td>Ref.</td><td>Artillery! I'm the Gnezen soldier.</td></tr>
+                    <tr><td></td><td>My excellent Gnezenland! (x2)</td></tr>
+                    </table></p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-eng"></div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.item');
+        
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Pobiera rodzica, który zawiera atrybut data-lang, aby wiedzieć, który div wyświetlić
+                const language = item.closest('.greeting-text').getAttribute('data-lang');
+                let displayText;
+                
+                if (language === 'pol') {
+                    displayText = document.getElementById('display-text-pol');
+                } else if (language === 'eng') {
+                    displayText = document.getElementById('display-text-eng');
+                } else if (language === 'gnz') {
+                    displayText = document.getElementById('display-text-gnz');
+                }
+
+                if (displayText) {
+                    const descriptionContent = item.querySelector('.description').innerHTML;
+                    displayText.innerHTML = descriptionContent;
+                    displayText.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
