@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Partnery</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        .item {
+            cursor: pointer;
+            width: 33.33%;
+            height: auto;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        .text-box {
+            margin: 40px auto 0;
+            max-width: 700px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            min-height: 150px;
+            display: none;
+            color: #666;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .item .description {
+          display: none;
+        }
+        .text-box h2 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<div class="greeting-text" data-lang="gnz">
+    <div class="content-wrapper">
+        <h1>Partnery Gnezenskej Respubliky</h1>
+        <div class="gallery">
+            <div class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/abaka.jpg" alt="Flaga Gneżencji">
+               <span class="description">
+                    <h2>Abakova Respublika</h2>
+                    <p>
+                    <ul>
+                      <li>Tymčasovy Lyder Abakovej Respubliky - Adam V. Gnezenec
+                      <li>Movy - Gnezničina, Abakovščina
+                      <li>Den povstana - 9.2023 (ofycalovo)
+                      <li>Inny informacy - Abaka ot ofycalovej proklamacy (majucej misto v 7.2024) set zvuzana z Gnezencom. Jej lyder, Adam V. Gnezenec, byl učestnykem proklamacy Gnezency. V 1.2025 zostala členem Uny Nezaleznyh Mykrokrajov. Ot marcy ku july tego dvanacta byla Autonomovym Dystryktem (AD) Gnezency. Po povrotym ku pelnej nezaleznosty zostala členem Zvuzeka Bratnyh Mykrokrajov.
+                    </ul>
+                    <a href="mailto:lekcjeabackiego@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Abaka-Kana%C5%82Oficjalny"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/arkaena.png" alt="Flaga Arkaenii">
+                <span class="description">
+                    <h2>Arkaenova Respublika</h2>
+                    <p>
+                    <ul>
+                      <li>Prezydent - Mateuš A. Naumovyč
+                      <li>Movy - Gnezničina, Arkaenovščina
+                      <li>Den povstana - 16.9.2023
+                      <li>Inny informacy - Arkaena set peršym sojušnykem Gnezency. Jej prezydent - Mateuš A. Naumovyč, set personom vaznom pro Gnezency. Arkaena (vtedy ješče Matowice) byla vspolzalozytelem Uny Nezaleznyh Mykrokrajov. V janury ulela lykvydacy, vrotyla v july. Set členem Zvuzeka Bratnyh Mykrokrajov.
+                    </ul>
+                    <a href="mailto:arkaena@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Arkaenia"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RMatowicka70351"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/globo.png" alt="Flaga Globo">
+                <span class="description">
+                    <h2>Globova Respublika</h2>
+                    <p>
+                    <ul>
+                      <li>Prezydent - Aleksý' Ivanow
+                      <li>Movy - Gnezničina, Globovščina
+                      <li>Den povstana - 24.6.2018
+                      <li>Inny informacy - Globo zavrelo dyplomatykovy relacy z Gnezencom v 9.2024. Set vspolzalozytelem Uny Nezaleznyh Mykrokrajov. Pospolu krajy organyzovaly projekty, m.in. SlavProject, kotory fynalovo nedojsl ku skuteku.
+                    </ul>
+                    <a href="mailto:Republicofglobo@outlook.com"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@RepublikaGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RepGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a> <a href="https://discord.com/invite/zbBNsG4x3x"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/discord.png"></a>
+                    </p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-gnz"></div>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="pol">
+    <div class="content-wrapper">
+        <h1>Partnerzy Republiki Gneżeńskiej</h1>
+        <div class="gallery">
+            <div class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/abaka.jpg" alt="Flaga Abaki">
+                <span class="description">
+                    <h2>Republika Abaki</h2>
+                    <p>
+                    <ul>
+                      <li>Tymczasowy Przywódca Republiki Abackiej - Adam Gneżeniec
+                      <li>Języki - Polski, Abacki
+                      <li>Data powstania - wrzesień 2023 (oficjalnie)
+                      <li>Inne informacje - Abaka od oficjalnej proklamacji (mającej miejsce w lipcu 2024 roku) jest związana z Gneżencją. Jej przywódca, Adam Gneżeniec (Adam V. Gnezenec), był uczestnikiem proklamacji Gneżencji. W styczniu 2025 roku została członkiem Unii Niezależnych Mikronacji. Od marca do lipca tego roku była Autonomiczny Okręgiem (AD) Gneżencji. Po powrocie do pełnej niezależności została członkiem Związku Braterskich Mikronacji.
+                    </ul>
+                    <a href="mailto:lekcjeabackiego@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Abaka-Kana%C5%82Oficjalny"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/arkaena.png" alt="Flaga Arkaenii">
+                <span class="description">
+                    <h2>Republika Arkaenii</h2>
+                    <p>
+                    <ul>
+                      <li>Prezydent - Mateusz Naumowicz
+                      <li>Języki - Polski, Arkaeński
+                      <li>Data powstania - 16 wrzesień 2023
+                      <li>Inne informacje - Arkaenia jest pierwszym sojusznikiem Gneżencji. Jej prezydent - Mateusz Naumowicz (Mateuš A. Naumovyč) jest osobą istotną w dziejach Gneżencji. Arkaenia (wówczas jeszcze Matowice) była współzałożycielem Unii Niezależnych Mikronacji. W styczniu uległa likwidacji, wróciła w lipcu. Jest członkiem Związku Braterskich Mikronacji.
+                    </ul>
+                    <a href="mailto:arkaena@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Arkaenia"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RMatowicka70351"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/globo.png" alt="Flaga Globo">
+                <span class="description">
+                    <h2>Republika Globo</h2>
+                    <p>
+                    <ul>
+                      <li>Prezydent - Aleksý' Ivanow
+                      <li>Języki - Polski, Globiński
+                      <li>Data powstania - 24 czerwca 2018
+                      <li>Inne informacje - Globo zawarło stosunki dyplomatyczne z Gneżencją we wrześniu 2024 roku. Jest współzałożycielem Unii Niezależnych Mikronacji. Wspólnie państwa organizowały projekty, m.in. SlavProject, który finalnie nie doszedł do skutku.
+                    </ul>
+                    <a href="mailto:Republicofglobo@outlook.com"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@RepublikaGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RepGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a> <a href="https://discord.com/invite/zbBNsG4x3x"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/discord.png"></a>
+                    </p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-pol"></div>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="eng">
+    <div class="content-wrapper">
+        <h1>Partners of Republic of Gnezenland</h1>
+        <div class="gallery">
+            <div id="gallery" class="item" id="flag-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/abaka.jpg" alt="Flaga Abaki">
+                <span class="description">
+                    <h2>Republic of Abaka</h2>
+                    <p>
+                    <ul>
+                      <li>Temporary Leader of Republic of Abaka - Adam Gneżeniec
+                      <li>Languages - Polish, Abak
+                      <li>Date of developing - September 2023 (officially)
+                      <li>Other informations - Abaka since the official proclamation (which was in July 2024) is related with Gnezenland. Its leader, Adam Gneżeniec (Adam V. Gnezenec), was the participant of Republic of Gnezenland's proclamation. In January 2025 it became the member of Union of Independent Micronations. From March to July of this year it was the Autonomous District (AD) of Gnezenland. After return to full independence it became the member of Union of Brotherly Micronations.
+                    </ul>
+                    <a href="mailto:lekcjeabackiego@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Abaka-Kana%C5%82Oficjalny"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="coat-of-arms-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/arkaena.png" alt="Flaga Arkaenii">
+                <span class="description">
+                    <h2>Republic of Arkaenia</h2>
+                    <p>
+                    <ul>
+                      <li>President - Mateusz Naumowicz
+                      <li>Language - Polish, Arkaenian
+                      <li>Date of developing - 16th September 2023
+                      <li>Other informations - Arkaenia is the first alliant of Gnezenland. Its president - Mateusz Naumowicz (Mateuš A. Naumovyč) is an important person in history of Gnezenland. Arkaenia (then still Matowice) was the co-creator of Union of Independent Micronations. In January has liquidated, returned in July. It's a member of Union of Brotherly Micronations.
+                    </ul>
+                    <a href="mailto:arkaena@wp.pl"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@Arkaenia"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RMatowicka70351"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a>
+                    </p>
+                </span>
+            </div>
+            <div class="item" id="anthem-item">
+                <img src="https://gnezenca.github.io/krajovastrona/images/globo.png" alt="Flaga Globo">
+                <span class="description">
+                    <h2>Republic of Globo</h2>
+                    <p>
+                    <ul>
+                      <li>President - Aleksý' Ivanow
+                      <li>Languages - Polish, Globish
+                      <li>Date of developing - 24th June 2018
+                      <li>Other informations - Globo established diplomatic relations with Gnezenland in September 2024. It's a co-creator of Union of Independent Micronations. Together countries had organized projects, e.g. SlavProject, which finally falt through.
+                    </ul>
+                    <a href="mailto:Republicofglobo@outlook.com"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/mail.png"></a> <a href="https://www.youtube.com/@RepublikaGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/youtube.png"></a> <a href="https://x.com/RepGlobo"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/x.png"></a> <a href="https://discord.com/invite/zbBNsG4x3x"><img height="40px" src="https://gnezenca.github.io/krajovastrona/images/discord.png"></a>
+                    </p>
+                </span>
+            </div>
+        </div>
+        <div class="text-box" id="display-text-eng"></div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.item');
+        
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Pobiera rodzica, który zawiera atrybut data-lang, aby wiedzieć, który div wyświetlić
+                const language = item.closest('.greeting-text').getAttribute('data-lang');
+                let displayText;
+                
+                if (language === 'pol') {
+                    displayText = document.getElementById('display-text-pol');
+                } else if (language === 'eng') {
+                    displayText = document.getElementById('display-text-eng');
+                } else if (language === 'gnz') {
+                    displayText = document.getElementById('display-text-gnz');
+                }
+
+                if (displayText) {
+                    const descriptionContent = item.querySelector('.description').innerHTML;
+                    displayText.innerHTML = descriptionContent;
+                    displayText.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
