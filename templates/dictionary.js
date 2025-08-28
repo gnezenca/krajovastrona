@@ -907,7 +907,7 @@
     "nieść": "nieść - nesr",
     "niewiele": "niewiele - nevele",
     "niewielki": "niewielki - nevelky",
-    "niezależny": "niezależny - nezaleznym",
+    "niezależny": "niezależny - nezalezny",
     "nieznany": "nieznany - neznany",
     "nigdy": "nigdy - nekedy",
     "nikt": "nikt - nekto",
