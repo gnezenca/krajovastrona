@@ -202,3 +202,36 @@
         }
         
         document.addEventListener('DOMContentLoaded', loadAllContent);
+// Licznik do wyborów (tymczasowy)
+    function obliczCzas() {
+        // Ustaw datę i czas, do którego ma odliczać
+        const docelowaData = new Date("Sep 7, 2025 07:00:00").getTime();
+
+        // Pobierz aktualną datę i czas
+        const teraz = new Date().getTime();
+
+        // Oblicz różnicę w milisekundach
+        const roznica = docelowaData - teraz;
+
+        // Jeśli odliczanie się zakończyło
+        if (roznica < 0) {
+            document.getElementById("odliczanie").innerHTML = "Odliczanie zakończone!";
+            return;
+        }
+
+        // Oblicz dni, godziny, minuty i sekundy
+        const dni = Math.floor(roznica / (1000 * 60 * 60 * 24));
+        const godziny = Math.floor((roznica % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minuty = Math.floor((roznica % (1000 * 60 * 60)) / (1000 * 60));
+        const sekundy = Math.floor((roznica % (1000 * 60)) / 1000);
+
+        // Dodaj zera, jeśli liczba jest mniejsza od 10
+        const formatuj = (czas) => (czas < 10 ? "0" + czas : czas);
+        
+        // Wyświetl wynik w elemencie HTML
+        document.getElementById("odliczanie").innerHTML =
+            dni + ":" + formatuj(godziny) + ":" + formatuj(minuty) + ":" + formatuj(sekundy);
+    }
+
+    // Uruchom funkcję co sekundę, aby aktualizować odliczanie
+    setInterval(obliczCzas, 1000);
