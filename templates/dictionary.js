@@ -932,7 +932,7 @@
     "nuta": "nuta - nuta",
     "o": "o - o",
     "obecnie": "obecnie - prytomno",
-    "obecność": "obecność - obecnost",
+    "obecność": "obecność - prytomnost",
     "obecny": "obecny - prytomny",
     "obejmować": "obejmować - obejmovar",
     "obiad": "obiad - obed",
