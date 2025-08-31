@@ -5,18 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnezenska Respublika - Hlovna Strona</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <style>
+    .scrolling-container {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+table {
+  border-collapse: collapse;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  display: inline-block; /* lub block; */
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.img-table {
+  width: 150px;
+  height: auto;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
 </head>
 <body>
     <div id="header-placeholder">
         </div>
     <div class="greeting-text" data-lang="gnz">
     <h1>Fitamy v krajovyj strony Gnezenskej Respubliky!!!</h1>
+        <h2>Kym semy</h2>
+    Semy odnem z gneznickyh mykrokrajov, mamy hlovnego groda v Zlotstoky. Seharakteryzovamy vlasnom movom, narodem i roznymy innymy cehamy.<br>
+    <i>Hteś nam pomocyr? <a href="https://form.jotform.com/252423267444355">Dolučyi ku nam!</a></i>
+        <h2>Vesty</h2>
+    <div class="scrolling-container">
+  <table>
+      <tr>
+      <td><a>1.9.2025</a></td>
+    </tr>
+    <tr>
+      <td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td>
+    </tr>
+    <tr>
+      <td><a href="vesty/1.html">Povstane krajovej strony</a></td>
+    </tr>
+  </table>
+</div>
     </div>
     <div class="greeting-text" data-lang="pol">
     <h1>Witamy w stronie państwowej Republiki Gneżeńskiej!!!</h1>
+    <h2>Kim jesteśmy</h2>
+    Jesteśmy jedną z polskich mikronacji, stolicę mamy w Złotymstoku (Białymstoku). Charakteryzujemy się własnym językiem, narodem i różnymi innymi cechami.<br>
+    <i>Chcesz nam pomóc? <a href="https://form.jotform.com/252423267444355">Dołącz do nas!</a></i>
+    <h2>Wiadomości</h2>
+    <div class="scrolling-container">
+  <table>
+      <tr>
+      <td><a>1.9.2025</a></td>
+    </tr>
+    <tr>
+      <td><img class="img-table" src="images/beginning.jpg" alt="Obrazek 1"></td>
+    </tr>
+    <tr>
+      <td><a href="vesty/1.html">Powstanie strony państwowej</a></td>
+    </tr>
+  </table>
+</div>
     </div>
     <div class="greeting-text" data-lang="eng">
-    <h1>Welcome to the page of state website of Republic of Gnezenland!!!</h1>
+    <h1>Welcome to the state website of Republic of Gnezenland!!!</h1>
+        <h2>Who we are</h2>
+    We're one of polish micronations, we have the capital in Zlotstoka (Białystok). We're characterizing by our own language, nation and different other qualities.<br>
+    <i>Do you want to help us? <a href="https://form.jotform.com/252423267444355">Join to us!</a></i>
+        <h2>News</h2>
+    <div class="scrolling-container">
+  <table>
+      <tr>
+      <td><a>1.9.2025</a></td>
+    </tr>
+    <tr>
+      <td><img class="img-table" src="images/beginning.jpg" alt="Obrazek 1"></td>
+    </tr>
+    <tr>
+      <td><a href="vesty/1.html">Developing of state website</a></td>
+    </tr>
+  </table>
+</div>
     </div>
 
     <div id="footer-placeholder"></div>
