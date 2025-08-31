@@ -1,0 +1,98 @@
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Sekcja wiadomości */
+        .wiadomosc-kontener {
+            padding: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .wiadomosc-tytul {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Zmiana w układzie Flexbox dla treści */
+        .wiadomosc-tresc-wrapper {
+            display: flex;
+            gap: 20px; /* Odstęp między tekstem a obrazkiem */
+            flex-wrap: wrap; /* Zapewnia responsywność */
+            align-items: flex-start;
+        }
+
+        .wiadomosc-tresc {
+            flex-basis: 65%; /* Ustawia szerokość tekstu na 65% */
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .wiadomosc-tresc p {
+            margin: 0 0 1em;
+        }
+
+        .wiadomosc-media {
+            flex-basis: 30%; /* Ustawia szerokość obrazka na 30% */
+            margin-bottom: 20px;
+        }
+
+        .wiadomosc-obrazek {
+            width: 100%; /* Obrazek zajmuje całą dostępną szerokość */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .wiadomosc-data {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .wiadomosc-nawigacja {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nawigacja-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nawigacja-link:hover {
+            color: #0056b3;
+        }
+
+        .strzalka {
+            font-size: 1.2em;
+        }
+
+        /* Media queries dla lepszej responsywności na mniejszych ekranach */
+        @media (max-width: 768px) {
+            .wiadomosc-tresc-wrapper {
+                flex-direction: column; /* Układanie w kolumnie na urządzeniach mobilnych */
+            }
+
+            .wiadomosc-tresc, .wiadomosc-media {
+                flex-basis: 100%; /* Każdy element zajmuje całą szerokość */
+            }
+        }
