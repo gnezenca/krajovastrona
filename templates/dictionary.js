@@ -2340,7 +2340,7 @@
 "końcowo": "końcowo - konecovo",
 "ameryka": "Ameryka - Ameryka",
 "stany zjednoczone ameryki": "Stany Zjednoczone Ameryki - Usa",
-"amerykański": "amerykański -I (kontynent) amerykovy, II (państwo) usovy",
+"amerykański": "amerykański - I (kontynent) amerykovy, II (państwo) usovy",
 "tajlandzki": "tajlandzki - syjamovy",
 "sztuka": "sztuka - štuka",
 "temat": "temat - tema",
@@ -2356,6 +2356,14 @@
 "zemsta": "zemsta - pomsta",
 "zapowiedzieć": "zapowiedzieć - zaskazar",
 "natomiast": "natomiast - však"
+"poprowadzić": "poprowadzić - poprovadyr",
+"zajęcie": "zajęcie - zajute",
+"odwołać": "odwołać - otvolar",
+"rozpoczęcie": "rozpoczęcie - rozpočute",
+"różny": "różny - rozny",
+"nowość": "nowość - novost",
+"sukces": "sukces - sukces",
+"zrobienie": "zrobienie - zdelane",
         },
         eng: {
 "and": "and - a",
