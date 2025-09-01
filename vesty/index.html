@@ -6,7 +6,6 @@
     <title>Gnezenska Respublika - Vesty</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <style>
-
         .container {
             max-width: 1200px;
             margin: 20px auto;
@@ -15,39 +14,35 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         h1 {
             text-align: center;
         }
-
         .news-grid {
             display: flex;
-            flex-wrap: wrap; /* Zapewnia zawijanie się elementów */
-            gap: 20px; /* Odstępy między elementami */
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
             padding-bottom: 20px;
         }
-        
         .news-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-basis: calc(33.333% - 20px); /* 3 elementy w rzędzie na większych ekranach */
+            flex-basis: calc(33.333% - 20px);
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             background-color: #fff;
-            box-sizing: border-box; /* Upewnia się, że padding nie zwiększa szerokości */
+            box-sizing: border-box;
         }
-        
         .news-image {
-            width: 100%;
-            height: auto;
+            width: 300px; /* ZMIENIONO: Dodano stałą szerokość */
+            height: 200px; /* ZMIENIONO: Dodano stałą wysokość */
+            object-fit: cover; /* ZMIENIONO: Zapewnia skalowanie obrazu bez zniekształceń */
             border-radius: 6px;
             margin-bottom: 10px;
         }
-
         .read-more-button {
             padding: 12px 20px;
             background-color: #007bff;
@@ -58,83 +53,76 @@
             font-size: 1.1em;
             transition: background-color 0.3s ease;
         }
-
         .read-more-button:hover {
             background-color: #0056b3;
         }
-        
         /* Media queries dla responsywności */
         @media (max-width: 992px) {
             .news-item {
-                flex-basis: calc(50% - 20px); /* 2 elementy w rzędzie na tabletach */
+                flex-basis: calc(50% - 20px);
             }
         }
-
         @media (max-width: 576px) {
             .news-item {
-                flex-basis: 100%; /* 1 element w rzędzie na urządzeniach mobilnych */
+                flex-basis: 100%;
             }
         }
     </style>
 </head>
 <body>
-<div id="header-placeholder">
-</div>
-<div class="greeting-text" data-lang="gnz">
-    <div class="container">
-        <h1>Vesty</h1>
-        
-        <div class="news-grid">
-                        <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+    <div id="header-placeholder"></div>
+    <div class="greeting-text" data-lang="gnz">
+        <div class="container">
+            <h1>Vesty</h1>
+            <div class="news-grid">
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="2.html" class="read-more-button">Alert z 1.9.2025</a>
-            </div>
-            <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+                    <a href="2.html" class="read-more-button">Alert z 1.9.2025</a>
+                </div>
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="1.html" class="read-more-button">Povstane krajovej strony</a>
+                    <a href="1.html" class="read-more-button">Povstane krajovej strony</a>
+                </div>
             </div>
+        </div>
     </div>
-</div>
-</div>
-<div class="greeting-text" data-lang="pol">
-    <div class="container">
-        <h1>Wiadomości</h1>
-        
-        <div class="news-grid">
-                                    <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+    <div class="greeting-text" data-lang="pol">
+        <div class="container">
+            <h1>Wiadomości</h1>
+            <div class="news-grid">
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="2.html" class="read-more-button">Alert z dnia 1 września 2025</a>
-            </div>
-            <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+                    <a href="2.html" class="read-more-button">Alert z dnia 1 września 2025</a>
+                </div>
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="1.html" class="read-more-button">Powstanie strony państwowej</a>
+                    <a href="1.html" class="read-more-button">Powstanie strony państwowej</a>
+                </div>
             </div>
+        </div>
     </div>
-</div>
-</div>
-<div class="greeting-text" data-lang="eng">
-    <div class="container">
-        <h1>News</h1>
-        
-        <div class="news-grid">
-                                    <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+    <div class="greeting-text" data-lang="eng">
+        <div class="container">
+            <h1>News</h1>
+            <div class="news-grid">
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="2.html" class="read-more-button">Alert from 1st September 2025</a>
-            </div>
-            <div class="news-item">
-            <a class="read-more-button">1.9.2025</a>
+                    <a href="2.html" class="read-more-button">Alert from 1st September 2025</a>
+                </div>
+                <div class="news-item">
+                    <a class="read-more-button">1.9.2025</a>
                     <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek wiadomości 1" class="news-image">
-                <a href="1.html" class="read-more-button">Developing of state website</a>
+                    <a href="1.html" class="read-more-button">Developing of state website</a>
+                </div>
             </div>
+        </div>
     </div>
-</div>
-</div>
-<div id="footer-placeholder"></div>
-<script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    <div id="footer-placeholder"></div>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
