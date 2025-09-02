@@ -2405,6 +2405,10 @@
 "pedał": "pedał - pedal",
 "pedofilia": "pedofilia - pedofyla",
 "pedofil": "pedofil - pedofylyst",
+"przykry": "przykry - prykry",
+"przykro": "przykro - prykro",
+"polecać": "polecać - polecar",
+"poprawny": "poprawny - popravny",
         },
         eng: {
 "and": "and - a",
