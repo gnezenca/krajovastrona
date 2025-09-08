@@ -6,104 +6,189 @@
     <title>Gnezenska Respublika - Hlovna Strona</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <style>
-    .scrolling-container {
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid #ccc;
-}
+        .scrolling-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
 
-table {
-  border-collapse: collapse;
-  white-space: nowrap;
-  animation: scroll-left 20s linear infinite;
-  display: inline-block; /* lub block; */
-}
+        .scrolling-content {
+            display: flex;
+            animation: scroll-left 20s linear infinite;
+        }
 
-td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
+        .scrolling-item {
+            flex-shrink: 0;
+            width: calc(100vw / 6);
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
 
-.img-table {
-  width: 150px;
-  height: auto;
-}
+        .scrolling-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-</style>
+        .scrolling-item .date-btn,
+        .scrolling-item .title-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .scrolling-item .date-btn:hover,
+        .scrolling-item .title-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
     <meta name="google-site-verification" content="3C26_r49vlK6Fqxqg7EvUcuhGbO-LiuKNr0-tT7gN8A" />
 </head>
 <body>
-    <div id="header-placeholder">
-        </div>
+    <div id="header-placeholder"></div>
     <div class="greeting-text" data-lang="gnz">
-    <h1>Fitamy v krajovyj strony Gnezenskej Respubliky!!!</h1>
+        <h1>Fitamy v krajovyj strony Gnezenskej Republiky!!!</h1>
         <h2>Kym semy</h2>
-    Semy odnem z gneznickyh mykrokrajov, mamy hlovnego groda v Zlotstoky. Seharakteryzovamy vlasnom movom, narodem i roznymy innymy cehamy.<br>
-    <i>Hteś nam pomocyr? <a href="https://form.jotform.com/252423267444355">Dolučyi ku nam!</a></i>
+        Semy odnem z gneznickyh mykrokrajov, mamy hlovnogo groda v Zlotstoky. Seharakteryzovamy vlasnom movom, narodem i roznymy innymy cehamy.<br>
+        <i>Hteś nam pomocyr? <a href="https://form.jotform.com/252423267444355">Dolučyi ku nam!</a></i>
         <h2>Vesty</h2>
-    <div class="scrolling-container">
-      <table>
-      <tr>
-      <td><a>6.9.2025</a></td><td><a>6.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td>
-    </tr>
-    <tr>
-          <td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td>
-    </tr>
-    <tr>
-       <td><a href="vesty/6.html">Tadeush Vrantch otvolany z vlady v Gnezenskym Domynatym?</a></td><td><a href="vesty/5.html">Prezydentova elekca otvolana</a></td><td><a href="vesty/4.html">Vtora Anty-vrančkova Vojna</a></td><td><a href="vesty/3.html">Povstane GTA</a></td><td><a href="vesty/2.html">Alert z 1.9.2025</a></td><td><a href="vesty/1.html">Povstane krajovej strony</a></td>
-    </tr>
-  </table>
-</div>
-    </div>
-    <div class="greeting-text" data-lang="pol">
-    <h1>Witamy w stronie państwowej Republiki Gneżeńskiej!!!</h1>
-    <h2>Kim jesteśmy</h2>
-    Jesteśmy jedną z polskich mikronacji, stolicę mamy w Złotymstoku (Białymstoku). Charakteryzujemy się własnym językiem, narodem i różnymi innymi cechami.<br>
-    <i>Chcesz nam pomóc? <a href="https://form.jotform.com/252423267444355">Dołącz do nas!</a></i>
-    <h2>Wiadomości</h2>
-    <div class="scrolling-container">
-  <table>
-      <tr>
-      <td><a>7.9.2025</a></td><td><a>6.9.2025</a></td><td><a>6.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td>
-    </tr>
-    <tr>
-          <td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td>
-    </tr>
-    <tr>
-       <td><a href="vesty/6.html">Tadeush Vrantch odwołany z władzy w DOminacie Gneżencji?</a></td><td><a href="vesty/5.html">Wybory prezydenckie odwołane</a></td><td><a href="vesty/4.html">Druga Wojna Anty-vrančkowa</a></td><td><a href="vesty/3.html">Powstanie GTA</a></td><td><a href="vesty/2.html">Alert z dnia 1 września 2025</a></td><td><a href="vesty/1.html">Powstanie strony państwowej</a></td>
-    </tr>
-  </table>
-</div>
-    </div>
-    <div class="greeting-text" data-lang="eng">
-    <h1>Welcome to the state website of Republic of Gnezenland!!!</h1>
-        <h2>Who we are</h2>
-    We're one of polish micronations, we have the capital in Zlotstoka (Białystok). We're characterizing by our own language, nation and different other qualities.<br>
-    <i>Do you want to help us? <a href="https://form.jotform.com/252423267444355">Join to us!</a></i>
-        <h2>News</h2>
-    <div class="scrolling-container">
-  <table>
-      <tr>
-      <td><a>7.9.2025</a></td><td><a>6.9.2025</a></td><td><a>6.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td><td><a>1.9.2025</a></td>
-    </tr>
-    <tr>
-          <td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 1"></td><td><img class="img-table" src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 1"></td>
-    </tr>
-    <tr>
-      <td><a href="vesty/6.html">Tadeush Vrantch cancelled from power in Dominate of Gnezenland?</a></td> <td><a href="vesty/5.html">Presidential elections cancelled</a></td><td><a href="vesty/4.html">Anti-vrančk War II</a></td><td><a href="vesty/3.html">Developing of GTA</a></td><td><a href="vesty/2.html">Alert from 1st September 2025</a></td><td><a href="vesty/1.html">Developing of state website</a></td>
-    </tr>
-  </table>
-</div>
+        <div class="scrolling-container">
+            <div class="scrolling-content">
+                <div class="scrolling-item">
+                    <button class="date-btn">7.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1">
+                    <button class="title-btn" onclick="window.location.href='vesty/6.html'">Tadeush Vrantch otvolany z vlady v Gnezenskym Domynatym?</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 2">
+                    <button class="title-btn" onclick="window.location.href='vesty/5.html'">Prezydentova elekca otvolana</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 3">
+                    <button class="title-btn" onclick="window.location.href='vesty/4.html'">Vtora Anty-vrančkova Vojna</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 4">
+                    <button class="title-btn" onclick="window.location.href='vesty/3.html'">Povstane GTA</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 5">
+                    <button class="title-btn" onclick="window.location.href='vesty/2.html'">Alert z 1.9.2025</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 6">
+                    <button class="title-btn" onclick="window.location.href='vesty/1.html'">Povstane krajovej strony</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="greeting-text" data-lang="pol">
+        <h1>Witamy w stronie państwowej Republiki Gneżeńskiej!!!</h1>
+        <h2>Kim jesteśmy</h2>
+        Jesteśmy jedną z polskich mikronacji, stolicę mamy w Złotymstoku (Białystok). Charakteryzujemy się własnym językiem, narodem i różnymi innymi cechami.<br>
+        <i>Chcesz nam pomóc? <a href="https://form.jotform.com/252423267444355">Dołącz do nas!</a></i>
+        <h2>Wiadomości</h2>
+        <div class="scrolling-container">
+            <div class="scrolling-content">
+                <div class="scrolling-item">
+                    <button class="date-btn">7.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1">
+                    <button class="title-btn" onclick="window.location.href='vesty/6.html'">Tadeush Vrantch odwołany z władzy w DOminacie Gneżencji?</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 2">
+                    <button class="title-btn" onclick="window.location.href='vesty/5.html'">Wybory prezydenckie odwołane</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 3">
+                    <button class="title-btn" onclick="window.location.href='vesty/4.html'">Druga Wojna Anty-vrančkowa</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 4">
+                    <button class="title-btn" onclick="window.location.href='vesty/3.html'">Powstanie GTA</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 5">
+                    <button class="title-btn" onclick="window.location.href='vesty/2.html'">Alert z dnia 1 września 2025</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 6">
+                    <button class="title-btn" onclick="window.location.href='vesty/1.html'">Powstanie strony państwowej</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="greeting-text" data-lang="eng">
+        <h1>Welcome to the state website of Republic of Gnezenland!!!</h1>
+        <h2>Who we are</h2>
+        We're one of polish micronations, we have the capital in Zlotstoka (Białystok). We're characterizing by our own language, nation and different other qualities.<br>
+        <i>Do you want to help us? <a href="https://form.jotform.com/252423267444355">Join to us!</a></i>
+        <h2>News</h2>
+        <div class="scrolling-container">
+            <div class="scrolling-content">
+                <div class="scrolling-item">
+                    <button class="date-btn">7.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 1">
+                    <button class="title-btn" onclick="window.location.href='vesty/6.html'">Tadeush Vrantch cancelled from power in Dominate of Gnezenland?</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/cancelled.png" alt="Obrazek 2">
+                    <button class="title-btn" onclick="window.location.href='vesty/5.html'">Presidential elections cancelled</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">6.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vranck.png" alt="Obrazek 3">
+                    <button class="title-btn" onclick="window.location.href='vesty/4.html'">Anti-vrančk War II</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 4">
+                    <button class="title-btn" onclick="window.location.href='vesty/3.html'">Developing of GTA</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek 5">
+                    <button class="title-btn" onclick="window.location.href='vesty/2.html'">Alert from 1st September 2025</button>
+                </div>
+                <div class="scrolling-item">
+                    <button class="date-btn">1.9.2025</button>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" alt="Obrazek 6">
+                    <button class="title-btn" onclick="window.location.href='vesty/1.html'">Developing of state website</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="footer-placeholder"></div>
     <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
