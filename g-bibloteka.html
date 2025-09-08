@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Gnezenska Bibloteka</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        p, ul, table {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+        .search-box {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            flex-grow: 1;
+        }
+        .search-box button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <div class="greeting-text" data-lang="gnz">
+        <h1 align="center">Fitamy na strony Gnezenskej Bibloteky!!!</h1>
+        <div class="container">
+            <section id="onas">
+                <h2>Co to set?</h2>
+                <p>To set elektronična versa bibloteky, vona mat e-booky i fotografy stron z knyg. Teper mamy v svojyj zborah 20 knyg, ale numer ten stopnovo vzrastat.</p>
+            </section>
+            <section id="katalog">
+                <h2>Katalog knyg</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput-gnz" placeholder="Vyhledai tytula...">
+                    <button onclick="filterTable('gnz')">Hledai</button>
+                </div>
+                <table id="booksTable-gnz">
+                    <thead>
+                        <tr>
+                            <th>Tytul</th>
+                            <th>Autor</th>
+                            <th>Numer stron</th>
+                            <th>Dvanact napisana</th>
+                            <th>Mova</th>
+                            <th>Kod knygy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Das ist deutsch Kompakt 7</td><td>Nowa Era</td><td>108</td><td>2017</td><td>gnezničina</td><td>AAA002</td></tr>
+                        <tr><td>Das ist deutsch Kompakt 8</td><td>Nowa Era</td><td>116</td><td>2018</td><td>gnezničina</td><td>AAA001</td></tr>
+                        <tr><td>Konstytuca Gneznickej Republiky</td><td>Stanisław Michalkiewicz (*1947)</td><td>32</td><td>2016</td><td>gnezničina</td><td>AAA011</td></tr>
+                        <tr><td>Moj pes</td><td>John Bower (*?), Caroline Bower (*?)</td><td>208</td><td>1998</td><td>gnezničina</td><td>AAA014</td></tr>
+                        <tr><td>Polityka 14/2024</td><td>Polityka</td><td>124</td><td>2024</td><td>gnezničina</td><td>AAA007</td></tr>
+                        <tr><td>Polityka 15/2024</td><td>Polityka</td><td>108</td><td>2024</td><td>gnezničina</td><td>AAA008</td></tr>
+                        <tr><td>Polityka 16/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>gnezničina</td><td>AAA006</td></tr>
+                        <tr><td>Polityka 17/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>gnezničina</td><td>AAA004</td></tr>
+                        <tr><td>Polityka 18-19/2024</td><td>Polityka</td><td>172</td><td>2024</td><td>gnezničina</td><td>AAA010</td></tr>
+                        <tr><td>Polityka 20/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>gnezničina</td><td>AAA005</td></tr>
+                        <tr><td>Polityka 24/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>gnezničina</td><td>AAA009</td></tr>
+                        <tr><td>Polityka 41/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>gnezničina</td><td>AAA003</td></tr>
+                        <tr><td>Polityka Narodowa 25/2021</td><td>Polityka Narodowa</td><td>308</td><td>2021</td><td>gnezničina</td><td>AAA012</td></tr>
+                        <tr><td>Polska Wschodnia Kultura/Eastern Poland Culture</td><td>Unitex</td><td>24</td><td>?</td><td>gnezničina, anglovščina</td><td>AAA016</td></tr>
+                        <tr><td>Polska Wschodnia Turystyka/Eastern Poland Tourism</td><td>Unitex</td><td>44</td><td>?</td><td>gnezničina, anglovščina</td><td>AAA017</td></tr>
+                        <tr><td>Ryby sa super</td><td>Karol Okrasa (*1978), Dorota Wellman (*1961)</td><td>288</td><td>2015</td><td>gnezničina</td><td>AAA013</td></tr>
+                        <tr><td>Sekrety Zlotstoky</td><td>Andrzej Lechowski (*1956)</td><td>180</td><td>2016</td><td>gnezničina</td><td>AAA000</td></tr>
+                        <tr><td>Świat Wiedzy 11/2024</td><td>Świat Wiedzy</td><td>88</td><td>2024</td><td>gnezničina</td><td>AAA019</td></tr>
+                        <tr><td>Świat Wiedzy 6/2025</td><td>Świat Wiedzy</td><td>88</td><td>2025</td><td>gnezničina</td><td>AAA018</td></tr>
+                        <tr><td>Tutorial anglovščiny</td><td>Dorota Olszewska (*?)</td><td>316</td><td>2005</td><td>gnezničina</td><td>AAA015</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="dla-kogo">
+                <h2>Pro kogo set ta bibloteka?</h2>
+                <p>Bibloteka ta set dostupna pro vsyh person, kotory za cyvilamy i persony, kotore da knygu pro bibloteky.</p>
+            </section>
+            <section id="wypozyczanie">
+                <h2>Jak vypujčyr knygu?</h2>
+                <p>Aby vypujčyr knygu treba napisar na imejla bibloteky gnezenskabibloteka@wp.pl prosene o vypujčene knygy. Vtedy treba napisar jaku knygu hteš vypujčyr i na jaku dlouho. Vtedy otrymaš plyk z knygom.</p>
+            </section>
+            <section id="darowizna">
+                <h2>Jak dar knygu?</h2>
+                <p>Aby dar knygu treba vyslar na imejla gnezenskabibloteka@wp.pl plyk z ibukem lub plyky z fotografamy stron knyg. Take sa vymagana z tym:</p>
+                <ul>
+                    <li>Muset byla cela knyga, ne jej čustka</li>
+                    <li>V fotografah knyg musa byr strony (muset tez byt okladka i numery stron)</li>
+                    <li>Vsy fotografy musa byr čytelne</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <div class="greeting-text" data-lang="pol">
+        <h1 align="center">Witamy na stronie Biblioteki Gneżeńskiej!!!</h1>
+        <div class="container">
+            <section id="onas">
+                <h2>Co to jest?</h2>
+                <p>Jest to elektroniczna wersja biblioteki posiadająca e-booki oraz zdjęcia stron z książek. Obecnie posiadamy w swoich zbiorach 20 książek, ale liczba ta stopniowo wzrasta.</p>
+            </section>
+            <section id="katalog">
+                <h2>Katalog książek</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput-pol" placeholder="Wyszukaj tytuł...">
+                    <button onclick="filterTable('pol')">Szukaj</button>
+                </div>
+                <table id="booksTable-pol">
+                    <thead>
+                        <tr>
+                            <th>Tytuł</th>
+                            <th>Autor</th>
+                            <th>Liczba stron</th>
+                            <th>Rok napisania</th>
+                            <th>Język</th>
+                            <th>Kod książki</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Das ist deutsch Kompakt 7</td><td>Nowa Era</td><td>108</td><td>2017</td><td>polski</td><td>AAA002</td></tr>
+                        <tr><td>Das ist deutsch Kompakt 8</td><td>Nowa Era</td><td>116</td><td>2018</td><td>polski</td><td>AAA001</td></tr>
+                        <tr><td>Konstytucja Rzeczypospolitej Polskiej</td><td>Stanisław Michalkiewicz (*1947)</td><td>32</td><td>2016</td><td>polski</td><td>AAA011</td></tr>
+                        <tr><td>Mój pies</td><td>John Bower (*?), Caroline Bower (*?)</td><td>208</td><td>1998</td><td>polski</td><td>AAA014</td></tr>
+                        <tr><td>Polityka 14/2024</td><td>Polityka</td><td>124</td><td>2024</td><td>polski</td><td>AAA007</td></tr>
+                        <tr><td>Polityka 15/2024</td><td>Polityka</td><td>108</td><td>2024</td><td>polski</td><td>AAA008</td></tr>
+                        <tr><td>Polityka 16/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polski</td><td>AAA006</td></tr>
+                        <tr><td>Polityka 17/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polski</td><td>AAA004</td></tr>
+                        <tr><td>Polityka 18-19/2024</td><td>Polityka</td><td>172</td><td>2024</td><td>polski</td><td>AAA010</td></tr>
+                        <tr><td>Polityka 20/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polski</td><td>AAA005</td></tr>
+                        <tr><td>Polityka 24/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polski</td><td>AAA009</td></tr>
+                        <tr><td>Polityka 41/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polski</td><td>AAA003</td></tr>
+                        <tr><td>Polityka Narodowa 25/2021</td><td>Polityka Narodowa</td><td>308</td><td>2021</td><td>polski</td><td>AAA012</td></tr>
+                        <tr><td>Polska Wschodnia Kultura/Eastern Poland Culture</td><td>Unitex</td><td>24</td><td>?</td><td>polski, angielski</td><td>AAA016</td></tr>
+                        <tr><td>Polska Wschodnia Turystyka/Eastern Poland Tourism</td><td>Unitex</td><td>44</td><td>?</td><td>polski, angielski</td><td>AAA017</td></tr>
+                        <tr><td>Ryby są super</td><td>Karol Okrasa (*1978), Dorota Wellman (*1961)</td><td>288</td><td>2015</td><td>polski</td><td>AAA013</td></tr>
+                        <tr><td>Samouczek języka angielskiego</td><td>Dorota Olszewska (*?)</td><td>316</td><td>2005</td><td>polski</td><td>AAA015</td></tr>
+                        <tr><td>Sekrety Białegostoku</td><td>Andrzej Lechowski (*1956)</td><td>180</td><td>2016</td><td>polski</td><td>AAA000</td></tr>
+                        <tr><td>Świat Wiedzy 11/2024</td><td>Świat Wiedzy</td><td>88</td><td>2024</td><td>polski</td><td>AAA019</td></tr>
+                        <tr><td>Świat Wiedzy 6/2025</td><td>Świat Wiedzy</td><td>88</td><td>2025</td><td>polski</td><td>AAA018</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="dla-kogo">
+                <h2>Dla kogo jest ta biblioteka?</h2>
+                <p>Biblioteka ta jest dostępna dla wszystkich osób, którzy są obywatelami oraz osoby, które dadzą książkę bibliotece.</p>
+            </section>
+            <section id="wypozyczanie">
+                <h2>Jak wypożyczyć książkę?</h2>
+                <p>Żeby wypożyczyć książkę trzeba napisać na e-mail biblioteki gnezenskabibloteka@wp.pl prośbę o wypożyczenie książki. Napisać trzeba wtedy jaką książkę chce się wypożyczyć i na jak długo. Otrzyma się wtedy plik z książką.</p>
+            </section>
+            <section id="darowizna">
+                <h2>Jak przekazać książkę?</h2>
+                <p>Żeby dać książkę trzeba wysłać na e-mail gnezenskabibloteka@wp.pl plik z e-bookiem lub pliki ze zdjęciami stron książki. W kwestii plików są następujące wymagania:</p>
+                <ul>
+                    <li>Musi być całość książki, a nie jej część</li>
+                    <li>W przypadku zdjęć książki muszą być strony łącznie z okładką i numery stron</li>
+                    <li>Wszystkie zdjęcia mają być czytelne</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <div class="greeting-text" data-lang="eng">
+        <h1 align="center">Welcome to the site of Gnezen Library!!!</h1>
+        <div class="container">
+            <section id="onas">
+                <h2>What's this?</h2>
+                <p>It's the e-version of library, which has e-books and photos of pages in book. Currently we have in our collection 20 books, but it'll be more.</p>
+            </section>
+            <section id="katalog">
+                <h2>Catalogue of books</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput-eng" placeholder="Search the title...">
+                    <button onclick="filterTable('eng')">Search</button>
+                </div>
+                <table id="booksTable-eng">
+                    <thead>
+                        <tr>
+                            <th>Titler</th>
+                            <th>Author</th>
+                            <th>Number of pages</th>
+                            <th>Year of writing</th>
+                            <th>Language</th>
+                            <th>Code of book</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Constitution of Republic of Poland</td><td>Stanisław Michalkiewicz (*1947)</td><td>32</td><td>2016</td><td>polish</td><td>AAA011</td></tr>
+                        <tr><td>Das ist deutsch Kompakt 7</td><td>Nowa Era</td><td>108</td><td>2017</td><td>polish</td><td>AAA002</td></tr>
+                        <tr><td>Das ist deutsch Kompakt 8</td><td>Nowa Era</td><td>116</td><td>2018</td><td>polish</td><td>AAA001</td></tr>
+                        <tr><td>My dog</td><td>John Bower (*?), Caroline Bower (*?)</td><td>208</td><td>1998</td><td>polish</td><td>AAA014</td></tr>
+                        <tr><td>Polityka 14/2024</td><td>Polityka</td><td>124</td><td>2024</td><td>polish</td><td>AAA007</td></tr>
+                        <tr><td>Polityka 15/2024</td><td>Polityka</td><td>108</td><td>2024</td><td>polish</td><td>AAA008</td></tr>
+                        <tr><td>Polityka 16/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polish</td><td>AAA006</td></tr>
+                        <tr><td>Polityka 17/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polish</td><td>AAA004</td></tr>
+                        <tr><td>Polityka 18-19/2024</td><td>Polityka</td><td>172</td><td>2024</td><td>polish</td><td>AAA010</td></tr>
+                        <tr><td>Polityka 20/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polish</td><td>AAA005</td></tr>
+                        <tr><td>Polityka 24/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polish</td><td>AAA009</td></tr>
+                        <tr><td>Polityka 41/2024</td><td>Polityka</td><td>100</td><td>2024</td><td>polish</td><td>AAA003</td></tr>
+                        <tr><td>Polityka Narodowa 25/2021</td><td>Polityka Narodowa</td><td>308</td><td>2021</td><td>polish</td><td>AAA012</td></tr>
+                        <tr><td>Polska Wschodnia Kultura/Eastern Poland Culture</td><td>Unitex</td><td>24</td><td>?</td><td>polish, english</td><td>AAA016</td></tr>
+                        <tr><td>Polska Wschodnia Turystyka/Eastern Poland Tourism</td><td>Unitex</td><td>44</td><td>?</td><td>polish, english</td><td>AAA017</td></tr>
+                        <tr><td>Fish are super</td><td>Karol Okrasa (*1978), Dorota Wellman (*1961)</td><td>288</td><td>2015</td><td>polish</td><td>AAA013</td></tr>
+                        <tr><td>Tutorial of english language</td><td>Dorota Olszewska (*?)</td><td>316</td><td>2005</td><td>polish</td><td>AAA015</td></tr>
+                        <tr><td>Secrets of Białystok</td><td>Andrzej Lechowski (*1956)</td><td>180</td><td>2016</td><td>polish</td><td>AAA000</td></tr>
+                        <tr><td>Świat Wiedzy 11/2024</td><td>Świat Wiedzy</td><td>88</td><td>2024</td><td>polish</td><td>AAA019</td></tr>
+                        <tr><td>Świat Wiedzy 6/2025</td><td>Świat Wiedzy</td><td>88</td><td>2025</td><td>polish</td><td>AAA018</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="dla-kogo">
+                <h2>For who is this library?</h2>
+                <p>This library is for every person, which is a citizen and people, which'll give us a book.</p>
+            </section>
+            <section id="wypozyczanie">
+                <h2>How to lend a book?</h2>
+                <p>If you want to lend a book, you have to write to e-mail of the library gnezenskabibloteka@wp.pl ask to lend a book. You have to write then: which book do you want to lend and how long time do you want. Then you'll get a file of this book.</p>
+            </section>
+            <section id="darowizna">
+                <h2>How to give a book?</h2>
+                <p>If you want to give a book, you have to write to e-mail of the library gnezenskabibloteka@wp.pl file with e-book or files with photos of pages of the book. We have these requirements:</p>
+                <ul>
+                    <li>It has to be all the book, not the part.</li>
+                    <li>The files with photos of book have to have the photos of cover. It have to be the numbers of pages on the photos.</li>
+                    <li>All the photos have to be readable.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    <script>
+        function filterTable(lang) {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput-" + lang);
+            filter = input.value.toLowerCase();
+            table = document.getElementById("booksTable-" + lang);
+            
+            if (table) {
+                tr = table.getElementsByTagName("tr");
+                // Pętla od 1, aby pominąć nagłówek tabeli (<th>)
+                for (i = 1; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0]; // Pobieramy komórkę z tytułem
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Dodanie obsługi wyszukiwania po naciśnięciu klawisza Enter
+        var searchInputs = document.querySelectorAll('.search-box input');
+        searchInputs.forEach(input => {
+            input.addEventListener("keyup", function(event) {
+                if (event.key === "Enter") {
+                    var lang = this.id.split('-')[1];
+                    filterTable(lang);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
