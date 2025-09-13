@@ -59,7 +59,6 @@
             background-color: #333;
             color: white;
             cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -117,26 +116,26 @@
                 <h2>Pro kogo set ta bibloteka?</h2>
                 <p>Dostup ku bibloteke set oprety na 3 paketah: "zvykly", "pro" i "extra-pro". Oto vymagany i profyty z kazdego z nyh.</p>
                 <table>
-                <thead>
-                <th>Nazva</th><th>Profyty</th><th>Vymagany pro cyvila Gnezency</th><th>Vymagany pro innyh</th>
-                </thead>
-                <tbody>
-                <tr>
-                <td>zvykly</td><td>10 knyg/mesec</td><td>neco</td><td>dane 1 knygy</td>
-                </tr>
-                <tr>
-                <td>pro</td><td>30 knyg/mesec</td><td>dane 1 knygy</td><td>dane 1 knygy/mesec</td>
-                </tr>
-                <tr>
-                <td>extra-pro</td><td>neohranycyny numer knyg</td><td>dane 1 knygy/mesec</td><td>dane 2 knyg/mesec</td>
-                </tr>
-                </tbody>
+                    <thead>
+                    <th>Nazva</th><th>Profyty</th><th>Vymagany pro cyvila Gnezency</th><th>Vymagany pro innyh</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>zvykly</td><td>10 knyg/mesec</td><td>neco</td><td>dane 1 knygy</td>
+                    </tr>
+                    <tr>
+                    <td>pro</td><td>30 knyg/mesec</td><td>dane 1 knygy</td><td>dane 1 knygy/mesec</td>
+                    </tr>
+                    <tr>
+                    <td>extra-pro</td><td>neohranycyny numer knyg</td><td>dane 1 knygy/mesec</td><td>dane 2 knyg/mesec</td>
+                    </tr>
+                    </tbody>
                 </table>
             </section>
             <section id="wypozyczanie">
                 <h2>Jak vypujčyr knygu?</h2>
                 <p>Aby vypujčyr knygu, treba vypelnyr <a href="https://form.jotform.com/252535371552355">forma</a>. V otskazy otrymaš imejla z odpovednym plykem.<br>
-                Vazne: <b>Museš mar konta v bibloteky. Jesly jeho nemaš, zalozyi za pomocom <a href="https://form.jotform.com/252514799433364">forma</a></b></p>
+                Vazne: <b>Museš mar konta v bibloteky. Jesly jego nemaš, zalozyi za pomocom <a href="https://form.jotform.com/252514799433364">forma</a></b></p>
             </section>
             <section id="darowizna">
                 <h2>Jak dar knygu?</h2>
@@ -145,7 +144,24 @@
                     <li>Muset byla cela knyga, ne jej čustka</li>
                     <li>V fotografah knyg musa byr strony (muset tez byt okladka i numery stron)</li>
                     <li>Vsy fotografy musa byr čytelne</li>
+                    <li>Prekazane knygy treba zarezervovar pres <a href="https://form.jotform.com/252553145055352">forma</a>. Zanym to zdelaš, spravdi v ponyskojovym katalogym, uz ktos zarezervoval. Rezervaca trvat pres 2 sudmdeny.
                 </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tytul</th>
+                            <th>Autor</th>
+                            <th>Den rezervacy</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td>Smartbook Poznać Przeszłość 1</td>
+                            <td>Nowa Era</td>
+                            <td>13.9.2025</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
     </div>
@@ -202,35 +218,69 @@
                 <h2>Dla kogo jest ta biblioteka?</h2>
                 <p>Dostęp do bibloteki oparty jest na 3 pakietach: "zwykły", "pro" i "extra-pro". Oto wymagania i korzyści z każdego z nich.</p>
                 <table>
-                <thead>
-                <th>Nazwa</th><th>Korzyści</th><th>Wymagania dla obywatela Gneżencji</th><th>Wymagania dla innych</th>
-                </thead>
-                <tbody>
-                <tr>
-                <td>zwykły</td><td>10 książek/miesiąc</td><td>nic</td><td>danie 1 książki</td>
-                </tr>
-                <tr>
-                <td>pro</td><td>30 książek/miesiąc</td><td>danie 1 książki</td><td>danie 1 książki/miesiąc</td>
-                </tr>
-                <tr>
-                <td>extra-pro</td><td>nieograniczona liczba książek</td><td>danie 1 książki/miesiąc</td><td>danie 2 książek/miesiąc</td>
-                </tr>
-                </tbody>
+                    <thead>
+                    <th>Nazwa</th><th>Korzyści</th><th>Wymagania dla obywatela Gneżencji</th><th>Wymagania dla innych</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>zwykły</td><td>10 książek/miesiąc</td><td>nic</td><td>danie 1 książki</td>
+                    </tr>
+                    <tr>
+                    <td>pro</td><td>30 książek/miesiąc</td><td>danie 1 książki</td><td>danie 1 książki/miesiąc</td>
+                    </tr>
+                    <tr>
+                    <td>extra-pro</td><td>nieograniczona liczba książek</td><td>danie 1 książki/miesiąc</td><td>danie 2 książek/miesiąc</td>
+                    </tr>
+                    </tbody>
                 </table>
             </section>
             <section id="wypozyczanie">
                 <h2>Jak wypożyczyć książkę?</h2>
-                <p>Żeby wypożyczyć książkę, trzeba wypełnić <a href="https://form.jotform.com/252535371552355">formularz</a>. W odpowiedzi otrzymasz e-maila z odpowiednim plikiem.<br>
+                         <li>Giving a book you have to book by a <a href="https://form.jotform.com/252553145055352">form</a>. Before you'll do this, check in catalogue below, has someone already booked. Reservation is during 2 weeks.
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Date of booking</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td>Smartbook Poznać Przeszłość 1</td>
+                            <td>Nowa Era</td>
+                            <td>13.9.2025</td>
+                        </tr>
+                    </tbody>
+                </table>           <p>Żeby wypożyczyć książkę, trzeba wypełnić <a href="https://form.jotform.com/252535371552355">formularz</a>. W odpowiedzi otrzymasz e-maila z odpowiednim plikiem.<br>
                 Ważne: <b>Musisz mieć konto w bibliotece. Jeśli go nie masz, załóż za pomocą <a href="https://form.jotform.com/252514799433364">formularza</a></b></p>
             </section>
             <section id="darowizna">
                 <h2>Jak przekazać książkę?</h2>
-                <p>Żeby dać książkę trzeba wysłać na e-mail gnezenskabibloteka@wp.pl plik z e-bookiem lub pliki ze zdjęciami stron książki. W kwestii plików są następujące wymagania:</p>
+                <p>Żeby dać książkę trzeba wysłać na e-mail gnezenskabibloteka@wp.pl plik z e-bookiem lub pliki ze zdjęciami stron książki. Są następujące wymagania:</p>
                 <ul>
                     <li>Musi być całość książki, a nie jej część</li>
                     <li>W przypadku zdjęć książki muszą być strony łącznie z okładką i numery stron</li>
                     <li>Wszystkie zdjęcia mają być czytelne</li>
+                    <li>Przekazanie książki trzeba zarezerwować przez <a href="https://form.jotform.com/252553145055352">formularz</a>. Zanim to zrobisz, sprawdź w poniższym katalogu, czy ktoś już nie zarezerwował. Rezerwacja trwa przez 2 tygodnie.
                 </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tytuł</th>
+                            <th>Autor</th>
+                            <th>Data rezerwacji</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td>Smartbook Poznać Przeszłość 1</td>
+                            <td>Nowa Era</td>
+                            <td>13.9.2025</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
     </div>
@@ -287,20 +337,20 @@
                 <h2>For who is this library?</h2>
                 <p>Access to library is based to 3 packages: "usual", "pro" abd "extra-pro". These are demands and profits from everything of them.</p>
                 <table>
-                <thead>
-                <th>Name</th><th>Profits</th><th>Demands from citizen of Gnezenland</th><th>Demands for others</th>
-                </thead>
-                <tbody>
-                <tr>
-                <td>usual</td><td>10 books/month</td><td>nothing</td><td>giving 1 book</td>
-                </tr>
-                <tr>
-                <td>pro</td><td>30 books/month</td><td>giving 1 book</td><td>giving 1 book/month</td>
-                </tr>
-                <tr>
-                <td>extra-pro</td><td>unlimited number of books</td><td>giving 1 book/month</td><td>giving 2 books/month</td>
-                </tr>
-                </tbody>
+                    <thead>
+                    <th>Name</th><th>Profits</th><th>Demands from citizen of Gnezenland</th><th>Demands for others</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>usual</td><td>10 books/month</td><td>nothing</td><td>giving 1 book</td>
+                    </tr>
+                    <tr>
+                    <td>pro</td><td>30 books/month</td><td>giving 1 book</td><td>giving 1 book/month</td>
+                    </tr>
+                    <tr>
+                    <td>extra-pro</td><td>unlimited number of books</td><td>giving 1 book/month</td><td>giving 2 books/month</td>
+                    </tr>
+                    </tbody>
                 </table>
             </section>
             <section id="wypozyczanie">
@@ -315,7 +365,24 @@
                     <li>It has to be all the book, not the part.</li>
                     <li>The files with photos of book have to have the photos of cover. It have to be the numbers of pages on the photos.</li>
                     <li>All the photos have to be readable.</li>
+                    <li>Giving a book you have to book by a <a href="https://form.jotform.com/252553145055352">form</a>. Before you'll do this, check in catalogue below, has someone already booked. Reservation is during 2 weeks.
                 </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Date of booking</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td>Smartbook Poznać Przeszłość 1</td>
+                            <td>Nowa Era</td>
+                            <td>13.9.2025</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
     </div>
