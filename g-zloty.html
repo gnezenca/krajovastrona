@@ -6,255 +6,262 @@
     <title>Gnezenska Respublika - Gnezensky Zloty</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <style>
-        <style>
-    body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background-color: #f4f4f4;
-    }
-    
-    /* Nowy kontener do wyśrodkowania tabeli */
-    .table-container {
-        max-width: 600px; /* Ustawia maksymalną szerokość kontenera */
-        margin: 0 auto;  /* Wyśrodkowuje kontener na stronie */
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        border-radius: 8px; /* Opcjonalnie: dodaje zaokrąglone rogi */
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
-    #searchContainer {
-        margin-bottom: 20px;
-    }
-    
-    #searchInput {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-    }
+        /* Nowy kontener do wyśrodkowania tabeli */
+        .table-container {
+            max-width: 600px; /* Ustawia maksymalną szerokość kontenera */
+            margin: 0 auto;  /* Wyśrodkowuje kontener na stronie */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px; /* Opcjonalnie: dodaje zaokrąglone rogi */
+        }
 
-    table {
-        width: 100%; /* Sprawia, że tabela zajmuje całą szerokość swojego kontenera (table-container) */
-        border-collapse: collapse;
-    }
+        #searchContainer {
+            margin-bottom: 20px;
+        }
 
-    th, td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
 
-    th {
-        background-color: #e9e9e9;
-        font-weight: bold;
-    }
+        table {
+            width: 100%; /* Sprawia, że tabela zajmuje całą szerokość swojego kontenera (table-container) */
+            border-collapse: collapse;
+        }
 
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-    
-    .flag-icon-currency {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        margin-right: 12px;
-        vertical-align: middle;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-    .hidden-currency-text {
-        display: none;
-    }
-</style>
+        th {
+            background-color: #e9e9e9;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .flag-icon-currency {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 12px;
+            vertical-align: middle;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .hidden-currency-text {
+            display: none;
+        }
     </style>
 </head>
 <body>
 <div id="header-placeholder">
 </div>
 
-<div class="table-container"> <div class="greeting-text" data-lang="gnz">
+<div class="table-container">
+    <div class="greeting-text" data-lang="gnz">
+        <h2>O valute</h2>
+
+        <p>Ta valuta povstala v 1.6.2024, zastupovajuc kutyhčasovego gneznickego zlotego. Vtedy zostal ustalyny staly kurs vobec švajcarovego franka (1CHF=8,70GNZ, vtedy 1PLN=2GNZ). V počutekym Juny byl odeny v istory valuty kryzys, dojslo ku inflace 108%. Ryhlo jednak dojslo ku povrotu ku normalnej sytuacy.</p>
         <h2>Kurs valut (stan z 12.9.2025)</h2>
-        
+
         <div id="searchContainer">
             <input type="text" id="searchInput" placeholder="Vpisai koda valuty">
         </div>
 
         <table>
             <thead>
-                <tr>
-                    <th>Valuta</th>
-                    <th>Jak vele GNZ to odna štuka</th>
-                </tr>
+            <tr>
+                <th>Valuta</th>
+                <th>Jak vele GNZ to odna štuka</th>
+            </tr>
             </thead>
             <tbody id="currencyTableBody">
-                <tr data-currency-code="CHF">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
-                        <span class="hidden-currency-text">CHF</span>
-                    </td>
-                    <td>8,70</td>
-                </tr>
-                <tr data-currency-code="EUR">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">EUR</span>
-                    </td>
-                    <td>8,13</td>
-                </tr>
-                <tr data-currency-code="GBP">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">GBP</span>
-                    </td>
-                    <td>9,39</td>
-                </tr>
-                <tr data-currency-code="PLN">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
-                        <span class="hidden-currency-text">PLN</span>
-                    </td>
-                    <td>1,91</td>
-                </tr>
-                <tr data-currency-code="USD">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">USD</span>
-                    </td>
-                    <td>6,94</td>
-                </tr>
+            <tr data-currency-code="CHF">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
+                    <span class="hidden-currency-text">CHF</span>
+                </td>
+                <td>8,70</td>
+            </tr>
+            <tr data-currency-code="EUR">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">EUR</span>
+                </td>
+                <td>8,13</td>
+            </tr>
+            <tr data-currency-code="GBP">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">GBP</span>
+                </td>
+                <td>9,39</td>
+            </tr>
+            <tr data-currency-code="PLN">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
+                    <span class="hidden-currency-text">PLN</span>
+                </td>
+                <td>1,91</td>
+            </tr>
+            <tr data-currency-code="USD">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">USD</span>
+                </td>
+                <td>6,94</td>
+            </tr>
             </tbody>
         </table>
     </div>
-</div> 
-<div class="table-container"> <div class="greeting-text" data-lang="pol">
+
+    <div class="greeting-text" data-lang="pol">
+        <h2>O walucie</h2>
+
+        <p>Waluta ta powstała 1 czerwca 2024 roku, zastępując dotychczasowy złoty polski. Ustalony został wówczas stały kurs wobec franka szwajcarskiego (1CHF=8,70GNZ, wtedy 1PLN=2GNZ). Na początku lipca był jedyny w historii waluty kryzys, doszło do inflacji 108%. Szybko jednak doszło do powrotu do normalnej sytuacji.</p>
         <h2>Kurs walut (stan z 12 września 2025)</h2>
-        
+
         <div id="searchContainer">
             <input type="text" id="searchInput" placeholder="Wpisz kod waluty">
         </div>
 
         <table>
             <thead>
-                <tr>
-                    <th>Waluta</th>
-                    <th>Ile GNZ to jedna sztuka</th>
-                </tr>
+            <tr>
+                <th>Waluta</th>
+                <th>Ile GNZ to jedna sztuka</th>
+            </tr>
             </thead>
             <tbody id="currencyTableBody">
-                <tr data-currency-code="CHF">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
-                        <span class="hidden-currency-text">CHF</span>
-                    </td>
-                    <td>8,70</td>
-                </tr>
-                <tr data-currency-code="EUR">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">EUR</span>
-                    </td>
-                    <td>8,13</td>
-                </tr>
-                <tr data-currency-code="GBP">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">GBP</span>
-                    </td>
-                    <td>9,39</td>
-                </tr>
-                <tr data-currency-code="PLN">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
-                        <span class="hidden-currency-text">PLN</span>
-                    </td>
-                    <td>1,91</td>
-                </tr>
-                <tr data-currency-code="USD">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">USD</span>
-                    </td>
-                    <td>6,94</td>
-                </tr>
+            <tr data-currency-code="CHF">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
+                    <span class="hidden-currency-text">CHF</span>
+                </td>
+                <td>8,70</td>
+            </tr>
+            <tr data-currency-code="EUR">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">EUR</span>
+                </td>
+                <td>8,13</td>
+            </tr>
+            <tr data-currency-code="GBP">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">GBP</span>
+                </td>
+                <td>9,39</td>
+            </tr>
+            <tr data-currency-code="PLN">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
+                    <span class="hidden-currency-text">PLN</span>
+                </td>
+                <td>1,91</td>
+            </tr>
+            <tr data-currency-code="USD">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">USD</span>
+                </td>
+                <td>6,94</td>
+            </tr>
             </tbody>
         </table>
     </div>
-</div> 
-<div class="table-container"> <div class="greeting-text" data-lang="eng">
+
+    <div class="greeting-text" data-lang="eng">
+        <h2>About a currency</h2>
+
+        <p>This currency has established in 1st June 2024, replacing previous polish zloty. Then it has established constant exchange course of swiss franc (1CHF=8,70GNZ, then 1PLN=2GNZ). In the beginning of July was the only in history of currency cris, it was inflation 108%. However, it was quickly return to normal situation.</p>
         <h2>Exchange courses (as in 12th September 2025)</h2>
-        
+
         <div id="searchContainer">
             <input type="text" id="searchInput" placeholder="Enter the code of currency">
         </div>
 
         <table>
             <thead>
-                <tr>
-                    <th>Currency</th>
-                    <th>How much GNZ is one piece</th>
-                </tr>
+            <tr>
+                <th>Currency</th>
+                <th>How much GNZ is one piece</th>
+            </tr>
             </thead>
             <tbody id="currencyTableBody">
-                <tr data-currency-code="CHF">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
-                        <span class="hidden-currency-text">CHF</span>
-                    </td>
-                    <td>8,70</td>
-                </tr>
-                <tr data-currency-code="EUR">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">EUR</span>
-                    </td>
-                    <td>8,13</td>
-                </tr>
-                <tr data-currency-code="GBP">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">GBP</span>
-                    </td>
-                    <td>9,39</td>
-                </tr>
-                <tr data-currency-code="PLN">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
-                        <span class="hidden-currency-text">PLN</span>
-                    </td>
-                    <td>1,91</td>
-                </tr>
-                <tr data-currency-code="USD">
-                    <td>
-                        <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
-                        <span class="hidden-currency-text">USD</span>
-                    </td>
-                    <td>6,94</td>
-                </tr>
+            <tr data-currency-code="CHF">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/svajcarova_flaga.png" class="flag-icon-currency" alt="Flaga Szwajcarii">
+                    <span class="hidden-currency-text">CHF</span>
+                </td>
+                <td>8,70</td>
+            </tr>
+            <tr data-currency-code="EUR">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/evropova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">EUR</span>
+                </td>
+                <td>8,13</td>
+            </tr>
+            <tr data-currency-code="GBP">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/anglova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">GBP</span>
+                </td>
+                <td>9,39</td>
+            </tr>
+            <tr data-currency-code="PLN">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/gneznicka_flaga.png" class="flag-icon-currency" alt="Flaga Polski">
+                    <span class="hidden-currency-text">PLN</span>
+                </td>
+                <td>1,91</td>
+            </tr>
+            <tr data-currency-code="USD">
+                <td>
+                    <img src="https://gnezenca.github.io/krajovastrona/images/usova_flaga.png" class="flag-icon-currency" alt="Flaga Unii Europejskiej">
+                    <span class="hidden-currency-text">USD</span>
+                </td>
+                <td>6,94</td>
+            </tr>
             </tbody>
         </table>
     </div>
-</div> 
+</div>
 
 <div id="footer-placeholder"></div>
 <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
-    <script>
-        document.getElementById('searchInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                let filter = this.value.toUpperCase();
-                let rows = document.getElementById('currencyTableBody').getElementsByTagName('tr');
+<script>
+    document.getElementById('searchInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            let filter = this.value.toUpperCase();
+            let rows = document.getElementById('currencyTableBody').getElementsByTagName('tr');
 
-                for (let i = 0; i < rows.length; i++) {
-                    let rowCode = rows[i].getAttribute('data-currency-code');
-                    if (rowCode.indexOf(filter) > -1) {
-                        rows[i].style.display = "";
-                    } else {
-                        rows[i].style.display = "none";
-                    }
+            for (let i = 0; i < rows.length; i++) {
+                let rowCode = rows[i].getAttribute('data-currency-code');
+                if (rowCode.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
                 }
             }
-        });
-    </script>
+        }
+    });
+</script>
 </body>
 </html>
