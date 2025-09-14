@@ -18,7 +18,7 @@
                 "g-library": "GNEZENSKA BIBLOTEKA",
                 "g-telegraph": "GNEZENSKY TELEGRAF",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "V 14.9.2025 OT OSMEJ KU OSMNACTEJ HODINE BEDET PREZYDENTOVA ELEKCA",
+                "election": "V 14.9.2025 OT OSMEJ KU OSMNACTEJ HODINE SET PREZYDENTOVA ELEKCA",
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -39,7 +39,7 @@
                 "g-library": "BIBLIOTEKA GNEŻEŃSKA",
                 "g-telegraph": "TELEGRAF GNEŻEŃSKI",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "14 WRZEŚNIA 2025 W GODZINACH 8:00-20:00 BĘDĄ WYBORY PREZYDENCKIE",                    
+                "election": "14 WRZEŚNIA 2025 W GODZINACH 8:00-20:00 SĄ WYBORY PREZYDENCKIE",                    
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -60,7 +60,7 @@
                 "g-library": "GNEZEN LIBRARY",
                 "g-telegraph": "GNEZEN TELEGRAPH",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "IN 14TH SEPTEMBER 2025 IN 8:00-20:00 WILL BE PRESIDENTIAL ELECTION",                    
+                "election": "IN 14TH SEPTEMBER 2025 IN 8:00-20:00 IS PRESIDENTIAL ELECTION",                    
             }
         };
 
