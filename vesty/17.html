@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Vynyky prezydentovej elekcy</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <style>
+        .chart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .chart-bar-wrapper {
+            flex-grow: 1;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .chart-bar {
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 4px;
+            transition: width 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            box-sizing: border-box;
+            color: white; /* Ustawienie koloru tekstu wewnątrz słupków */
+        }
+
+        .chart-bar.bar-1 {
+            width: 100%;
+            background-color: #27ae60;
+        }
+
+        .chart-bar.bar-2 {
+            width: 0%;
+            background-color: #c0392b;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<div class="greeting-text" data-lang="gnz">
+    <div class="container">
+        <article class="wiadomosc-kontener">
+            <h1 class="wiadomosc-tytul">Vynyky prezydentovej elekcy</h1>
+
+            <div class="wiadomosc-tresc-wrapper">
+                <div class="wiadomosc-tresc">
+                    <p>
+                        Jak verydyt Tymčasovy Lyder Gnezenskej Republiky Patryk J. Č. Galazka, elekcu z popartem 100% vyhral Hlovny Zastupnyk TLGR, Mateuš A. Naumovyč, kotory zostal prezydentem-elektem. Frekvenca vynosyla 50% (zagłosowały 2 osoby).
+                    </p>
+                </div>
+                <div class="wiadomosc-media">
+                    <img src="https://gnezenca.github.io/krajovastrona/images/signing.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-1">100% (2)</div>
+                </div>
+                <div class="label">MN</div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-2">0% (0)</div>
+                </div>
+                <div class="label">PG</div>
+            </div>
+            <p class="wiadomosc-data">
+                <em>14.09.2025</em>
+            </p>
+
+            <nav class="wiadomosc-nawigacja">
+                <a href="15.html" class="nawigacja-link starszy">
+                    <span class="strzalka">&larr;</span> Popredna vest
+                </a>
+                <a class="nawigacja-link nowszy">
+                    Nastupna vest <span class="strzalka">&rarr;</span>
+                </a>
+            </nav>
+        </article>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="pol">
+    <div class="container">
+        <article class="wiadomosc-kontener">
+            <h1 class="wiadomosc-tytul">Wyniki wyborów prezydenckich</h1>
+
+            <div class="wiadomosc-tresc-wrapper">
+                <div class="wiadomosc-tresc">
+                    <p>
+                        Jak przekazuje Tymczasowy Przywódca Republiki Gneżeńskiej Patryk J. Č. Galazka, wybory z poparciem 100% wygrał Główny Zastępca TLGR, Mateuš A. Naumovyč, który został prezydentem-elektem. Frekwencja wynosiła 50% (zagłosowały 2 osoby).
+                    </p>
+                </div>
+                <div class="wiadomosc-media">
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-1">100% (2)</div>
+                </div>
+                <div class="label">MN</div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-2">0% (0)</div>
+                </div>
+                <div class="label">PG</div>
+            </div>
+            <p class="wiadomosc-data">
+                <em>15.09.2025</em>
+            </p>
+
+            <nav class="wiadomosc-nawigacja">
+                <a href="16.html" class="nawigacja-link starszy">
+                    <span class="strzalka">&larr;</span> Poprzednia wiadomość
+                </a>
+                <a class="nawigacja-link nowszy">
+                    Następna wiadomość <span class="strzalka">&rarr;</span>
+                </a>
+            </nav>
+        </article>
+    </div>
+</div>
+
+<div class="greeting-text" data-lang="eng">
+    <div class="container">
+        <article class="wiadomosc-kontener">
+            <h1 class="wiadomosc-tytul">Results of presidential election</h1>
+
+            <div class="wiadomosc-tresc-wrapper">
+                <div class="wiadomosc-tresc">
+                    <p>
+                        As Temporary Leader of Republic of Gnezenland Patryk J. Č. Galazka informs, election won with supporting 100% Main Deputy of TLGR, Mateuš A. Naumovyč, who became president-elect. The frequency was 50% (2 people voted).
+                    </p>
+                </div>
+                <div class="wiadomosc-media">
+                    <img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-1">100% (2)</div>
+                </div>
+                <div class="label">MN</div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-bar-wrapper">
+                    <div class="chart-bar bar-2">0% (0)</div>
+                </div>
+                <div class="label">PG</div>
+            </div>
+            <p class="wiadomosc-data">
+                <em>15.09.2025</em>
+            </p>
+
+            <nav class="wiadomosc-nawigacja">
+                <a href="16.html" class="nawigacja-link starszy">
+                    <span class="strzalka">&larr;</span> Previous news
+                </a>
+                <a class="nawigacja-link nowszy">
+                    Next news <span class="strzalka">&rarr;</span>
+                </a>
+            </nav>
+        </article>
+    </div>
+</div>
+<div id="footer-placeholder"></div>
+<script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+</body>
+</html>
