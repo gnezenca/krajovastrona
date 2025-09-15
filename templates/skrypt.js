@@ -18,7 +18,7 @@
                 "g-library": "GNEZENSKA BIBLOTEKA",
                 "g-telegraph": "GNEZENSKY TELEGRAF",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "PREZYDENTOVA ELEKCA SESKONČYLA",
+                "election": "VYNYKY PREZYDENTOVEJ ELEKCY",
             },
             pol: {
                 "main-page": "STRONA GŁÓWNA",
@@ -39,7 +39,7 @@
                 "g-library": "BIBLIOTEKA GNEŻEŃSKA",
                 "g-telegraph": "TELEGRAF GNEŻEŃSKI",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "WYBORY PREZYDENCKIE SKOŃCZYŁY SIĘ",                    
+                "election": "WYNIKI WYBORÓW PREZYDENCKICH",                    
             },
             eng: {
                 "main-page": "MAIN PAGE",
@@ -60,7 +60,7 @@
                 "g-library": "GNEZEN LIBRARY",
                 "g-telegraph": "GNEZEN TELEGRAPH",
                 "gnezenpeda": "GNEZENPEDA",
-                "election": "PRESIDENTIAL ELECTION HAS FINISHED",                    
+                "election": "RESULTS OF PRESIDENTIAL ELECTION",                    
             }
         };
 
