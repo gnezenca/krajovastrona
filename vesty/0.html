@@ -36,6 +36,26 @@
                 document.getElementById('previousnews-eng').innerHTML = '<a href="0.html" class="nawigacja-link starszy">Previous news <span class="strzalka">&larr;</span></a>';
                 document.getElementById('nextnews-pol').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
                 document.getElementById('nextnews-eng').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+
+                // Nowy kod do ukrywania nieaktywnych języków
+                const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+                const langDivs = document.querySelectorAll('[data-lang]');
+                let langFound = false;
+
+                langDivs.forEach(div => {
+                    const lang = div.getAttribute('data-lang');
+                    if (lang === userLang || (userLang === 'pl' && lang === 'pol') || (userLang === 'en' && lang === 'eng')) {
+                        div.style.display = 'block';
+                        langFound = true;
+                    } else {
+                        div.style.display = 'none';
+                    }
+                });
+
+                // Jeśli język użytkownika nie pasuje, domyślnie wyświetl wersję polską
+                if (!langFound) {
+                    document.querySelector('[data-lang="pol"]').style.display = 'block';
+                }
             })
             .catch(error => {
                 console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
