@@ -8,7 +8,7 @@
 <body>
     <div id="content"></div>
     <script>
-        fetch('template.html', { cache: 'no-store' })
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
