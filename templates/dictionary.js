@@ -2419,7 +2419,7 @@
 "faszystowski": "faszystowski - fašyzmovy",
 "zakon": "zakon - orden",
 "zakonny": "zakonny - ordenovy",
-"Zakon Fenrirru": "Zakon Fenrirru - Fenryrovy Orden",
+"zakon fenrirru": "Zakon Fenrirru - Fenryrovy Orden",
 "uważać się": "uważać się - seuvazar",
 "reprezentować": "reprezentować - reprezentovar",
 "reprezentant": "reprezentant - reprezent",
