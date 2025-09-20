@@ -1,114 +1,50 @@
-<!DOCTYPE html>
-<html lang="pl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnezenska Respublika - Povstal server Gnezency v Diskordym</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
 </head>
 <body>
-<div id="header-placeholder"></div>
-
-<div class="greeting-text" data-lang="gnz">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Povstal server Gnezency v Diskordym</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Tymčasovy Lyder Gnezenskej Respubliky Patryk J. Č. Galazka ukreoval servera Gnezency v Diskordym. Set to kolejny, po grupe v Uotsappym, reč tego typa, jeno v Diskordym moga byr takze persony z zevnetra.<br>
-Link ku serveru: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/discord.png" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="12.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Popredna vest
-                </a>
-                <a href="14.html" class="nawigacja-link nowszy">
-                    Nastupna vest <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="pol">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Powstał serwer Gneżencji na Discordzie</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Tymczasowy Przywódca Republiki Gneżeńskiej Patryk J. Č. Galazka utworzył serwer Gneżencji na Discordzie. Jest to kolejna, po grupie na WhatsAppie, rzecz tego typu, tylko na Discordzie mogą być także osoby z zewnątrz.<br>
-Link do serwera: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/discord.png" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="12.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Poprzednia wiadomość
-                </a>
-                <a href="14.html" class="nawigacja-link nowszy">
-                    Następna wiadomość <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="eng">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Discord server of Gnezenland has developed</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Temporary Leader of Republic of Gnezenland Patryk J. Č. Galazka created Discord server of Gnezenland. It's next, after the WhatsApp group. thing in this type, but in Discord can be also people from outside.<br>
-Link to server: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/discord.png" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="12.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Previous news
-                </a>
-                <a href="14.html" class="nawigacja-link nowszy">
-                    Next news <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  <div id="footer-placeholder"></div>
-  <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    <div id="content"></div>
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('content').innerHTML = bodyContent;
+                
+                document.getElementById('title-gnz').textContent = 'Povstal server Gnezency v Diskordym';
+                document.getElementById('title-pol').textContent = 'Powstał serwer Gneżencji na Discordzie';
+                document.getElementById('title-eng').textContent = 'Discord server of Gnezenland has developed';
+                document.getElementById('contain-gnz').innerHTML = 'Tymčasovy Lyder Gnezenskej Respubliky Patryk J. Č. Galazka ukreoval servera Gnezency v Diskordym. Set to kolejny, po grupe v Uotsappym, reč tego typa, jeno v Diskordym moga byr takze persony z zevnetra.<br>Link ku serveru: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>.';
+                document.getElementById('contain-pol').innerHTML = 'Tymczasowy Przywódca Republiki Gneżeńskiej Patryk J. Č. Galazka utworzył serwer Gneżencji na Discordzie. Jest to kolejna, po grupie na WhatsAppie, rzecz tego typu, tylko na Discordzie mogą być także osoby z zewnątrz.<br>Link do serwera: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>.';
+                document.getElementById('contain-eng').innerHTML = 'Temporary Leader of Republic of Gnezenland Patryk J. Č. Galazka created Discord server of Gnezenland. It\'s next, after the WhatsApp group. thing in this type, but in Discord can be also people from outside.<br>Link to server: <a href="https://discord.gg/PP72addn">discord.gg/PP72addn</a>.';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/discord.png" class="wiadomosc-obrazek">';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/discord.png" class="wiadomosc-obrazek">';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/discord.png" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = '13.09.2025';
+                document.getElementById('date-pol').textContent = '13.09.2025';
+                document.getElementById('date-eng').textContent = '13.09.2025';
+                document.getElementById('previousnews-gnz').innerHTML = '<a href="12.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Popredna vest</a>';
+                document.getElementById('previousnews-pol').innerHTML = '<a href="12.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Poprzednia wiadomość</a>';
+                document.getElementById('previousnews-eng').innerHTML = '<a href="12.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Previous news</a>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a href="14.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-pol').innerHTML = '<a href="14.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-eng').innerHTML = '<a href="14.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
