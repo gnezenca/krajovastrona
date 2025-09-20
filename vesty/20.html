@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Gnezenska Respublika - TLGR othodyt z funkcy</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('content').innerHTML = bodyContent;
+                
+                document.getElementById('title-gnz').textContent = 'Pryvrotyne krajovej lotery';
+                document.getElementById('title-pol').textContent = 'Przywrócenie loterii państwowej';
+                document.getElementById('title-eng').textContent = 'Restoring the state lottery';
+                document.getElementById('contain-gnz').innerHTML = 'Tenden po dlouhej pauze dojslo ku pryvrotyna krajovej lotery v Gnezenskyj Respubliky. Moga v nyj učestnykyr vsy persony majuce konto v Gnezenskym Bankym, treba vybrar 5 cyfr. Bedet trvar ku osnactej hodine, tenden v večyrym lub jitro v ranym beda vynyky.';
+                document.getElementById('contain-pol').innerHTML = 'Dzisiaj po długiej przerwie doszło do przywrócenia loterii państwowej w Republice Gneżencji. Mogą w niej uczestniczyć wszystkie osoby mające konto w Banku Gneżeńskim, trzeba wybrać 5 cyfr. Będzie trwać do 20:00, dziś wieczorem lub jutro rano będą wyniki.';
+                document.getElementById('contain-eng').innerHTML = 'Today after a long break it was restoring the state lottery in Republic of Gnezenland. One can take part on it all people having account in Gnezen Bank, one must choose 5 digits. It\'ll be last until 20:00, today in the evening or tomorrow in the morning will be results.';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/lottery.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/lottery.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/lottery.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = '20.09.2025';
+                document.getElementById('date-pol').textContent = '20.09.2025';
+                document.getElementById('date-eng').textContent = '20.09.2025';
+                document.getElementById('previousnews-gnz').innerHTML = '<a href="19.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Popredna vest</a>';
+                document.getElementById('previousnews-pol').innerHTML = '<a href="19.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Poprzednia wiadomość</a>';
+                document.getElementById('previousnews-eng').innerHTML = '<a href="19.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Previous news</a>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-pol').innerHTML = '<a class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-eng').innerHTML = '<a class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+</body>
+</html>
