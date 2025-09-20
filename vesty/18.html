@@ -1,3 +1,53 @@
+<html>
+<head>
+    <title>Gnezenska Respublika - Pryvrotyne sojuša z Globovom Respublikom</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('content').innerHTML = bodyContent;
+                
+                document.getElementById('title-gnz').textContent = 'Pryvrotyne sojuša z Globovom Respublikom';
+                document.getElementById('title-pol').textContent = 'Przywrócenie sojuszu z Republiką Globo';
+                document.getElementById('title-eng').textContent = 'Restoring alliance with Republic of Globo';
+                document.getElementById('contain-gnz').innerHTML = 'Včera v večyrym dojslo ku zakončynu dyplomatykovego kryzysa z Globo, kotory sezačil v 11.9 i skutkovalo zrvanem z nymy relacy. Jak tverdyt TLGR Patryk J. Č. Galazka, to set čustka jeho polityky na posledny deny jeho govermentovana, dotyčuce ustabylyzovana sytuacy Gnezency v zahranycy.';
+                document.getElementById('contain-pol').innerHTML = 'Wczoraj wieczorem doszło do zakończenia kryzysu dyplomatycznego z Globo, który zaczął się 11 września i skutkował zerwaniem z nimi relacji. Jak twierdzi TLGR Patryk J. Č. Galazka, jest to część jego polityki na ostatnie dni jego rządów, dotyczące ustabilizowania sytuacji Gneżencji za granicą.';
+                document.getElementById('contain-eng').innerHTML = 'Yesterday in evening has finished diplomatic crisis with Globo, which started in 11th September and resulted breaking relations with them. As TLGR Patryk J. Č. Galazka claims, it\'s part of politics for last days of his reign, interesting in stabilizing situation of Gnezenland in abroad.';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenca-globo.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenca-globo.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenca-globo.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = '18.09.2025';
+                document.getElementById('date-pol').textContent = '18.09.2025';
+                document.getElementById('date-eng').textContent = '18.09.2025';
+                document.getElementById('previousnews-gnz').innerHTML = '<a href="17.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Popredna vest</a>';
+                document.getElementById('previousnews-pol').innerHTML = '<a href="17.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Poprzednia wiadomość</a>';
+                document.getElementById('previousnews-eng').innerHTML = '<a href="17.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Previous news</a>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a href="19.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-pol').innerHTML = '<a href="19.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-eng').innerHTML = '<a href="19.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
