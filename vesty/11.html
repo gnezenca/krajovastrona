@@ -1,111 +1,50 @@
-<!DOCTYPE html>
-<html lang="pl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnezenska Respublika - TLGR othodyt z funkcy</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
 </head>
 <body>
-<div id="header-placeholder"></div>
-
-<div class="greeting-text" data-lang="gnz">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">TLGR othodyt z funkcy</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Tymčasovy Lyder Gnezenskej Respubliky Patryk J. Č. Galazka podjul decyzu o rezygnacy z najvysokšej funkcy v krajym. Povodem mat to byr, ze set vykončyny pres posledny udalosty zvuzany z Gnezencom. Na svojego nastupnyka vybral Pramynystra nr. 1 Mateuša A. Naumovyča. Von mat jitro zostar Hlovnym Zastupnykem TLGR. Objut však funkcu v 29.9.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>11.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="10.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Popredna vest
-                </a>
-                <a href="12.html" class="nawigacja-link nowszy">
-                    Nastupna vest <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="pol">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">TLGR odchodzi z funkcji</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Tymczasowy Przywódca Republiki Gneżeńskiej Patryk J. Č. Galazka podjął decyzję o rezygnacji z najwyższej funkcji w państwie. Powodem ma być to, że jest wykończony przez ostatnie wydarzenia związane z Gneżencją. Na swojego następcę wybrał Pra-ministra nr. 1 Mateuša A. Naumovyča. Ma on jutro zostać Głównym Zastępcą TLGR. Funkcję zaś obejmie 29 września.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>11.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="10.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Poprzednia wiadomość
-                </a>
-                <a href="12.html" class="nawigacja-link nowszy">
-                    Następna wiadomość <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="eng">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">TLGR leaves from function</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Temporary Leader of Republic of Gnezenland Patryk J. Č. Galazka decided about resignation from the highest function in state. The reason is that he's exhausted because of the lest events related with Gnezenland. As his successor he choosed Pra-minister nr. 1 Mateuš A. Naumovyč. He tomorrow has to became Main Deputy of TLGR. Meanwhile he will take the office in 29th September.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>11.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="10.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Previous news
-                </a>
-                <a href="12.html" class="nawigacja-link nowszy">
-                    Next news <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  <div id="footer-placeholder"></div>
-  <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    <div id="content"></div>
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('content').innerHTML = bodyContent;
+                
+                document.getElementById('title-gnz').textContent = 'TLGR othodyt z funkcy';
+                document.getElementById('title-pol').textContent = 'TLGR odchodzi z funkcji';
+                document.getElementById('title-eng').textContent = 'TLGR leaves from function';
+                document.getElementById('contain-gnz').innerHTML = 'Tymčasovy Lyder Gnezenskej Respubliky Patryk J. Č. Galazka podjul decyzu o rezygnacy z najvysokšej funkcy v krajym. Povodem mat to byr, ze set vykončyny pres posledny udalosty zvuzany z Gnezencom. Na svojego nastupnyka vybral Pramynystra nr. 1 Mateuša A. Naumovyča. Von mat jitro zostar Hlovnym Zastupnykem TLGR. Objut však funkcu v 29.9.';
+                document.getElementById('contain-pol').innerHTML = 'Tymczasowy Przywódca Republiki Gneżeńskiej Patryk J. Č. Galazka podjął decyzję o rezygnacji z najwyższej funkcji w państwie. Powodem ma być to, że jest wykończony przez ostatnie wydarzenia związane z Gneżencją. Na swojego następcę wybrał Pra-ministra nr. 1 Mateuša A. Naumovyča. Ma on jutro zostać Głównym Zastępcą TLGR. Funkcję zaś obejmie 29 września.';
+                document.getElementById('contain-eng').innerHTML = 'Temporary Leader of Republic of Gnezenland Patryk J. Č. Galazka decided about resignation from the highest function in state. The reason is that he\'s exhausted because of the lest events related with Gnezenland. As his successor he choosed Pra-minister nr. 1 Mateuš A. Naumovyč. He tomorrow has to became Main Deputy of TLGR. Meanwhile he will take the office in 29th September.';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/alert.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = '11.09.2025';
+                document.getElementById('date-pol').textContent = '11.09.2025';
+                document.getElementById('date-eng').textContent = '11.09.2025';
+                document.getElementById('previousnews-gnz').innerHTML = '<a href="10.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Popredna vest</a>';
+                document.getElementById('previousnews-pol').innerHTML = '<a href="10.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Poprzednia wiadomość</a>';
+                document.getElementById('previousnews-eng').innerHTML = '<a href="10.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Previous news</a>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a href="12.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-pol').innerHTML = '<a href="12.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-eng').innerHTML = '<a href="12.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
