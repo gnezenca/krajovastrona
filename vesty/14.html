@@ -1,111 +1,50 @@
-<!DOCTYPE html>
-<html lang="pl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnezenska Respublika - Prezydentova elekca, posledny decyzy</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
 </head>
 <body>
-<div id="header-placeholder"></div>
-
-<div class="greeting-text" data-lang="gnz">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Prezydentova elekca, posledny decyzy</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Jitrova elekca bedet seodbyr v hodinam 8:00-20:00. Aby zaglosovar, treba vyslar imejla ku gnezencaelekca2025@poczta.onet.pl. Set vymagany elekcovy kod, preslany ku kazdej persone mogucej zaglosovar. Po elekcy glosy beda zlyčany pres elekcovu komysu, kotora bedet prekazar vynyky ku TLGR najpoznoi o 22:00. Vynyky beda podany ku publykovej vesty v peršydenym rano.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="13.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Popredna vest
-                </a>
-                <a href="15.html" class="nawigacja-link nowszy">
-                    Nastupna vest <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="pol">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Wybory prezydenckie, ostatnie decyzje</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Jutrzejsze wybory odbędą się w godzinach 8:00-20:00. Żeby zagłosować, trzeba wysłać e-maila do gnezencaelekca2025@poczta.onet.pl. Wymagany jest kod wyborczy, przesłany do każdej osoby mogącej zagłosować. Po wyborach głosy zliczać będzie komisja wyborcza, która przekaże wyniki do TLGR najpóźniej o 22:00. Wyniki będą podane do publicznej wiadomości w poniedziałek rano.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="13.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Poprzednia wiadomość
-                </a>
-                <a href="15.html" class="nawigacja-link nowszy">
-                    Następna wiadomość <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  
-  <div class="greeting-text" data-lang="eng">
-    <div class="container">
-        <article class="wiadomosc-kontener">
-            <h1 class="wiadomosc-tytul">Presidential election, last decisions</h1>
-
-            <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p>
-Tomorrow's election will be in 8:00-20:00. To vote, one must send e-mail to gnezencaelekca2025@poczta.onet.pl. Demanded is electoral code, sended to every person, that could vote. After election electoral comission will count votes, which will send results to TLGR no later than in 22:00. Results will published on Monday morning.
-                    </p>
-                </div>
-                <div class="wiadomosc-media">
-                    <img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" alt="Obrazek do wiadomości" class="wiadomosc-obrazek">
-                </div>
-            </div>
-
-            <p class="wiadomosc-data">
-                <em>13.09.2025</em>
-            </p>
-
-            <nav class="wiadomosc-nawigacja">
-                <a href="13.html" class="nawigacja-link starszy">
-                <span class="strzalka">&larr;</span> Previous news
-                </a>
-                <a href="15.html" class="nawigacja-link nowszy">
-                    Next news <span class="strzalka">&rarr;</span>
-                </a>
-            </nav>
-        </article>
-    </div>
-  </div>
-  <div id="footer-placeholder"></div>
-  <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    <div id="content"></div>
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('content').innerHTML = bodyContent;
+                
+                document.getElementById('title-gnz').textContent = 'Prezydentova elekca, posledny decyzy';
+                document.getElementById('title-pol').textContent = 'Wybory prezydenckie, ostatnie decyzje';
+                document.getElementById('title-eng').textContent = 'Presidential election, last decisions';
+                document.getElementById('contain-gnz').innerHTML = 'Jitrova elekca bedet seodbyr v hodinam 8:00-20:00. Aby zaglosovar, treba vyslar imejla ku gnezencaelekca2025@poczta.onet.pl. Set vymagany elekcovy kod, preslany ku kazdej persone mogucej zaglosovar. Po elekcy glosy beda zlyčany pres elekcovu komysu, kotora bedet prekazar vynyky ku TLGR najpoznoi o 22:00. Vynyky beda podany ku publykovej vesty v peršydenym rano.';
+                document.getElementById('contain-pol').innerHTML = 'Jutrzejsze wybory odbędą się w godzinach 8:00-20:00. Żeby zagłosować, trzeba wysłać e-maila do gnezencaelekca2025@poczta.onet.pl. Wymagany jest kod wyborczy, przesłany do każdej osoby mogącej zagłosować. Po wyborach głosy zliczać będzie komisja wyborcza, która przekaże wyniki do TLGR najpóźniej o 22:00. Wyniki będą podane do publicznej wiadomości w poniedziałek rano.';
+                document.getElementById('contain-eng').innerHTML = 'Tomorrow\'s election will be in 8:00-20:00. To vote, one must send e-mail to gnezencaelekca2025@poczta.onet.pl. Demanded is electoral code, sended to every person, that could vote. After election electoral comission will count votes, which will send results to TLGR no later than in 22:00. Results will published on Monday morning.';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/vote.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = '13.09.2025';
+                document.getElementById('date-pol').textContent = '13.09.2025';
+                document.getElementById('date-eng').textContent = '13.09.2025';
+                document.getElementById('previousnews-gnz').innerHTML = '<a href="13.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Popredna vest</a>';
+                document.getElementById('previousnews-pol').innerHTML = '<a href="13.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Poprzednia wiadomość</a>';
+                document.getElementById('previousnews-eng').innerHTML = '<a href="13.html" class="nawigacja-link nowszy"> <span class="strzalka">&larr;</span> Previous news</a>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a href="15.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-pol').innerHTML = '<a href="15.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+                document.getElementById('nextnews-eng').innerHTML = '<a href="15.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
