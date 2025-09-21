@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnezenska Respublika - Povstane krajovej strony</title>
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
     <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
@@ -7,42 +10,47 @@
 </head>
 <body>
     <div id="content"></div>
+
     <script>
         fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Błąd ładowania pliku 1.html: ' + response.statusText);
+                    throw new Error('Błąd ładowania szablonu: ' + response.statusText);
                 }
                 return response.text();
             })
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
-                const bodyContent = doc.body.innerHTML;
-                document.getElementById('content').innerHTML = bodyContent;
+                document.getElementById('content').innerHTML = doc.body.innerHTML;
                 
+                // --- GNZ ---
                 document.getElementById('title-gnz').textContent = 'Povstane krajovej strony';
-                document.getElementById('title-pol').textContent = 'Powstanie strony państwowej';
-                document.getElementById('title-eng').textContent = 'Developing of state website';
                 document.getElementById('contain-gnz').innerHTML = 'Gnezenska Respublika informovat o rozpočutu dalarosty novej krajovej strony, beducej pod adresom <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. Set vele novost, m.in. try movovy versy (gnezenśčina, gnezničina i anglovščina), rozny informacy o Gnezency (np. istora i symboly). Povstal takze slovozbor gnezenščiny, v kotorym latvo set znalezr to, čego se hledat. Jak informovat admynystrator strony, ješče vele zostalo ku zdelanu, ale sukces uz set. Vekova strona: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> bedet dalar ku konecy sudmdena.';
-                document.getElementById('contain-pol').innerHTML = 'Republika Gneżeńska informuje o rozpoczęciu działalności nowej strony państwowej, będącej pod adresem <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. Jest wiele nowości, m.in. trzy wersje językowe (gneżeńska, polska i angielska), różne informacje o Gneżencji (np. historia i symbole). Powstał także słownik języka gneżeńskiego, w którym łatwo jest znaleźć to czego się szuka. Jak informuje administrator strony, jeszcze dużo zostało do zrobienia, ale sukces już jest. Stara strona: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> działać będzie do końca tygodnia.';
-                document.getElementById('contain-eng').innerHTML = 'Republic of Gnezenland informs about the beginning of activity of state website, being in address <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. There\'re many newnesses, e.g. three language versions (Gnezen, Polish and English), different informations about Gnezenland (e.g. history and symbols). It has also developed dictionary of Gnezen language, where it\'s easy to find, what it\'s searching. As administrator of website informs, it\'s still much to do, but success already is. Old website: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> will act until the end of week.';
                 document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
-                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
-                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
                 document.getElementById('date-gnz').textContent = '01.09.2025';
-                document.getElementById('date-pol').textContent = '01.09.2025';
-                document.getElementById('date-eng').textContent = '01.09.2025';
-                document.getElementById('previousnews-gnz').innerHTML = '<a href="0.html" class="nawigacja-link starszy"></a>';
-                document.getElementById('previousnews-pol').innerHTML = '<a href="0.html" class="nawigacja-link starszy"></a>';
-                document.getElementById('previousnews-eng').innerHTML = '<a href="0.html" class="nawigacja-link starszy"></a>';
+                document.getElementById('previousnews-gnz').innerHTML = '<span class="brak-wiadomosci"></span>';
                 document.getElementById('nextnews-gnz').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+
+                // --- POL ---
+                document.getElementById('title-pol').textContent = 'Powstanie strony państwowej';
+                document.getElementById('contain-pol').innerHTML = 'Republika Gneżeńska informuje o rozpoczęciu działalności nowej strony państwowej, będącej pod adresem <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. Jest wiele nowości, m.in. trzy wersje językowe (gneżeńska, polska i angielska), różne informacje o Gneżencji (np. historia i symbole). Powstał także słownik języka gneżeńskiego, w którym łatwo jest znaleźć to czego się szuka. Jak informuje administrator strony, jeszcze dużo zostało do zrobienia, ale sukces już jest. Stara strona: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> działać będzie do końca tygodnia.';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-pol').textContent = '01.09.2025';
+                document.getElementById('previousnews-pol').innerHTML = '<span class="brak-wiadomosci"></span>';
                 document.getElementById('nextnews-pol').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+
+                // --- ENG ---
+                document.getElementById('title-eng').textContent = 'Developing of state website';
+                document.getElementById('contain-eng').innerHTML = 'Republic of Gnezenland informs about the beginning of activity of state website, being in address <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. There\'re many newnesses, e.g. three language versions (Gnezen, Polish and English), different informations about Gnezenland (e.g. history and symbols). It has also developed dictionary of Gnezen language, where it\'s easy to find, what it\'s searching. As administrator of website informs, it\'s still much to do, but success already is. Old website: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> will act until the end of week.';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
+                document.getElementById('date-eng').textContent = '01.09.2025';
+                document.getElementById('previousnews-eng').innerHTML = '<span class="brak-wiadomosci"></span>';
                 document.getElementById('nextnews-eng').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
             })
             .catch(error => {
-                console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
-                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+                console.error('Błąd podczas ładowania lub przetwarzania szablonu:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku szablonu.</p>`;
             });
     </script>
     <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
