@@ -12,21 +12,21 @@
     <div id="content"></div>
 
     <script>
-        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+        const templateUrl = 'https://gnezenca.github.io/krajovastrona/templates/news-template.html';
+        // Dodajemy unikalny parametr ?t=czas aby zawsze pobierać najnowszą wersję
+        fetch(`${templateUrl}?t=${Date.now()}`, { cache: 'no-store' })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Błąd ładowania szablonu: ' + response.statusText);
-                }
+                if (!response.ok) throw new Error('Błąd ładowania szablonu: ' + response.statusText);
                 return response.text();
             })
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
                 document.getElementById('content').innerHTML = doc.body.innerHTML;
-                
+
                 // --- GNZ ---
                 document.getElementById('title-gnz').textContent = 'Povstane krajovej strony';
-                document.getElementById('contain-gnz').innerHTML = 'Gnezenska Respublika informovat o rozpočutu dalarosty novej krajovej strony, beducej pod adresom <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. Set vele novost, m.in. try movovy versy (gnezenśčina, gnezničina i anglovščina), rozny informacy o Gnezency (np. istora i symboly). Povstal takze slovozbor gnezenščiny, v kotorym latvo set znalezr to, čego se hledat. Jak informovat admynystrator strony, ješče vele zostalo ku zdelanu, ale sukces uz set. Vekova strona: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> bedet dalar ku konecy sudmdena.';
+                document.getElementById('contain-gnz').innerHTML = 'Gnezenska Respublika informovat o rozpočutu dalarosty novej krajovej strony, beducej pod adresom <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>...';
                 document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
                 document.getElementById('date-gnz').textContent = '01.09.2025';
                 document.getElementById('previousnews-gnz').innerHTML = '<span class="brak-wiadomosci"></span>';
@@ -34,7 +34,7 @@
 
                 // --- POL ---
                 document.getElementById('title-pol').textContent = 'Powstanie strony państwowej';
-                document.getElementById('contain-pol').innerHTML = 'Republika Gneżeńska informuje o rozpoczęciu działalności nowej strony państwowej, będącej pod adresem <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. Jest wiele nowości, m.in. trzy wersje językowe (gneżeńska, polska i angielska), różne informacje o Gneżencji (np. historia i symbole). Powstał także słownik języka gneżeńskiego, w którym łatwo jest znaleźć to czego się szuka. Jak informuje administrator strony, jeszcze dużo zostało do zrobienia, ale sukces już jest. Stara strona: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> działać będzie do końca tygodnia.';
+                document.getElementById('contain-pol').innerHTML = 'Republika Gneżeńska informuje o rozpoczęciu działalności nowej strony państwowej...';
                 document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
                 document.getElementById('date-pol').textContent = '01.09.2025';
                 document.getElementById('previousnews-pol').innerHTML = '<span class="brak-wiadomosci"></span>';
@@ -42,7 +42,7 @@
 
                 // --- ENG ---
                 document.getElementById('title-eng').textContent = 'Developing of state website';
-                document.getElementById('contain-eng').innerHTML = 'Republic of Gnezenland informs about the beginning of activity of state website, being in address <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>. There\'re many newnesses, e.g. three language versions (Gnezen, Polish and English), different informations about Gnezenland (e.g. history and symbols). It has also developed dictionary of Gnezen language, where it\'s easy to find, what it\'s searching. As administrator of website informs, it\'s still much to do, but success already is. Old website: <a href="https://sites.google.com/view/gnezenca">sites.google.com/view/gnezenca</a> will act until the end of week.';
+                document.getElementById('contain-eng').innerHTML = 'Republic of Gnezenland informs about the beginning of activity of state website...';
                 document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
                 document.getElementById('date-eng').textContent = '01.09.2025';
                 document.getElementById('previousnews-eng').innerHTML = '<span class="brak-wiadomosci"></span>';
