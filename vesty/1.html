@@ -12,19 +12,17 @@
     <div id="content"></div>
 
     <script>
-        const templateUrl = 'https://gnezenca.github.io/krajovastrona/templates/news-template.html';
-        // Dodajemy unikalny parametr ?t=czas aby zawsze pobierać najnowszą wersję
-        fetch(`${templateUrl}?t=${Date.now()}`, { cache: 'no-store' })
-            .then(response => {
-                if (!response.ok) throw new Error('Błąd ładowania szablonu: ' + response.statusText);
-                return response.text();
-            })
-            .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data, 'text/html');
-                document.getElementById('content').innerHTML = doc.body.innerHTML;
+        document.addEventListener("DOMContentLoaded", () => {
+    const templateUrl = 'https://gnezenca.github.io/krajovastrona/templates/news-template.html';
+    fetch(`${templateUrl}?t=${Date.now()}`, { cache: 'no-store' })
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, 'text/html');
+            document.getElementById('content').innerHTML = doc.body.innerHTML;
 
-                // --- GNZ ---
+            // --- dopiero tutaj ustawiamy treści ---
+                            // --- GNZ ---
                 document.getElementById('title-gnz').textContent = 'Povstane krajovej strony';
                 document.getElementById('contain-gnz').innerHTML = 'Gnezenska Respublika informovat o rozpočutu dalarosty novej krajovej strony, beducej pod adresom <a href="https://gnezenca.github.io/krajovastrona">gnezenca.github.io/krajovastrona</a>...';
                 document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/beginning.jpg" class="wiadomosc-obrazek">';
@@ -47,12 +45,13 @@
                 document.getElementById('date-eng').textContent = '01.09.2025';
                 document.getElementById('previousnews-eng').innerHTML = '<span class="brak-wiadomosci"></span>';
                 document.getElementById('nextnews-eng').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
-            })
-            .catch(error => {
-                console.error('Błąd podczas ładowania lub przetwarzania szablonu:', error);
-                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku szablonu.</p>`;
-            });
-    </script>
+            // ...
+        })
+        .catch(err => {
+            console.error("Błąd:", err);
+            document.getElementById('content').innerHTML = `<p style="color:red;">Nie udało się załadować szablonu.</p>`;
+        });
+});
     <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
 </body>
 </html>
