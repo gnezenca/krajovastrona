@@ -12,7 +12,7 @@
     <div id="content"></div>
 
     <script>
-        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html?v=' + Date.now())
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Błąd ładowania szablonu: ' + response.statusText);
