@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnezenska Respublika - Povstane krajovej strony</title>
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/style.css">
+    <link rel="stylesheet" href="https://gnezenca.github.io/krajovastrona/templates/news-style.css">
+    <link rel="shortcut icon" href="https://gnezenca.github.io/krajovastrona/images/favicon.ico">
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        fetch('https://gnezenca.github.io/krajovastrona/templates/news-template.html', { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Błąd ładowania szablonu: ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                document.getElementById('content').innerHTML = doc.body.innerHTML;
+                
+                // --- GNZ ---
+                document.getElementById('title-gnz').textContent = 'Tytul';
+                document.getElementById('contain-gnz').innerHTML = 'Trest';
+                document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" class="wiadomosc-obrazek">';
+                document.getElementById('date-gnz').textContent = 'DD.MM.YYYY';
+                document.getElementById('previousnews-gnz').innerHTML = '<span class="brak-wiadomosci"></span>';
+                document.getElementById('nextnews-gnz').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Nastupna vest <span class="strzalka">&rarr;</span></a>';
+
+                // --- POL ---
+                document.getElementById('title-pol').textContent = 'Tytuł';
+                document.getElementById('contain-pol').innerHTML = 'Treść';
+                document.getElementById('image-pol').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" class="wiadomosc-obrazek">';
+                document.getElementById('date-pol').textContent = 'DD.MM.YYYY';
+                document.getElementById('previousnews-pol').innerHTML = '<span class="brak-wiadomosci"></span>';
+                document.getElementById('nextnews-pol').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Następna wiadomość <span class="strzalka">&rarr;</span></a>';
+
+                // --- ENG ---
+                document.getElementById('title-eng').textContent = 'Title';
+                document.getElementById('contain-eng').innerHTML = 'Contain';
+                document.getElementById('image-eng').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" class="wiadomosc-obrazek">';
+                document.getElementById('date-eng').textContent = '01.09.2025';
+                document.getElementById('previousnews-eng').innerHTML = '<span class="brak-wiadomosci"></span>';
+                document.getElementById('nextnews-eng').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
+            })
+            .catch(error => {
+                console.error('Błąd podczas ładowania lub przetwarzania szablonu:', error);
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku szablonu.</p>`;
+            });
+    </script>
+    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+</body>
+</html>
