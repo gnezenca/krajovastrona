@@ -1,281 +1,230 @@
 <style>
     a {
-  color: blue; /* Kolor niebieski dla normalnego stanu linku */
-  text-decoration: none; /* Usuwa podkreślenie linku */
-}
-
-a:hover {
-  color: darkgoldenrod; /* Ciemnożółty kolor po najechaniu myszką */
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-h1 {
-            color: #444;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-.main-header {
-    background-color: black;
-    display: flex;
-    align-items: center;
-    padding: 0; /* Zmieniono padding na 0, aby nagłówek zajmował całą szerokość */
-    color: white;
-    width: 100vw; /* Zapewnia, że nagłówek zajmuje całą szerokość widocznego obszaru */
-}
-
-.header-left {
-    /* Usunięto margin-right: auto, ponieważ flex-grow zajmie się rozkładem */
-    display: flex; /* Dodano display: flex, aby flaga była centrowana w swoim kontenerze */
-    align-items: center; /* Wyśrodkowanie flagi w pionie */
-    padding-left: 20px; /* Dodano padding dla flagi, aby nie dotykała lewej krawędzi */
-}
-
-.flag-icon {
-    height: 40px; /* Dostosuj rozmiar flagi według potrzeb */
-    width: auto;
-    display: block; /* Zapewnia, że obraz jest blokowy, co pomaga w wyrównaniu */
-}
-
-.header-nav {
-    display: flex;
-    flex-grow: 1; /* Pozwala nawigacji zająć całą dostępną przestrzeń */
-}
-
-.nav-button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 10px 0; /* Zmieniono padding horyzontalny na 0, aby przyciski stykały się */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Płynne przejście */
-    flex-grow: 1; /* Pozwala każdemu przyciskowi zająć równą część dostępnej przestrzeni */
-    text-align: center; /* Wyśrodkowanie tekstu w przyciskach */
-}
-
-.nav-button:hover {
-    background-color: white;
-    color: black;
-}
-
-footer {
-  background-color: black; /* Czarne tło stopki */
-  color: white; /* Biały kolor tekstu */
-  text-align: center; /* Wyśrodkowanie tekstu */
-  padding: 20px 0; /* Górny i dolny padding 20px, brak paddingu po bokach */
-  font-family: Arial, sans-serif; /* Prosta, czytelna czcionka */
-  font-size: 14px; /* Rozmiar czcionki */
-  position: relative; /* Używane, jeśli stopka ma być na dole strony, niekoniecznie "przypięta" */
-  width: 100%; /* Stopka zajmuje całą szerokość strony */
-}
-
-.nav-button:hover {
-        background-color: #0056b3;
+        color: blue;
+        text-decoration: none;
     }
-
+    a:hover {
+        color: darkgoldenrod;
+    }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    h1 {
+        color: #444;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+    .main-header {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        color: white;
+        width: 100vw;
+    }
+    .header-left {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+    .flag-icon {
+        height: 40px;
+        width: auto;
+        display: block;
+    }
+    .header-nav {
+        display: flex;
+        flex-grow: 1;
+    }
+    .nav-button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        padding: 10px 0;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .nav-button:hover {
+        background-color: white;
+        color: black;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 14px;
+        position: relative;
+        width: 100%;
+    }
     .language-switcher {
         display: flex;
         gap: 10px;
     }
-
     .lang-button {
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
     }
-
     .lang-icon {
-        height: 30px; /* Rozmiar ikonek językowych */
+        height: 30px;
         width: 30px;
-        border-radius: 50%; /* Aby były okrągłe, jeśli chcesz */
+        border-radius: 50%;
         box-shadow: 0 0 5px rgba(0,0,0,0.2);
     }
-
     .lang-button:hover .lang-icon {
         opacity: 0.8;
     }
-    /* Dodany styl dla centralnego powitania */
-    #greeting-container {
-
-    }
-
-    /* Ukryj wszystkie powitania domyślnie, pokaż tylko aktywne */
+    #greeting-container {}
     .greeting-text {
         display: none;
     }
-
     .greeting-text.active {
         display: block;
     }
-/* Nowe style dla dropdownu jako listy */
-.dropdown-content ul {
-    list-style-type: none; /* Usuwa domyślne kropki listy */
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-content li {
-    padding: 0; /* Usuwa domyślny padding z elementów listy */
-}
-
-.dropdown-content li a {
-    display: block; /* Sprawia, że linki zajmują całą szerokość elementu listy */
-    padding: 12px 16px; /* Padding dla linków, aby były klikalne i miały przestrzeń */
-    color: black;
-    text-decoration: none;
-    text-align: left;
-}
-
-.dropdown-content li a:hover {
-    background-color: #ddd;
-    border-radius: 5px;
-}
-/* Style dla kontenera rozwijanego menu */
-.dropdown {
-    position: relative;
-    /* Usunięto display: inline-block; aby dropdown mógł być elementem flexa */
-    display: flex; /* KLUCZOWA ZMIANA: Zmieniono na flex, aby wewnętrzny przycisk mógł się rozciągać */
-    flex-grow: 1; /* KLUCZOWA ZMIANA: Pozwala kontenerowi dropdown zająć równą część dostępnej przestrzeni */
-    text-align: center; /* Wyśrodkowanie tekstu w przycisku dropdown */
-}
-
-/* Styl dla przycisku wewnątrz dropdownu, aby rozciągał się */
-.dropdown-toggle {
-    flex-grow: 1; /* Pozwala przyciskowi 'MOVA' wewnątrz dropdownu rozciągać się */
-    padding: 10px 0; /* Utrzymuje taki sam padding jak inne nav-buttony */
-}
-
-/* Style dla zawartości rozwijanej (domyślnie ukryte) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9; /* Kolor tła rozwijanego menu */
-    min-width: 160px; /* Zachowaj min-width dla rozwijanej listy */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1; /* Upewnia się, że menu jest na wierzchu */
-    border-radius: 5px;
-    top: 100%; /* Umieszcza dropdown poniżej przycisku */
-    left: 0;
-    /* Dodaj poniższe, aby rozwijane menu było szerokie jak całe menu, a nie tylko min-width */
-    width: 100%;
-}
-
-/* Pokazywanie rozwijanego menu po najechaniu na kontener dropdown */
-.dropdown:hover .dropdown-content {
-    display: block;
-}        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        /* Sekcja wiadomości */
-        .wiadomosc-kontener {
-            padding: 20px;
-            border-top: 2px solid #e0e0e0;
-        }
-
-        .wiadomosc-tytul {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        /* Zmiana w układzie Flexbox dla treści */
+    .dropdown-content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .dropdown-content li {
+        padding: 0;
+    }
+    .dropdown-content li a {
+        display: block;
+        padding: 12px 16px;
+        color: black;
+        text-decoration: none;
+        text-align: left;
+    }
+    .dropdown-content li a:hover {
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+    .dropdown {
+        position: relative;
+        display: flex;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .dropdown-toggle {
+        flex-grow: 1;
+        padding: 10px 0;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .wiadomosc-kontener {
+        padding: 20px;
+        border-top: 2px solid #e0e0e0;
+    }
+    .wiadomosc-tytul {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    .wiadomosc-tresc-wrapper {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .wiadomosc-tresc {
+        flex-basis: 65%;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    .wiadomosc-tresc p {
+        margin: 0 0 1em;
+    }
+    .wiadomosc-media {
+        flex-basis: 30%;
+        margin-bottom: 20px;
+    }
+    .wiadomosc-obrazek {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .wiadomosc-data {
+        font-size: 0.9em;
+        color: #888;
+        font-style: italic;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .wiadomosc-nawigacja {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .nawigacja-link {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .nawigacja-link:hover {
+        color: #0056b3;
+    }
+    .strzalka {
+        font-size: 1.2em;
+    }
+    @media (max-width: 768px) {
         .wiadomosc-tresc-wrapper {
-            display: flex;
-            gap: 20px; /* Odstęp między tekstem a obrazkiem */
-            flex-wrap: wrap; /* Zapewnia responsywność */
-            align-items: flex-start;
+            flex-direction: column;
         }
-
-        .wiadomosc-tresc {
-            flex-basis: 65%; /* Ustawia szerokość tekstu na 65% */
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
+        .wiadomosc-tresc, .wiadomosc-media {
+            flex-basis: 100%;
         }
-
-        .wiadomosc-tresc p {
-            margin: 0 0 1em;
-        }
-
-        .wiadomosc-media {
-            flex-basis: 30%; /* Ustawia szerokość obrazka na 30% */
-            margin-bottom: 20px;
-        }
-
-        .wiadomosc-obrazek {
-            width: 100%; /* Obrazek zajmuje całą dostępną szerokość */
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .wiadomosc-data {
-            font-size: 0.9em;
-            color: #888;
-            font-style: italic;
-            border-bottom: 1px solid #e9ecef;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .wiadomosc-nawigacja {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .nawigacja-link {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nawigacja-link:hover {
-            color: #0056b3;
-        }
-
-        .strzalka {
-            font-size: 1.2em;
-        }
-
-        /* Media queries dla lepszej responsywności na mniejszych ekranach */
-        @media (max-width: 768px) {
-            .wiadomosc-tresc-wrapper {
-                flex-direction: column; /* Układanie w kolumnie na urządzeniach mobilnych */
-            }
-
-            .wiadomosc-tresc, .wiadomosc-media {
-                flex-basis: 100%; /* Każdy element zajmuje całą szerokość */
-            }
-        }
+    }
 </style>
+
 <div id="header-placeholder"></div>
+
+<!-- GNZ -->
 <div class="greeting-text" data-lang="gnz">
     <div class="container">
         <article class="wiadomosc-kontener">
             <h1 class="wiadomosc-tytul"><span id="title-gnz"></span></h1>
             <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p><span id="contain-gnz"></span></p>
-                </div>
+                <div class="wiadomosc-tresc"><p><span id="contain-gnz"></span></p></div>
                 <div class="wiadomosc-media"><span id="image-gnz"></span></div>
             </div>
             <span id="extracontain-gnz"></span>
@@ -287,14 +236,14 @@ footer {
         </article>
     </div>
 </div>
+
+<!-- POL -->
 <div class="greeting-text" data-lang="pol">
     <div class="container">
         <article class="wiadomosc-kontener">
             <h1 class="wiadomosc-tytul"><span id="title-pol"></span></h1>
             <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p><span id="contain-pol"></span></p>
-                </div>
+                <div class="wiadomosc-tresc"><p><span id="contain-pol"></span></p></div>
                 <div class="wiadomosc-media"><span id="image-pol"></span></div>
             </div>
             <span id="extracontain-pol"></span>
@@ -306,14 +255,14 @@ footer {
         </article>
     </div>
 </div>
+
+<!-- ENG -->
 <div class="greeting-text" data-lang="eng">
     <div class="container">
         <article class="wiadomosc-kontener">
             <h1 class="wiadomosc-tytul"><span id="title-eng"></span></h1>
             <div class="wiadomosc-tresc-wrapper">
-                <div class="wiadomosc-tresc">
-                    <p><span id="contain-eng"></span></p>
-                </div>
+                <div class="wiadomosc-tresc"><p><span id="contain-eng"></span></p></div>
                 <div class="wiadomosc-media"><span id="image-eng"></span></div>
             </div>
             <span id="extracontain-eng"></span>
@@ -325,4 +274,5 @@ footer {
         </article>
     </div>
 </div>
+
 <div id="footer-placeholder"></div>
