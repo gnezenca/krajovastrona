@@ -20,10 +20,10 @@
                 return response.text();
             })
             .then(html => {
-                document.getElementById('content').innerHTML = html;
+    document.getElementById('content').innerHTML = html;
 
-                // --- GNZ ---
-                document.getElementById('title-gnz').textContent = 'Povstane krajovej strony';
+    // tu dopiero ustawiasz tytuły, obrazki, daty itd.
+document.getElementById('title-gnz').textContent = 'Povstane krajovej strony';
                 document.getElementById('contain-gnz').innerHTML = 'Povstane krajovej strony. Tekst je wczytany ze szablonu a wypełniony dynamicznie.';
                 document.getElementById('image-gnz').innerHTML = '<img src="https://gnezenca.github.io/krajovastrona/images/gnezenska_flaga.png" class="wiadomosc-obrazek">';
                 document.getElementById('date-gnz').textContent = '27. septembra 2025';
@@ -45,12 +45,11 @@
                 document.getElementById('date-eng').textContent = '27.09.2025';
                 document.getElementById('previousnews-eng').innerHTML = '<span class="brak-wiadomosci"></span>';
                 document.getElementById('nextnews-eng').innerHTML = '<a href="2.html" class="nawigacja-link nowszy">Next news <span class="strzalka">&rarr;</span></a>';
-            })
-            .catch(error => {
-                console.error('Błąd podczas ładowania lub przetwarzania szablonu:', error);
-                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku szablonu.</p>`;
-            });
-    </script>
-    <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
+    // a na końcu:
+    const script = document.createElement("script");
+    script.src = "https://gnezenca.github.io/krajovastrona/templates/skrypt.js";
+    document.body.appendChild(script);
+}
+                  </script>
 </body>
 </html>
