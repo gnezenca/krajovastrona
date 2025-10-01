@@ -23,9 +23,15 @@
                 document.getElementById('content').innerHTML = bodyContent;
                 
                 // --- PRAWIDŁOWE WYPEŁNIANIE DANYCH ---
-                document.getElementById('title').textContent = 'Tytul';
-                document.getElementById('contain').textContent = 'Trest';
-                document.getElementById('date').textContent = '01.01.2000';
+                document.getElementById('title-gnz').textContent = 'Tytul';
+                document.getElementById('title-pol').textContent = 'Tytuł';
+                document.getElementById('title-eng').textContent = 'Title';
+                document.getElementById('contain-gnz').textContent = 'Trest';
+                document.getElementById('contain-pol').textContent = 'Treść';
+                document.getElementById('contain-eng').textContent = 'Contain';
+                document.getElementById('date-gnz').textContent = '01.01.2000';
+                document.getElementById('date-pol').textContent = '01.01.2000';
+                document.getElementById('date-eng').textContent = '01.01.2000';
                 
                 // POPRAWKA: Wstawienie linku do atrybutu href.
                 // 1. Używamy nowego, poprawnego ID linku (<a>).
@@ -33,7 +39,7 @@
                 const previousLink = document.getElementById('previous-news-link');
                 if (previousLink) {
                     // Wstawienie rzeczywistego URL-a (np. "news-21.html")
-                    previousLink.setAttribute('href', '21.html'); 
+                    previousLink.setAttribute('href', '21'); 
                 }
             })
             .catch(error => {
