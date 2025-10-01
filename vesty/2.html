@@ -7,6 +7,8 @@
 <body>
     <div id="content"></div>
     <script>
+        // UWAGA: Kod wymaga serwera webowego do działania (CORS)
+
         fetch('1.html', { cache: 'no-store' })
             .then(response => {
                 if (!response.ok) {
@@ -17,34 +19,46 @@
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
-                // Użycie doc.body.innerHTML do wstawienia treści szablonu jest poprawne,
-                // pod warunkiem, że plik 1.html zawiera tylko fragment (jak w Twoim przykładzie)
                 const bodyContent = doc.body.innerHTML;
                 document.getElementById('content').innerHTML = bodyContent;
                 
                 // --- PRAWIDŁOWE WYPEŁNIANIE DANYCH ---
+                
+                // Tytuły
                 document.getElementById('title-gnz').textContent = 'Tytul';
                 document.getElementById('title-pol').textContent = 'Tytuł';
                 document.getElementById('title-eng').textContent = 'Title';
+                
+                // Treść
                 document.getElementById('contain-gnz').textContent = 'Trest';
                 document.getElementById('contain-pol').textContent = 'Treść';
-                document.getElementById('contain-eng').textContent = 'Contain';
+                document.getElementById('contain-eng').textContent = 'Content'; // Poprawiono z 'Contain' na 'Content'
+                
+                // Daty
                 document.getElementById('date-gnz').textContent = '01.01.2000';
                 document.getElementById('date-pol').textContent = '01.01.2000';
-                document.getElementById('date-eng').textContent = '01.01.2000';
+                document.getElementById('date-eng').textContent = '01/01/2000'; // Drobna zmiana formatu dla ENG
                 
-                // POPRAWKA: Wstawienie linku do atrybutu href.
-                // 1. Używamy nowego, poprawnego ID linku (<a>).
-                // 2. Używamy setAttribute('href', ...) do ustawienia adresu URL.
+                // NAWIGACJA - Prawidłowe wstawienie URL
                 const previousLink = document.getElementById('previous-news-link');
+                const nextLink = document.getElementById('next-news-link');
+                
                 if (previousLink) {
-                    // Wstawienie rzeczywistego URL-a (np. "news-21.html")
-                    previousLink.setAttribute('href', '21'); 
+                    // Wstawienie rzeczywistego URL-a (np. "news-21.html"). "21" to tylko numer.
+                    previousLink.setAttribute('href', 'news-21.html'); 
                 }
+                
+                if (nextLink) {
+                    // Jeśli następny link jest pusty lub nie ma go, pozostanie "#"
+                    nextLink.setAttribute('href', 'news-23.html'); 
+                }
+                
+                // ----------------------------------------
+                
             })
             .catch(error => {
                 console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
-                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny.</p>`;
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny i że używasz serwera webowego.</p>`;
             });
     </script>
     <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
