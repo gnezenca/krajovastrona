@@ -7,7 +7,7 @@
 <body>
     <div id="content"></div>
     <script>
-        // UWAGA: Kod wymaga serwera webowego do działania (CORS)
+        // Ta funkcja zadziała na GitHub Pages, ponieważ pliki są serwowane przez HTTP.
 
         fetch('1.html', { cache: 'no-store' })
             .then(response => {
@@ -19,6 +19,8 @@
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
+                
+                // Wstawienie załadowanego szablonu (fragmentu) do głównego DIVa
                 const bodyContent = doc.body.innerHTML;
                 document.getElementById('content').innerHTML = bodyContent;
                 
@@ -32,33 +34,32 @@
                 // Treść
                 document.getElementById('contain-gnz').textContent = 'Trest';
                 document.getElementById('contain-pol').textContent = 'Treść';
-                document.getElementById('contain-eng').textContent = 'Content'; // Poprawiono z 'Contain' na 'Content'
+                document.getElementById('contain-eng').textContent = 'Content';
                 
                 // Daty
                 document.getElementById('date-gnz').textContent = '01.01.2000';
                 document.getElementById('date-pol').textContent = '01.01.2000';
-                document.getElementById('date-eng').textContent = '01/01/2000'; // Drobna zmiana formatu dla ENG
+                document.getElementById('date-eng').textContent = '01/01/2000';
                 
-                // NAWIGACJA - Prawidłowe wstawienie URL
+                // NAWIGACJA - Poprawne wstawienie URL do atrybutu href
                 const previousLink = document.getElementById('previous-news-link');
                 const nextLink = document.getElementById('next-news-link');
                 
+                // URL do poprzedniej wiadomości (używamy setAttribute)
                 if (previousLink) {
-                    // Wstawienie rzeczywistego URL-a (np. "news-21.html"). "21" to tylko numer.
                     previousLink.setAttribute('href', 'news-21.html'); 
                 }
                 
+                // URL do następnej wiadomości (jeśli istnieje)
                 if (nextLink) {
-                    // Jeśli następny link jest pusty lub nie ma go, pozostanie "#"
                     nextLink.setAttribute('href', 'news-23.html'); 
                 }
                 
                 // ----------------------------------------
-                
             })
             .catch(error => {
                 console.error('Błąd podczas ładowania lub przetwarzania pliku:', error);
-                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny i że używasz serwera webowego.</p>`;
+                document.getElementById('content').innerHTML = `<p style="color:red;">Wystąpił błąd ładowania pliku. Upewnij się, że plik 1.html istnieje i jest dostępny w tym samym folderze.</p>`;
             });
     </script>
     <script src="https://gnezenca.github.io/krajovastrona/templates/skrypt.js"></script>
